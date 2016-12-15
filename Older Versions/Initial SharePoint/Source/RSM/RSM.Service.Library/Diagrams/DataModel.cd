@@ -1,0 +1,110 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<ClassDiagram MajorVersion="1" MinorVersion="1">
+  <Class Name="RSM.Service.Library.Model.ExternalEntity">
+    <Position X="5.25" Y="2" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAgAAAAAAAAACAgAAAAAAAAAAIAAAAAAAAAwAA=</HashCode>
+      <FileName>Model\ExternalEntity.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="RSM.Service.Library.Model.Person">
+    <Position X="1" Y="5.75" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>wH9AAEEAAAAgkMAEAAAQQGEAAAAAABAgQAAAAIAAAgg=</HashCode>
+      <FileName>Model\Person.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="RSM.Service.Library.Model.Reader">
+    <Position X="2.75" Y="5.75" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAAAAAAAAAACAAAEQAAAAAIAAAAAAAAAABAAA=</HashCode>
+      <FileName>Model\Reader.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="RSM.Service.Library.Model.Portal">
+    <Position X="4.5" Y="5.75" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>IAAYAAAAEAAAAAAAAAIAAEQAAAAAAAAAAAAgAAAAAAA=</HashCode>
+      <FileName>Model\Portal.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="RSM.Service.Library.Model.AccessLog">
+    <Position X="8" Y="5.75" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AIAAAAAAAAAAAAIGAAAAAAAQAAACIAAAABAAAAABAAA=</HashCode>
+      <FileName>Model\AccessLog.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="RSM.Service.Library.Model.Location">
+    <Position X="6.25" Y="5.75" Width="1.5" />
+    <InheritanceLine Type="RSM.Service.Library.Model.ExternalEntity" ManuallyRouted="true">
+      <Path>
+        <Point X="6" Y="4.306" />
+        <Point X="6" Y="5.438" />
+        <Point X="7" Y="5.438" />
+        <Point X="7" Y="5.75" />
+      </Path>
+    </InheritanceLine>
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAAAAAAAAAAAAAAEQAAAAAAAAAAAAAAAAAAAA=</HashCode>
+      <FileName>Model\Location.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="RSM.Service.Library.Model.Entity">
+    <Position X="4" Y="0.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAAAAAAAAAAAAAAAAAQAAAAAAAAAAAAAAAAAA=</HashCode>
+      <FileName>Model\Entity.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="RSM.Service.Library.Model.ExternalSystem">
+    <Position X="2.75" Y="2" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>BEACAAAAACAAAAAAACACAAQAoAAAAAAEAAAAAAAAAAA=</HashCode>
+      <FileName>Model\ExternalSystem.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="RSM.Service.Library.Model.Factory">
+    <Position X="3.75" Y="9" Width="2" />
+    <TypeIdentifier>
+      <HashCode>AQAAACAAAAAQAAAAAAAIAAAAAAAAAAAAAgAAABCAAAA=</HashCode>
+      <FileName>Model\Factory.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="RSM.Service.Library.Model.UserSession">
+    <Position X="6" Y="9" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAACAAAAAAAAAAAAAQAAAAAAAAAAAAAAAAAAAAAAAAA=</HashCode>
+      <FileName>Model\UserSession.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="RSM.Service.Library.Extensions.DataExtensions" Collapsed="true">
+    <Position X="7.75" Y="9.75" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAQAAEgAAAAAAAAAAAAAAAAAAAAAAAABAAAARAgoAAA=</HashCode>
+      <FileName>Extensions\DataExtensions.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="RSM.Service.Library.Extensions.ModelExtensions" Collapsed="true">
+    <Position X="7.75" Y="9" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAYIAAAAAAAAAABAAAAIAAAIAAAAAAAAEAAABAAgQEA=</HashCode>
+      <FileName>Extensions\ModelExtensions.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Enum Name="RSM.Service.Library.Model.EntityType">
+    <Position X="7" Y="0.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AIAAAAAAAAEAAAAAAAIAAAAAAAAAAAAAABAAAAABggA=</HashCode>
+      <FileName>Model\EntityType.cs</FileName>
+    </TypeIdentifier>
+  </Enum>
+  <Enum Name="RSM.Service.Library.Extensions.SelectKeys">
+    <Position X="7" Y="2.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAAAAAAAAAAIAAAAAAAAAAAAAAAAAAAAAACAA=</HashCode>
+      <FileName>Extensions\ModelExtensions.cs</FileName>
+    </TypeIdentifier>
+  </Enum>
+  <Font Name="Tahoma" Size="8.25" />
+</ClassDiagram>

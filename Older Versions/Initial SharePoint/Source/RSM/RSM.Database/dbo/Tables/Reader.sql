@@ -1,0 +1,9 @@
+﻿CREATE TABLE [dbo].[Reader]
+(
+	[Id] INT NOT NULL PRIMARY KEY IDENTITY, 
+	[Name] VARCHAR(200) NOT NULL, 
+	[PortalId] INT NOT NULL, 
+	[Added] DATETIME NOT NULL DEFAULT SYSDATETIME(), 
+	[Direction] INT NOT NULL DEFAULT ((0)), 
+	CONSTRAINT [FK_Reader_Portal] FOREIGN KEY ([PortalId]) REFERENCES [dbo].[Portal]([Id])
+)

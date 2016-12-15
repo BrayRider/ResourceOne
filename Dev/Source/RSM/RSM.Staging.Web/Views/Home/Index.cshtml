@@ -1,0 +1,104 @@
+﻿@model RSM.Staging.Web.Models.StagingToolsModel
+           
+@{    
+    ViewBag.Title = "R1SM Staging";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+
+<p>
+    @ViewBag.Message
+</p>
+
+@using (Html.BeginForm("Index", "Home", FormMethod.Post, new { @class = "form-horizontal" }))
+{ 
+    <fieldset>  
+        <legend>R1SM Data Staging Options</legend>  
+        <div class="control-group">
+            <label class="control-label" for="optionsCheckbox">R1SM</label>  
+            <div class="controls">  
+                <label class="checkbox">  
+                    @Html.EditorFor(x => x.R1SM)
+                    Include the General Settings for R1SM 
+                </label>  
+            </div> 
+        </div>  
+        <div class="control-group">
+            <label class="control-label" for="optionsCheckbox">S2 Incoming</label>  
+            <div class="controls">  
+                <label class="checkbox">  
+                    @Html.EditorFor(x => x.S2Incoming)
+                    Include Settings for incoming S2 data 
+                </label>  
+            </div>  
+            <div class="controls">  
+                <label class="checkbox">  
+                    @Html.EditorFor(x => x.S2IncomingHistory)
+                    Include batch history for incoming S2 data 
+                </label>  
+            </div>  
+            <div class="controls">  
+                <label class="checkbox">  
+                    @Html.EditorFor(x => x.CleanAllPeople)
+                    Clean all existing people 
+                </label>  
+            </div>  
+            <div class="controls">  
+                <label class="checkbox">  
+                    @Html.EditorFor(x => x.CleanAllAccessHistory)
+                    Clean all existing access history 
+                </label>  
+            </div>  
+            <div class="controls">  
+                <label class="checkbox">  
+                    @Html.EditorFor(x => x.CleanAllExternalAppKeys)
+                    Clean all existing external application keys
+                </label>  
+            </div>  
+        </div>  
+        <div class="control-group">
+            <label class="control-label" for="optionsCheckbox">S2 Outgoing</label>  
+            <div class="controls">  
+                <label class="checkbox">  
+                    @Html.EditorFor(x => x.S2Outgoing)
+                    Include Settings for outgoing S2 data 
+                </label>  
+            </div>  
+            <div class="controls">  
+                <label class="checkbox">  
+                    @Html.EditorFor(x => x.S2OutgoingHistory)
+                    Include batch history for outgoing S2 data 
+                </label>  
+            </div>  
+        </div>  
+        <div class="control-group">
+            <label class="control-label" for="optionsCheckbox">Track Outgoing</label>  
+            <div class="controls">  
+                <label class="checkbox">  
+                    @Html.EditorFor(x => x.TrackOutgoing)
+                    Include Settings for outgoing Track data 
+                </label>  
+            </div>  
+            <div class="controls">  
+                <label class="checkbox">  
+                    @Html.EditorFor(x => x.TrackOutgoingHistory)
+                    Include batch history for outgoing Track data 
+                </label>  
+            </div>  
+        </div>
+        <div class="control-group">
+            <label class="control-label" for="optionsCheckbox">PeopleSoft Incoming</label>  
+            <div class="controls">  
+                <label class="checkbox">  
+                    @Html.EditorFor(x => x.PsIncoming)
+                    Include Settings for incoming PeopleSoft data 
+                </label>  
+            </div>  
+        </div>  
+        <div class="form-actions">  
+            <button type="submit" class="btn btn-primary" name="command" value="Run">Run</button>  
+            <button type="submit" class="btn btn-danger" name="command" value="Clean">Clean</button>  
+            @Html.ActionLink("Reset", "Index", "Home", null, new { @class = "btn" })
+        </div>  
+    </fieldset>  
+}
+

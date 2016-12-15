@@ -1,0 +1,207 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<ordesignerObjectsDiagram dslVersion="1.0.0.0" absoluteBounds="0, 0, 12.375, 23" name="RSMDataModel">
+  <DataContextMoniker Name="/RSMDataModelDataContext" />
+  <nestedChildShapes>
+    <classShape Id="a65a6e51-273b-4d77-a048-7ecb0a440053" absoluteBounds="0.5, 0.5, 2, 2.9039737955729166">
+      <DataClassMoniker Name="/RSMDataModelDataContext/EmployeesWithChange" />
+      <nestedChildShapes>
+        <elementListCompartment Id="858e1fe2-ab47-45ef-8c17-cf30f779edf8" absoluteBounds="0.51500000000000012, 0.96, 1.9700000000000002, 2.3439737955729165" name="DataPropertiesCompartment" titleTextColor="Black" itemTextColor="Black" />
+      </nestedChildShapes>
+    </classShape>
+    <classShape Id="3fc86670-d397-4adb-88d5-d8dfd0c355b2" absoluteBounds="3.25, 4.625, 2, 1.26050048828125">
+      <DataClassMoniker Name="/RSMDataModelDataContext/AccessLevelRole" />
+      <nestedChildShapes>
+        <elementListCompartment Id="8e55fcad-221e-410b-9b4a-28906efd3cf8" absoluteBounds="3.2649999999999997, 5.085, 1.9700000000000002, 0.70050048828125" name="DataPropertiesCompartment" titleTextColor="Black" itemTextColor="Black" />
+      </nestedChildShapes>
+    </classShape>
+    <classShape Id="338ffa1b-346e-4299-940d-a3f8db271861" absoluteBounds="0.5, 6.5, 2, 1.5891951497395831">
+      <DataClassMoniker Name="/RSMDataModelDataContext/PSImportStatus" />
+      <nestedChildShapes>
+        <elementListCompartment Id="be47c999-c574-487e-b5d6-cc13338b2995" absoluteBounds="0.51499999999999968, 6.9600000000000009, 1.9700000000000002, 1.0291951497395833" name="DataPropertiesCompartment" titleTextColor="Black" itemTextColor="Black" />
+      </nestedChildShapes>
+    </classShape>
+    <classShape Id="8a069d97-78e5-47b3-aea9-551cd83a8c54" absoluteBounds="10.125, 5.125, 2, 1.5891951497395827">
+      <DataClassMoniker Name="/RSMDataModelDataContext/Job" />
+      <nestedChildShapes>
+        <elementListCompartment Id="c867cd80-4c92-4c82-99ef-13eb46255854" absoluteBounds="10.14, 5.5850000000000009, 1.9700000000000002, 1.0291951497395833" name="DataPropertiesCompartment" titleTextColor="Black" itemTextColor="Black" />
+      </nestedChildShapes>
+    </classShape>
+    <classShape Id="5f753085-5c76-46d4-aa62-2e4df31efc65" absoluteBounds="4.5, 10.75, 2, 1.26050048828125">
+      <DataClassMoniker Name="/RSMDataModelDataContext/Location" />
+      <nestedChildShapes>
+        <elementListCompartment Id="00bf2993-8874-4d37-b503-e2a1a46540b8" absoluteBounds="4.515, 11.21, 1.9700000000000002, 0.70050048828125" name="DataPropertiesCompartment" titleTextColor="Black" itemTextColor="Black" />
+      </nestedChildShapes>
+    </classShape>
+    <classShape Id="699d7a9f-b8b6-4547-865d-3f0d2d8e2839" absoluteBounds="4.5, 8, 2, 1.26050048828125">
+      <DataClassMoniker Name="/RSMDataModelDataContext/Department" />
+      <nestedChildShapes>
+        <elementListCompartment Id="8b4d6e34-75d0-43ac-b34f-b34e1db54d56" absoluteBounds="4.515, 8.46, 1.9700000000000002, 0.70050048828125" name="DataPropertiesCompartment" titleTextColor="Black" itemTextColor="Black" />
+      </nestedChildShapes>
+    </classShape>
+    <classShape Id="008c836c-edfd-4806-b35d-ba26b5c4b42c" absoluteBounds="6.625, 9.375, 2, 1.0961531575520844">
+      <DataClassMoniker Name="/RSMDataModelDataContext/NewJob" />
+      <nestedChildShapes>
+        <elementListCompartment Id="ae6cdcc9-39c8-4238-b251-65ed81480ff0" absoluteBounds="6.64, 9.835, 1.9700000000000002, 0.53615315755208326" name="DataPropertiesCompartment" titleTextColor="Black" itemTextColor="Black" />
+      </nestedChildShapes>
+    </classShape>
+    <classShape Id="6c2cfa18-c393-4a8a-981b-6cde733c9149" absoluteBounds="6.625, 8, 2, 1.0961531575520844">
+      <DataClassMoniker Name="/RSMDataModelDataContext/NewDepartment" />
+      <nestedChildShapes>
+        <elementListCompartment Id="04f54c2f-0b26-4f25-8cef-bf9de7fb4356" absoluteBounds="6.64, 8.46, 1.9700000000000002, 0.53615315755208326" name="DataPropertiesCompartment" titleTextColor="Black" itemTextColor="Black" />
+      </nestedChildShapes>
+    </classShape>
+    <classShape Id="4e1ae62e-bc3b-41d2-88e8-40f7444313cb" absoluteBounds="6.625, 10.75, 2, 0.93180582682291679">
+      <DataClassMoniker Name="/RSMDataModelDataContext/NewLocation" />
+      <nestedChildShapes>
+        <elementListCompartment Id="b35d48dc-4e34-4017-b067-75719753154e" absoluteBounds="6.64, 11.21, 1.9700000000000002, 0.37180582682291669" name="DataPropertiesCompartment" titleTextColor="Black" itemTextColor="Black" />
+      </nestedChildShapes>
+    </classShape>
+    <classShape Id="287b4ee2-6e52-4830-ae3b-5447fd252dee" absoluteBounds="1.75, 8.875, 2, 1.4248478190104166">
+      <DataClassMoniker Name="/RSMDataModelDataContext/JCLRoleRule" />
+      <nestedChildShapes>
+        <elementListCompartment Id="77c631d4-b26d-4975-a7ab-63bd0dcdeb80" absoluteBounds="1.7650000000000001, 9.335, 1.9700000000000002, 0.86484781901041674" name="DataPropertiesCompartment" titleTextColor="Black" itemTextColor="Black" />
+      </nestedChildShapes>
+    </classShape>
+    <associationConnector edgePoints="[(3.75 : 9.06775024414062); (4.5 : 9.06775024414062)]" fixedFrom="NotFixed" fixedTo="NotFixed">
+      <AssociationMoniker Name="/RSMDataModelDataContext/JCLRoleRule/JCLRoleRule_Department" />
+      <nodes>
+        <classShapeMoniker Id="287b4ee2-6e52-4830-ae3b-5447fd252dee" />
+        <classShapeMoniker Id="699d7a9f-b8b6-4547-865d-3f0d2d8e2839" />
+      </nodes>
+    </associationConnector>
+    <associationConnector edgePoints="[(3.75 : 9.81142365364583); (6.5625 : 9.81142365364583); (6.5625 : 9.3125); (11.125 : 9.3125); (11.125 : 6.71419514973958)]" fixedFrom="NotFixed" fixedTo="NotFixed">
+      <AssociationMoniker Name="/RSMDataModelDataContext/JCLRoleRule/JCLRoleRule_Job" />
+      <nodes>
+        <classShapeMoniker Id="287b4ee2-6e52-4830-ae3b-5447fd252dee" />
+        <classShapeMoniker Id="8a069d97-78e5-47b3-aea9-551cd83a8c54" />
+      </nodes>
+    </associationConnector>
+    <associationConnector edgePoints="[(3.15625 : 10.2998478190104); (3.15625 : 11.9792504882812); (4.5 : 11.9792504882812)]" fixedFrom="NotFixed" fixedTo="NotFixed">
+      <AssociationMoniker Name="/RSMDataModelDataContext/JCLRoleRule/JCLRoleRule_Location" />
+      <nodes>
+        <classShapeMoniker Id="287b4ee2-6e52-4830-ae3b-5447fd252dee" />
+        <classShapeMoniker Id="5f753085-5c76-46d4-aa62-2e4df31efc65" />
+      </nodes>
+    </associationConnector>
+    <classShape Id="63988387-b9b9-4361-bf91-3a890aa3998f" absoluteBounds="3.75, 6.125, 2, 1.26050048828125">
+      <DataClassMoniker Name="/RSMDataModelDataContext/JCLRole" />
+      <nestedChildShapes>
+        <elementListCompartment Id="162ac650-975e-4898-a186-3a7f3d34da5b" absoluteBounds="3.7649999999999997, 6.585, 1.9700000000000002, 0.70050048828125" name="DataPropertiesCompartment" titleTextColor="Black" itemTextColor="Black" />
+      </nestedChildShapes>
+    </classShape>
+    <associationConnector edgePoints="[(3.125 : 8.875); (3.125 : 6.28125); (3.75 : 6.28125)]" fixedFrom="NotFixed" fixedTo="NotFixed">
+      <AssociationMoniker Name="/RSMDataModelDataContext/JCLRoleRule/JCLRoleRule_JCLRole" />
+      <nodes>
+        <classShapeMoniker Id="287b4ee2-6e52-4830-ae3b-5447fd252dee" />
+        <classShapeMoniker Id="63988387-b9b9-4361-bf91-3a890aa3998f" />
+      </nodes>
+    </associationConnector>
+    <classShape Id="69dd93f4-bef0-4f71-86c9-a18f1c54097f" absoluteBounds="6.5, 5.875, 2, 1.5891951497395831">
+      <DataClassMoniker Name="/RSMDataModelDataContext/JCLRuleDisplay" />
+      <nestedChildShapes>
+        <elementListCompartment Id="2ca970a3-6b62-4799-8a5c-d728802ae299" absoluteBounds="6.515, 6.335, 1.9700000000000002, 1.0291951497395833" name="DataPropertiesCompartment" titleTextColor="Black" itemTextColor="Black" />
+      </nestedChildShapes>
+    </classShape>
+    <classShape Id="f6910973-8a5b-4740-b729-e90a7739d5f4" absoluteBounds="4.5, 0.875, 2, 1.4248478190104168">
+      <DataClassMoniker Name="/RSMDataModelDataContext/PeopleRole" />
+      <nestedChildShapes>
+        <elementListCompartment Id="18693aec-24fe-4a72-a144-e7046952c0c2" absoluteBounds="4.515, 1.335, 1.9700000000000002, 0.86484781901041674" name="DataPropertiesCompartment" titleTextColor="Black" itemTextColor="Black" />
+      </nestedChildShapes>
+    </classShape>
+    <classShape Id="47b4722a-cba3-4a9c-b791-0629257521d5" absoluteBounds="7.125, 0.625, 2, 5.0404890950520826">
+      <DataClassMoniker Name="/RSMDataModelDataContext/Person" />
+      <nestedChildShapes>
+        <elementListCompartment Id="f98a3f90-e875-4838-91d4-64cf10858e10" absoluteBounds="7.14, 1.085, 1.9700000000000002, 4.480489095052083" name="DataPropertiesCompartment" titleTextColor="Black" itemTextColor="Black" />
+      </nestedChildShapes>
+    </classShape>
+    <associationConnector edgePoints="[(7.125 : 1.58742390950521); (6.5 : 1.58742390950521)]" fixedFrom="NotFixed" fixedTo="NotFixed">
+      <AssociationMoniker Name="/RSMDataModelDataContext/Person/Person_PeopleRole" />
+      <nodes>
+        <classShapeMoniker Id="47b4722a-cba3-4a9c-b791-0629257521d5" />
+        <classShapeMoniker Id="f6910973-8a5b-4740-b729-e90a7739d5f4" />
+      </nodes>
+    </associationConnector>
+    <classShape Id="defce352-a0e5-4a96-820a-399a85eee6a0" absoluteBounds="4.75, 12.375, 2, 4.38309977213542">
+      <DataClassMoniker Name="/RSMDataModelDataContext/NewFire" />
+      <nestedChildShapes>
+        <elementListCompartment Id="d1898dd4-2723-4840-89df-a10750f6c1b9" absoluteBounds="4.7650000000000006, 12.835, 1.9700000000000002, 3.8230997721354165" name="DataPropertiesCompartment" titleTextColor="Black" itemTextColor="Black" />
+      </nestedChildShapes>
+    </classShape>
+    <classShape Id="713a201f-6222-4a1a-b825-2b80e958edeb" absoluteBounds="2.375, 12.375, 2, 4.38309977213542">
+      <DataClassMoniker Name="/RSMDataModelDataContext/NewHire" />
+      <nestedChildShapes>
+        <elementListCompartment Id="c2c1ab35-a544-47de-936b-51698df457a3" absoluteBounds="2.39, 12.835, 1.9700000000000002, 3.8230997721354165" name="DataPropertiesCompartment" titleTextColor="Black" itemTextColor="Black" />
+      </nestedChildShapes>
+    </classShape>
+    <classShape Id="2f333de8-cdde-49b5-ac8f-04327e1b0888" absoluteBounds="6.875, 12.375, 2, 4.38309977213542">
+      <DataClassMoniker Name="/RSMDataModelDataContext/EmpWithNonStatusChange" />
+      <nestedChildShapes>
+        <elementListCompartment Id="83140757-fab5-472b-bf36-83dcaadd5e8b" absoluteBounds="6.8900000000000006, 12.835, 1.9700000000000002, 3.8230997721354165" name="DataPropertiesCompartment" titleTextColor="Black" itemTextColor="Black" />
+      </nestedChildShapes>
+    </classShape>
+    <classShape Id="48d4c38c-7390-4726-b1b4-9e3165e77dc2" absoluteBounds="2.75, 17.75, 2, 1.75354248046875">
+      <DataClassMoniker Name="/RSMDataModelDataContext/LogEntry" />
+      <nestedChildShapes>
+        <elementListCompartment Id="4f959acf-2cac-4929-bb9a-1d048868d7e9" absoluteBounds="2.7649999999999997, 18.21, 1.9700000000000002, 1.19354248046875" name="DataPropertiesCompartment" titleTextColor="Black" itemTextColor="Black" />
+      </nestedChildShapes>
+    </classShape>
+    <classShape Id="a083aea7-0821-489b-bc46-0578a950c222" absoluteBounds="3.875, 2.875, 2, 1.26050048828125">
+      <DataClassMoniker Name="/RSMDataModelDataContext/Role" />
+      <nestedChildShapes>
+        <elementListCompartment Id="51b20e61-4157-4cc2-b06a-d37896466bd2" absoluteBounds="3.89, 3.335, 1.9700000000000002, 0.70050048828125" name="DataPropertiesCompartment" titleTextColor="Black" itemTextColor="Black" />
+      </nestedChildShapes>
+    </classShape>
+    <associationConnector edgePoints="[(4.5625 : 4.13550048828125); (4.5625 : 4.625)]" fixedFrom="NotFixed" fixedTo="NotFixed">
+      <AssociationMoniker Name="/RSMDataModelDataContext/Role/Role_AccessLevelRole" />
+      <nodes>
+        <classShapeMoniker Id="a083aea7-0821-489b-bc46-0578a950c222" />
+        <classShapeMoniker Id="3fc86670-d397-4adb-88d5-d8dfd0c355b2" />
+      </nodes>
+    </associationConnector>
+    <associationConnector edgePoints="[(5.1875 : 2.875); (5.1875 : 2.29984781901042)]" fixedFrom="NotFixed" fixedTo="NotFixed">
+      <AssociationMoniker Name="/RSMDataModelDataContext/Role/Role_PeopleRole" />
+      <nodes>
+        <classShapeMoniker Id="a083aea7-0821-489b-bc46-0578a950c222" />
+        <classShapeMoniker Id="f6910973-8a5b-4740-b729-e90a7739d5f4" />
+      </nodes>
+    </associationConnector>
+    <associationConnector edgePoints="[(5.53125 : 6.125); (5.53125 : 4.13550048828125)]" fixedFrom="NotFixed" fixedTo="NotFixed">
+      <AssociationMoniker Name="/RSMDataModelDataContext/JCLRole/JCLRole_Role" />
+      <nodes>
+        <classShapeMoniker Id="63988387-b9b9-4361-bf91-3a890aa3998f" />
+        <classShapeMoniker Id="a083aea7-0821-489b-bc46-0578a950c222" />
+      </nodes>
+    </associationConnector>
+    <classShape Id="65afea88-c54a-40de-b016-af579d3a1710" absoluteBounds="0.5, 3.75, 2, 1.9178898111979166">
+      <DataClassMoniker Name="/RSMDataModelDataContext/AccessLevel" />
+      <nestedChildShapes>
+        <elementListCompartment Id="5b4841e5-86e8-45c9-bd71-78ae606cfb9a" absoluteBounds="0.51500000000000012, 4.21, 1.9700000000000002, 1.3578898111979165" name="DataPropertiesCompartment" titleTextColor="Black" itemTextColor="Black" />
+      </nestedChildShapes>
+    </classShape>
+    <associationConnector edgePoints="[(2.5 : 5.14644490559896); (3.25 : 5.14644490559896)]" fixedFrom="NotFixed" fixedTo="NotFixed">
+      <AssociationMoniker Name="/RSMDataModelDataContext/AccessLevel/AccessLevel_AccessLevelRole" />
+      <nodes>
+        <classShapeMoniker Id="65afea88-c54a-40de-b016-af579d3a1710" />
+        <classShapeMoniker Id="3fc86670-d397-4adb-88d5-d8dfd0c355b2" />
+      </nodes>
+    </associationConnector>
+    <classShape Id="d848ffe8-078f-4fc3-b59a-71118caf3066" absoluteBounds="0.5, 10.625, 2, 1.26050048828125">
+      <DataClassMoniker Name="/RSMDataModelDataContext/JobDisplay" />
+      <nestedChildShapes>
+        <elementListCompartment Id="5ec067f6-dd13-488f-87e1-e24c6b787ff5" absoluteBounds="0.51499999999999968, 11.085, 1.9700000000000002, 0.70050048828125" name="DataPropertiesCompartment" titleTextColor="Black" itemTextColor="Black" />
+      </nestedChildShapes>
+    </classShape>
+    <classShape Id="ab799646-6f2d-403c-a616-030174b0292a" absoluteBounds="5.625, 21.375, 2, 1.4248478190104168">
+      <DataClassMoniker Name="/RSMDataModelDataContext/AccessLevelReport" />
+      <nestedChildShapes>
+        <elementListCompartment Id="dd1db47d-6087-4b67-8929-80688e4a321b" absoluteBounds="5.64, 21.835, 1.9700000000000002, 0.86484781901041674" name="DataPropertiesCompartment" titleTextColor="Black" itemTextColor="Black" />
+      </nestedChildShapes>
+    </classShape>
+    <classShape Id="a2a26f43-6655-4cfe-a721-c12973f98b4f" absoluteBounds="2, 20, 2, 1.5891951497395831">
+      <DataClassMoniker Name="/RSMDataModelDataContext/EmpAccessLevelReport" />
+      <nestedChildShapes>
+        <elementListCompartment Id="92a914e0-4d42-4b95-8d30-794f83ec1348" absoluteBounds="2.015, 20.46, 1.9700000000000002, 1.0291951497395833" name="DataPropertiesCompartment" titleTextColor="Black" itemTextColor="Black" />
+      </nestedChildShapes>
+    </classShape>
+  </nestedChildShapes>
+</ordesignerObjectsDiagram>

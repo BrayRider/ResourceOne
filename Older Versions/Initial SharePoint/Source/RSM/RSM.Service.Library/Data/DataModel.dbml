@@ -1,0 +1,62 @@
+﻿<?xml version="1.0" encoding="utf-8"?><Database Name="RSM" Class="DataModelDataContext" xmlns="http://schemas.microsoft.com/linqtosql/dbml/2007">
+  <Table Name="dbo.Locations" Member="Locations">
+    <Type Name="Location">
+      <Column Name="LocationID" Type="System.Int32" DbType="Int NOT NULL IDENTITY" IsPrimaryKey="true" IsDbGenerated="true" CanBeNull="false" />
+      <Column Name="LocationName" Type="System.String" DbType="NVarChar(50) NOT NULL" CanBeNull="false" />
+      <Column Name="DateAdded" Type="System.DateTime" DbType="Date NOT NULL" CanBeNull="false" />
+      <Association Name="Location_Portal" Member="Portals" ThisKey="LocationID" OtherKey="LocationId" Type="Portal" />
+    </Type>
+  </Table>
+  <Table Name="dbo.ExternalSystem" Member="ExternalSystems">
+    <Type Name="ExternalSystem">
+      <Column Name="Id" Type="System.Int32" DbType="Int NOT NULL" IsPrimaryKey="true" CanBeNull="false" />
+      <Column Name="Name" Type="System.String" DbType="VarChar(50) NOT NULL" CanBeNull="false" />
+      <Column Name="Incoming" Type="System.Boolean" DbType="Bit NOT NULL" CanBeNull="false" />
+      <Column Name="Outgoing" Type="System.Boolean" DbType="Bit NOT NULL" CanBeNull="false" />
+      <Association Name="ExternalSystem_ExternalApplicationKey" Member="ExternalApplicationKeys" ThisKey="Id" OtherKey="ExternalSystemId" Type="ExternalApplicationKey" />
+    </Type>
+  </Table>
+  <Table Name="dbo.Portal" Member="Portals">
+    <Type Name="Portal">
+      <Column Name="Id" Type="System.Int32" DbType="Int NOT NULL IDENTITY" IsPrimaryKey="true" IsDbGenerated="true" CanBeNull="false" />
+      <Column Name="Name" Type="System.String" DbType="VarChar(50) NOT NULL" CanBeNull="false" />
+      <Column Name="Added" Type="System.DateTime" DbType="DateTime NOT NULL" CanBeNull="false" />
+      <Column Name="LocationId" Type="System.Int32" DbType="Int NOT NULL" CanBeNull="false" />
+      <Association Name="Portal_Reader" Member="Readers" ThisKey="Id" OtherKey="PortalId" Type="Reader" />
+      <Association Name="Portal_AccessHistory" Member="AccessHistories" ThisKey="Id" OtherKey="PortalId" Type="AccessHistory" />
+      <Association Name="Location_Portal" Member="Location" ThisKey="LocationId" OtherKey="LocationID" Type="Location" IsForeignKey="true" />
+    </Type>
+  </Table>
+  <Table Name="dbo.Reader" Member="Readers">
+    <Type Name="Reader">
+      <Column Name="Id" Type="System.Int32" DbType="Int NOT NULL IDENTITY" IsPrimaryKey="true" IsDbGenerated="true" CanBeNull="false" />
+      <Column Name="Name" Type="System.String" DbType="VarChar(50) NOT NULL" CanBeNull="false" />
+      <Column Name="PortalId" Type="System.Int32" DbType="Int NOT NULL" CanBeNull="false" />
+      <Column Name="Added" Type="System.DateTime" DbType="DateTime NOT NULL" CanBeNull="false" />
+      <Association Name="Reader_AccessHistory" Member="AccessHistories" ThisKey="Id" OtherKey="ReaderId" Type="AccessHistory" />
+      <Association Name="Portal_Reader" Member="Portal" ThisKey="PortalId" OtherKey="Id" Type="Portal" IsForeignKey="true" />
+    </Type>
+  </Table>
+  <Table Name="dbo.AccessHistory" Member="AccessHistories">
+    <Type Name="AccessHistory">
+      <Column Name="Id" Type="System.Int32" DbType="Int NOT NULL IDENTITY" IsPrimaryKey="true" IsDbGenerated="true" CanBeNull="false" />
+      <Column Name="Accessed" Type="System.DateTime" DbType="DateTime NOT NULL" CanBeNull="false" />
+      <Column Name="PersonId" Type="System.Int32" DbType="Int NOT NULL" CanBeNull="false" />
+      <Column Name="PortalId" Type="System.Int32" DbType="Int NOT NULL" CanBeNull="false" />
+      <Column Name="ReaderId" Type="System.Int32" DbType="Int NOT NULL" CanBeNull="false" />
+      <Column Name="Type" Type="System.Int32" DbType="Int NOT NULL" CanBeNull="false" />
+      <Column Name="Reason" Type="System.Int32" DbType="Int" CanBeNull="true" />
+      <Association Name="Portal_AccessHistory" Member="Portal" ThisKey="PortalId" OtherKey="Id" Type="Portal" IsForeignKey="true" />
+      <Association Name="Reader_AccessHistory" Member="Reader" ThisKey="ReaderId" OtherKey="Id" Type="Reader" IsForeignKey="true" />
+    </Type>
+  </Table>
+  <Table Name="dbo.ExternalApplicationKey" Member="ExternalApplicationKeys">
+    <Type Name="ExternalApplicationKey">
+      <Column Name="EntityType" Type="System.String" DbType="VarChar(50) NOT NULL" IsPrimaryKey="true" CanBeNull="false" />
+      <Column Name="ExternalSystemId" Type="System.Int32" DbType="Int NOT NULL" IsPrimaryKey="true" CanBeNull="false" />
+      <Column Name="ExternalId" Type="System.String" DbType="VarChar(50) NOT NULL" IsPrimaryKey="true" CanBeNull="false" />
+      <Column Name="InternalId" Type="System.Int32" DbType="Int NOT NULL" CanBeNull="false" />
+      <Association Name="ExternalSystem_ExternalApplicationKey" Member="ExternalSystem" ThisKey="ExternalSystemId" OtherKey="Id" Type="ExternalSystem" IsForeignKey="true" />
+    </Type>
+  </Table>
+</Database>

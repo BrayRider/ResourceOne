@@ -1,0 +1,1 @@
+﻿<%@ ServiceHost Language="C#" Debug="true" Service="RSM.Integration.S2.Stub.RestService" CodeBehind="RestService.svc.cs" %>

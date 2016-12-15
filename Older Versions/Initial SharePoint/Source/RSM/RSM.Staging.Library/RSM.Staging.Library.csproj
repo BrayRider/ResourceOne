@@ -1,0 +1,90 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="4.0" DefaultTargets="Build" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <PropertyGroup>
+    <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
+    <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
+    <ProductVersion>8.0.30703</ProductVersion>
+    <SchemaVersion>2.0</SchemaVersion>
+    <ProjectGuid>{A7D54570-72FE-4A4F-AD79-CB8746BFF36B}</ProjectGuid>
+    <OutputType>Library</OutputType>
+    <AppDesignerFolder>Properties</AppDesignerFolder>
+    <RootNamespace>RSM.Staging.Library</RootNamespace>
+    <AssemblyName>RSM.Staging.Library</AssemblyName>
+    <TargetFrameworkVersion>v4.0</TargetFrameworkVersion>
+    <FileAlignment>512</FileAlignment>
+    <SccProjectName>SAK</SccProjectName>
+    <SccLocalPath>SAK</SccLocalPath>
+    <SccAuxPath>SAK</SccAuxPath>
+    <SccProvider>SAK</SccProvider>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
+    <DebugSymbols>true</DebugSymbols>
+    <DebugType>full</DebugType>
+    <Optimize>false</Optimize>
+    <OutputPath>bin\Debug\</OutputPath>
+    <DefineConstants>DEBUG;TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|AnyCPU' ">
+    <DebugType>pdbonly</DebugType>
+    <Optimize>true</Optimize>
+    <OutputPath>bin\Release\</OutputPath>
+    <DefineConstants>TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <ItemGroup>
+    <Reference Include="System" />
+    <Reference Include="System.ComponentModel.DataAnnotations" />
+    <Reference Include="System.Configuration" />
+    <Reference Include="System.Core" />
+    <Reference Include="System.Data.Linq" />
+    <Reference Include="System.Web" />
+    <Reference Include="System.Xml.Linq" />
+    <Reference Include="System.Data.DataSetExtensions" />
+    <Reference Include="Microsoft.CSharp" />
+    <Reference Include="System.Data" />
+    <Reference Include="System.Xml" />
+  </ItemGroup>
+  <ItemGroup>
+    <Compile Include="DataLoad.cs" />
+    <Compile Include="Data\BatchHistory.cs" />
+    <Compile Include="Data\Employees.cs" />
+    <Compile Include="Data\Locations.cs" />
+    <Compile Include="Data\People.cs" />
+    <Compile Include="Data\Portal.cs" />
+    <Compile Include="Data\Reader.cs" />
+    <Compile Include="Data\Settings.cs" />
+    <Compile Include="Data\ExternalSystems.cs" />
+    <Compile Include="Factory.cs" />
+    <Compile Include="Models\StagingTools.cs" />
+    <Compile Include="Properties\AssemblyInfo.cs" />
+  </ItemGroup>
+  <ItemGroup>
+    <ProjectReference Include="..\..\RSMSupport\RSMSupport\RSMSupport.csproj">
+      <Project>{6EBB476A-E1EC-4026-9607-B9EDD2AD9C7C}</Project>
+      <Name>RSMSupport</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\RSM.Artifacts\RSM.Artifacts.csproj">
+      <Project>{1BDED39F-A6F5-4B0D-9B9E-37E63F74626C}</Project>
+      <Name>RSM.Artifacts</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\RSM.Integration.Lubrizol\RSM.Integration.Lubrizol.csproj">
+      <Project>{258BF4CB-8D63-45AB-9936-18C26D657A1E}</Project>
+      <Name>RSM.Integration.Lubrizol</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\RSM.Service.Library\RSM.Service.Library.csproj">
+      <Project>{8600A40C-2604-49D6-9971-490C397DA582}</Project>
+      <Name>RSM.Service.Library</Name>
+    </ProjectReference>
+  </ItemGroup>
+  <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
+  <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 
+       Other similar extension points exist, see Microsoft.Common.targets.
+  <Target Name="BeforeBuild">
+  </Target>
+  <Target Name="AfterBuild">
+  </Target>
+  -->
+</Project>

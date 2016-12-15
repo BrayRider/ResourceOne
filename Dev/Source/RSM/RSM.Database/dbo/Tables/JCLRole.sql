@@ -1,0 +1,7 @@
+﻿CREATE TABLE [dbo].[JCLRole] (
+    [ID]     INT IDENTITY (1, 1) NOT NULL,
+    [RuleID] INT NOT NULL,
+    [RoleID] INT NOT NULL,
+    CONSTRAINT [PK_JobCodeLocations] PRIMARY KEY CLUSTERED ([ID] ASC)
+);
+

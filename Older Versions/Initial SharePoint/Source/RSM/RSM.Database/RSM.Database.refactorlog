@@ -1,0 +1,38 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Operations Version="1.0" xmlns="http://schemas.microsoft.com/sqlserver/dac/Serialization/2012/02">
+  <Operation Name="Rename Refactor" Key="613ef85b-b800-4b3c-a1e8-fcf57343d3e2" ChangeDateTime="01/12/2013 03:25:07">
+    <Property Name="ElementName" Value="[dbo].[ExternalApplicationKey].[Id]" />
+    <Property Name="ElementType" Value="SqlSimpleColumn" />
+    <Property Name="ParentElementName" Value="[dbo].[ExternalApplicationKey]" />
+    <Property Name="ParentElementType" Value="SqlTable" />
+    <Property Name="NewName" Value="EntityType" />
+  </Operation>
+  <Operation Name="Rename Refactor" Key="ec516df2-295d-4ee8-a3c5-a3fd0d845ee4" ChangeDateTime="01/13/2013 05:42:24">
+    <Property Name="ElementName" Value="[dbo].[ExternalApplicationKey].[IX_ExternalApplicationKey_Column]" />
+    <Property Name="ElementType" Value="SqlIndex" />
+    <Property Name="ParentElementName" Value="[dbo].[ExternalApplicationKey]" />
+    <Property Name="ParentElementType" Value="SqlTable" />
+    <Property Name="NewName" Value="[IX_ExternalApplicationKey_InternalId]" />
+  </Operation>
+  <Operation Name="Rename Refactor" Key="913777da-4286-4075-b647-096309e6ad7e" ChangeDateTime="01/13/2013 05:52:32">
+    <Property Name="ElementName" Value="[dbo].[AK_ExternalApplicationKey_ExternalId]" />
+    <Property Name="ElementType" Value="SqlUniqueConstraint" />
+    <Property Name="ParentElementName" Value="[dbo].[ExternalApplicationKey]" />
+    <Property Name="ParentElementType" Value="SqlTable" />
+    <Property Name="NewName" Value="[AK_ExternalApplicationKey_Internal]" />
+  </Operation>
+  <Operation Name="Rename Refactor" Key="8db4f23d-9fa3-4227-a2ba-ebd185a8cbd1" ChangeDateTime="01/17/2013 20:57:55">
+    <Property Name="ElementName" Value="[dbo].[FK_AccessHistory_Person]" />
+    <Property Name="ElementType" Value="SqlForeignKeyConstraint" />
+    <Property Name="ParentElementName" Value="[dbo].[AccessHistory]" />
+    <Property Name="ParentElementType" Value="SqlTable" />
+    <Property Name="NewName" Value="[FK_AccessHistory_People]" />
+  </Operation>
+  <Operation Name="Rename Refactor" Key="993858b5-11ef-4fad-9e0a-99590b8e8d0d" ChangeDateTime="02/26/2013 21:55:08">
+    <Property Name="ElementName" Value="[dbo].[CK_Settings_Name_SystemId]" />
+    <Property Name="ElementType" Value="SqlCheckConstraint" />
+    <Property Name="ParentElementName" Value="[dbo].[Settings]" />
+    <Property Name="ParentElementType" Value="SqlTable" />
+    <Property Name="NewName" Value="[CK_Settings_Name]" />
+  </Operation>
+</Operations>

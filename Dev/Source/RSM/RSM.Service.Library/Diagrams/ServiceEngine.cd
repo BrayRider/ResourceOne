@@ -1,0 +1,143 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<ClassDiagram MajorVersion="1" MinorVersion="1">
+  <Class Name="RSM.Service.Library.Result&lt;T&gt;" Collapsed="true">
+    <Position X="8.25" Y="4.25" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>ECAEACBFAACBBAAFAAAERAgAAgIQAQEAABAAIAAAIJA=</HashCode>
+      <FileName>Results.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="RSM.Service.Library.Task">
+    <Position X="1" Y="0.5" Width="1.5" />
+    <Compartments>
+      <Compartment Name="Fields" Collapsed="true" />
+      <Compartment Name="Properties" Collapsed="true" />
+      <Compartment Name="Methods" Collapsed="true" />
+      <Compartment Name="Nested Types" Collapsed="false" />
+    </Compartments>
+    <NestedTypes>
+      <Class Name="RSM.Service.Library.Task.Config" Collapsed="true">
+        <TypeIdentifier>
+          <NewMemberFileName>Task.cs</NewMemberFileName>
+        </TypeIdentifier>
+      </Class>
+    </NestedTypes>
+    <TypeIdentifier>
+      <HashCode>AgIgiQABACAiAIQCAAAACwaAIAACQEAAIBBABEA2gAE=</HashCode>
+      <FileName>Task.cs</FileName>
+    </TypeIdentifier>
+    <Lollipop Position="0.2" />
+  </Class>
+  <Class Name="RSM.Service.Library.Import.AccessHistory">
+    <Position X="0.5" Y="3.5" Width="1.5" />
+    <Compartments>
+      <Compartment Name="Nested Types" Collapsed="false" />
+    </Compartments>
+    <NestedTypes>
+      <Class Name="RSM.Service.Library.Import.AccessHistory.Config" Collapsed="true">
+        <TypeIdentifier>
+          <NewMemberFileName>Import\AccessHistory.cs</NewMemberFileName>
+        </TypeIdentifier>
+      </Class>
+    </NestedTypes>
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAAAAgAAQAAAAAAAAAABAAAAAAAAAAAAAAAAA=</HashCode>
+      <FileName>Import\AccessHistory.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="RSM.Service.Library.Export.AccessEvents">
+    <Position X="2.75" Y="3.5" Width="1.5" />
+    <Compartments>
+      <Compartment Name="Nested Types" Collapsed="false" />
+    </Compartments>
+    <NestedTypes>
+      <Class Name="RSM.Service.Library.Export.AccessEvents.Config" Collapsed="true">
+        <TypeIdentifier>
+          <NewMemberFileName>Export\AccessEvents.cs</NewMemberFileName>
+        </TypeIdentifier>
+      </Class>
+    </NestedTypes>
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAAAAgAAQAAAAAAACAAAAAAAAAAAAAAAAAAAA=</HashCode>
+      <FileName>Export\AccessEvents.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="RSM.Service.Library.ServiceProfile" Collapsed="true">
+    <Position X="3.25" Y="0.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAACgQAAAAIiAAAAAAAAAASAAAACQAAAAAgIAAAAAAA=</HashCode>
+      <FileName>ServiceProfile.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="RSM.Service.Library.TaskProfile" Collapsed="true">
+    <Position X="5" Y="0.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAAAAAAAAAAAAEAAAAAEAAAACAAEAEAAAIAAA=</HashCode>
+      <FileName>TaskProfile.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="RSM.Service.Library.Scheduler" Collapsed="true">
+    <Position X="3.25" Y="1.25" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAgAAAAABAAAAAAAQQAAAAAAAAAAAAAIAAAAAAAA=</HashCode>
+      <FileName>Scheduler.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="RSM.Service.Library.UnityFactory" Collapsed="true">
+    <Position X="5" Y="1.25" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAQAAAAAAAAAAAAAAAAAAAAAAEAAAAAAAAAAAAA=</HashCode>
+      <FileName>UnityFactory.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Interface Name="RSM.Service.Library.Interfaces.IAccessHistory" Collapsed="true">
+    <Position X="6.75" Y="2" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAAAAAAAAAAAAEAAAAAgAAAAAAAAAAAAACgAA=</HashCode>
+      <FileName>Interfaces\IAccessHistory.cs</FileName>
+    </TypeIdentifier>
+  </Interface>
+  <Interface Name="RSM.Service.Library.Interfaces.IAuthentication" Collapsed="true">
+    <Position X="10.25" Y="0.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>BAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAQAAAAAAA=</HashCode>
+      <FileName>Interfaces\IAuthentication.cs</FileName>
+    </TypeIdentifier>
+  </Interface>
+  <Interface Name="RSM.Service.Library.Interfaces.ITask" Collapsed="true">
+    <Position X="6.75" Y="0.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAgiAAAACAAAAQAAAAAAQAAAAAAAAAAIBAABAAAAAA=</HashCode>
+      <FileName>Interfaces\ITask.cs</FileName>
+    </TypeIdentifier>
+  </Interface>
+  <Interface Name="RSM.Service.Library.Interfaces.IAPI" Collapsed="true">
+    <Position X="8.5" Y="0.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>IAAAAAAAAAAAAAAAAAAAAAQAAAAAAAAAAAAAAAAAAAA=</HashCode>
+      <FileName>Interfaces\IAPI.cs</FileName>
+    </TypeIdentifier>
+  </Interface>
+  <Interface Name="RSM.Service.Library.Interfaces.IExportAccessEvent" Collapsed="true">
+    <Position X="6.75" Y="1.25" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAIAABAAAAAAAAAACACAAAAAAAAAAAABACAAAAA=</HashCode>
+      <FileName>Interfaces\IExportAccessEvent.cs</FileName>
+    </TypeIdentifier>
+  </Interface>
+  <Enum Name="RSM.Service.Library.ResultType" Collapsed="true">
+    <Position X="8.25" Y="5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAAIAAAAAAAAAAABAAAgAgAAAAAAAIAQAAAAA=</HashCode>
+      <FileName>ResultType.cs</FileName>
+    </TypeIdentifier>
+  </Enum>
+  <Enum Name="RSM.Service.Library.TaskState" Collapsed="true">
+    <Position X="6.75" Y="2.75" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAgAABAAAIAACAAAAAAAIAAAAAAAAAIAAAAAAAAAAA=</HashCode>
+      <FileName>TaskState.cs</FileName>
+    </TypeIdentifier>
+  </Enum>
+  <Font Name="Tahoma" Size="8.25" />
+</ClassDiagram>

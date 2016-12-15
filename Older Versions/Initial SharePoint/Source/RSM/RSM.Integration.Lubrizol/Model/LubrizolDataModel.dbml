@@ -1,0 +1,30 @@
+﻿<?xml version="1.0" encoding="utf-8"?><Database Name="Lubrizol" Class="LubrizolDataModelDataContext" xmlns="http://schemas.microsoft.com/linqtosql/dbml/2007">
+  <Table Name="dbo.tblzILMData" Member="tblzILMDatas">
+    <Type Name="tblzILMData">
+      <Column Name="EmployeeID" Type="System.String" DbType="NChar(8) NOT NULL" CanBeNull="false" />
+      <Column Name="Initials" Type="System.String" DbType="NVarChar(30) NOT NULL" CanBeNull="false" />
+      <Column Name="Name" Type="System.String" DbType="NVarChar(50) NOT NULL" CanBeNull="false" />
+      <Column Name="ReportingLocation" Type="System.String" DbType="NVarChar(4) NOT NULL" CanBeNull="false" />
+      <Column Name="ReportingLocationName" Type="System.String" DbType="NVarChar(30) NOT NULL" CanBeNull="false" />
+      <Column Name="PhysicalLocation" Type="System.String" DbType="NVarChar(4) NOT NULL" CanBeNull="false" />
+      <Column Name="PhysicalLocationName" Type="System.String" DbType="NVarChar(30) NOT NULL" CanBeNull="false" />
+      <Column Name="EmployeeStatus" Type="System.Char" DbType="NChar(1) NOT NULL" CanBeNull="false" />
+      <Column Name="EmployeeStatusDesc" Type="System.String" DbType="NVarChar(40) NOT NULL" CanBeNull="false" />
+      <Column Name="Department" Type="System.String" DbType="NVarChar(10)" CanBeNull="true" />
+      <Column Name="DepartmentName" Type="System.String" DbType="NVarChar(40)" CanBeNull="true" />
+      <Column Name="EmployeeClassDesc" Type="System.String" DbType="NVarChar(20)" CanBeNull="true" />
+      <Column Name="Division" Type="System.String" DbType="NVarChar(40)" CanBeNull="true" />
+      <Column Name="LegalEntity" Type="System.String" DbType="NVarChar(4) NOT NULL" CanBeNull="false" />
+      <Column Name="Company" Type="System.String" DbType="NVarChar(30)" CanBeNull="true" />
+      <Column Name="JobDescr" Type="System.String" DbType="NVarChar(40)" CanBeNull="true" />
+      <Column Name="SupervisorID" Type="System.String" DbType="NChar(8)" CanBeNull="true" />
+      <Column Name="SupervisorInitials" Type="System.String" DbType="NVarChar(30)" CanBeNull="true" />
+      <Column Name="SupervisorName" Type="System.String" DbType="NVarChar(50)" CanBeNull="true" />
+      <Column Name="FirstName" Type="System.String" DbType="NVarChar(40)" CanBeNull="true" />
+      <Column Name="MiddleName" Type="System.String" DbType="NVarChar(40)" CanBeNull="true" />
+      <Column Name="LastName" Type="System.String" DbType="NVarChar(40)" CanBeNull="true" />
+      <Column Name="Country" Type="System.String" DbType="NVarChar(40)" CanBeNull="true" />
+      <Column Name="LastLoadDate" Type="System.DateTime" DbType="DateTime" CanBeNull="true" />
+    </Type>
+  </Table>
+</Database>

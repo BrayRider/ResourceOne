@@ -1,0 +1,135 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="4.0" DefaultTargets="Build" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <PropertyGroup>
+    <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
+    <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
+    <ProductVersion>
+    </ProductVersion>
+    <SchemaVersion>2.0</SchemaVersion>
+    <ProjectGuid>{9EEC90CB-1D02-4945-89F7-4D330892B327}</ProjectGuid>
+    <OutputType>Library</OutputType>
+    <AppDesignerFolder>Properties</AppDesignerFolder>
+    <RootNamespace>RSM.Service.Library.Tests</RootNamespace>
+    <AssemblyName>RSM.Service.Library.Tests</AssemblyName>
+    <TargetFrameworkVersion>v4.0</TargetFrameworkVersion>
+    <FileAlignment>512</FileAlignment>
+    <ProjectTypeGuids>{3AC096D0-A1C2-E12C-1390-A8335801FDAB};{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}</ProjectTypeGuids>
+    <SccProjectName>SAK</SccProjectName>
+    <SccLocalPath>SAK</SccLocalPath>
+    <SccAuxPath>SAK</SccAuxPath>
+    <SccProvider>SAK</SccProvider>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
+    <DebugSymbols>true</DebugSymbols>
+    <DebugType>full</DebugType>
+    <Optimize>false</Optimize>
+    <OutputPath>bin\Debug\</OutputPath>
+    <DefineConstants>DEBUG;TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|AnyCPU' ">
+    <DebugType>pdbonly</DebugType>
+    <Optimize>true</Optimize>
+    <OutputPath>bin\Release\</OutputPath>
+    <DefineConstants>TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <ItemGroup>
+    <Reference Include="Microsoft.VisualStudio.QualityTools.UnitTestFramework, Version=10.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a, processorArchitecture=MSIL" />
+    <Reference Include="System" />
+    <Reference Include="System.configuration" />
+    <Reference Include="System.Core">
+      <RequiredTargetFramework>3.5</RequiredTargetFramework>
+    </Reference>
+    <Reference Include="System.Data" />
+    <Reference Include="System.Data.Linq" />
+    <Reference Include="System.Drawing" />
+  </ItemGroup>
+  <ItemGroup>
+    <CodeAnalysisDependentAssemblyPaths Condition=" '$(VS100COMNTOOLS)' != '' " Include="$(VS100COMNTOOLS)..\IDE\PrivateAssemblies">
+      <Visible>False</Visible>
+    </CodeAnalysisDependentAssemblyPaths>
+  </ItemGroup>
+  <ItemGroup>
+    <Compile Include="Export\ExportAccessEvents.cs" />
+    <Compile Include="Export\ExportEmployeeToSharePoint.cs" />
+    <Compile Include="Export\TrackExportAPIStub.cs" />
+    <Compile Include="Export\TrackExportWrapperStub.cs" />
+    <Compile Include="Import\ImportEmployee.cs" />
+    <Compile Include="Import\ImportPeople.cs" />
+    <Compile Include="Import\S2ImportWrapperStub.cs" />
+    <Compile Include="Import\S2ImportAPIStub.cs" />
+    <Compile Include="Interface\LubrizolAPI.cs" />
+    <Compile Include="Interface\TrackAPI.cs" />
+    <Compile Include="Interface\S2API.cs" />
+    <Compile Include="Import\ImportAccessHistory.cs" />
+    <Compile Include="Model\Models.cs" />
+    <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="Controllers\Settings.cs" />
+    <Compile Include="Properties\Resources.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>Resources.resx</DependentUpon>
+    </Compile>
+    <Compile Include="Test.cs" />
+  </ItemGroup>
+  <ItemGroup>
+    <ProjectReference Include="..\..\RSMSupport\RSMSupport\RSMSupport.csproj">
+      <Project>{6EBB476A-E1EC-4026-9607-B9EDD2AD9C7C}</Project>
+      <Name>RSMSupport</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\RSM.Artifacts\RSM.Artifacts.csproj">
+      <Project>{1BDED39F-A6F5-4B0D-9B9E-37E63F74626C}</Project>
+      <Name>RSM.Artifacts</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\RSM.Integration.Lubrizol\RSM.Integration.Lubrizol.csproj">
+      <Project>{258BF4CB-8D63-45AB-9936-18C26D657A1E}</Project>
+      <Name>RSM.Integration.Lubrizol</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\RSM.Integration.S2\RSM.Integration.S2.csproj">
+      <Project>{0C1CC4F6-406F-4D5B-A48C-0DB828BFB167}</Project>
+      <Name>RSM.Integration.S2</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\RSM.Integration.Track\RSM.Integration.Track.csproj">
+      <Project>{5000CFA0-929B-40D8-93B7-A912B0FDCD13}</Project>
+      <Name>RSM.Integration.Track</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\RSM.Service.Library\RSM.Service.Library.csproj">
+      <Project>{8600A40C-2604-49D6-9971-490C397DA582}</Project>
+      <Name>RSM.Service.Library</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\RSM.Staging.Library\RSM.Staging.Library.csproj">
+      <Project>{A7D54570-72FE-4A4F-AD79-CB8746BFF36B}</Project>
+      <Name>RSM.Staging.Library</Name>
+    </ProjectReference>
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="App.config">
+      <SubType>Designer</SubType>
+    </None>
+  </ItemGroup>
+  <ItemGroup>
+    <Content Include="Content\AngryBirdsRed.jpg" />
+    <Content Include="Content\BadPiggies.jpg" />
+    <Content Include="Content\missing.jpg">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Content>
+    <None Include="Resources\BadPiggies.jpg" />
+  </ItemGroup>
+  <ItemGroup>
+    <EmbeddedResource Include="Properties\Resources.resx">
+      <Generator>PublicResXFileCodeGenerator</Generator>
+      <LastGenOutput>Resources.Designer.cs</LastGenOutput>
+    </EmbeddedResource>
+  </ItemGroup>
+  <Import Project="$(MSBuildBinPath)\Microsoft.CSharp.targets" />
+  <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 
+       Other similar extension points exist, see Microsoft.Common.targets.
+  <Target Name="BeforeBuild">
+  </Target>
+  <Target Name="AfterBuild">
+  </Target>
+  -->
+</Project>

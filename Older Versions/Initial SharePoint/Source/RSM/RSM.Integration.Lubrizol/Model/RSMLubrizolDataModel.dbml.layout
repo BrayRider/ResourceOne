@@ -1,0 +1,12 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<ordesignerObjectsDiagram dslVersion="1.0.0.0" absoluteBounds="0, 0, 11, 8.5" name="RSMLubrizolDataModel">
+  <DataContextMoniker Name="/RSMLubrizolDataModelDataContext" />
+  <nestedChildShapes>
+    <classShape Id="b444d220-2e46-461f-95e6-df5ae407d2a2" absoluteBounds="2.375, 0.5, 2, 4.8761417643229157">
+      <DataClassMoniker Name="/RSMLubrizolDataModelDataContext/Lubrizol_Employee" />
+      <nestedChildShapes>
+        <elementListCompartment Id="7fc3c8fe-d44b-4467-8f1e-8f169bcd83d8" absoluteBounds="2.39, 0.96, 1.9700000000000002, 4.3161417643229161" name="DataPropertiesCompartment" titleTextColor="Black" itemTextColor="Black" />
+      </nestedChildShapes>
+    </classShape>
+  </nestedChildShapes>
+</ordesignerObjectsDiagram>

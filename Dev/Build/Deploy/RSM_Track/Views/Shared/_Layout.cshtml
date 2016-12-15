@@ -1,0 +1,56 @@
+﻿@{
+    Layout = "~/Views/Shared/_GenericLayout.cshtml";
+}
+
+@section AdditionalScriptsAndCss {
+    @RenderSection("AdditionalScriptsAndCss", false)
+}
+
+@section Header {
+    @Html.Partial("_Header")
+}
+
+@section PageBanner {
+    @RenderSection("PageBanner", false)
+}
+
+
+
+
+
+@section Footer {
+    @Html.Partial("_Footer")
+}
+
+@section DeferredScripts {
+	@RenderSection("DeferredScripts", false)
+}
+
+@section Content {
+    <div class="content one-col-layout">
+        @if (IsSectionDefined("TemporaryMessages"))
+        {
+            <div id="TemporaryMessages" style="display:none;">
+                @this.RenderSection("TemporaryMessages", false)
+            </div>
+        }
+        @if (IsSectionDefined("ContentTitle"))
+        {
+            @RenderSection("ContentTitle", false)
+        }
+        else
+        {
+            <div id="ContentTitle" style="padding:0px;overflow:hidden;float: left;">
+                <h2>@(string.IsNullOrWhiteSpace(ViewBag.ContentTitle) ? ViewBag.Title : ViewBag.ContentTitle)</h2>
+            </div>
+        }
+        @if (IsSectionDefined("PageMessages"))
+        {
+            <div class="content-messages">
+                @RenderSection("PageMessages", false)
+            </div>
+        }
+        @RenderBody()
+    </div>
+}
+

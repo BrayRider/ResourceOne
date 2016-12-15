@@ -1,0 +1,449 @@
+﻿<?xml version="1.0" encoding="utf-8"?><Database Name="RSM" Class="RSMDataModelDataContext" xmlns="http://schemas.microsoft.com/linqtosql/dbml/2007">
+  <Table Name="dbo.EmployeesWithChanges" Member="EmployeesWithChanges">
+    <Type Name="EmployeesWithChange">
+      <Column Name="PersonID" Type="System.Int32" DbType="Int NOT NULL" CanBeNull="false" />
+      <Column Name="FirstName" Type="System.String" DbType="NVarChar(50) NOT NULL" CanBeNull="false" />
+      <Column Name="LastName" Type="System.String" DbType="NVarChar(50) NOT NULL" CanBeNull="false" />
+      <Column Name="MiddleName" Type="System.String" DbType="NVarChar(50) NOT NULL" CanBeNull="false" />
+      <Column Name="DeptID" Type="System.String" DbType="NVarChar(50) NOT NULL" CanBeNull="false" />
+      <Column Name="DeptDescr" Type="System.String" DbType="NVarChar(50)" CanBeNull="true" />
+      <Column Name="JobCode" Type="System.String" DbType="NVarChar(50) NOT NULL" CanBeNull="false" />
+      <Column Name="JobDescr" Type="System.String" DbType="NVarChar(50)" CanBeNull="true" />
+      <Column Name="BadgeNumber" Type="System.Int32" DbType="Int NOT NULL" CanBeNull="false" />
+      <Column Name="Facility" Type="System.String" DbType="NVarChar(50)" CanBeNull="true" />
+      <Column Name="Active" Type="System.Boolean" DbType="Bit NOT NULL" CanBeNull="false" />
+      <Column Name="LastUpdated" Type="System.DateTime" DbType="Date" CanBeNull="true" />
+      <Column Name="LastUpdateMask" Type="System.Int32" DbType="Int" CanBeNull="true" />
+    </Type>
+  </Table>
+  <Table Name="dbo.AccessLevelRoles" Member="AccessLevelRoles">
+    <Type Name="AccessLevelRole">
+      <Column Name="ID" Type="System.Int32" DbType="Int NOT NULL IDENTITY" IsPrimaryKey="true" IsDbGenerated="true" CanBeNull="false" />
+      <Column Name="AccessLevelID" Type="System.Int32" DbType="Int NOT NULL" CanBeNull="false" />
+      <Column Name="RoleID" Type="System.Int32" DbType="Int NOT NULL" CanBeNull="false" />
+      <Association Name="Role_AccessLevelRole" Member="Role" ThisKey="RoleID" OtherKey="RoleID" Type="Role" IsForeignKey="true" DeleteRule="CASCADE" DeleteOnNull="true" />
+      <Association Name="AccessLevel_AccessLevelRole" Member="AccessLevel" ThisKey="AccessLevelID" OtherKey="AccessLevelID" Type="AccessLevel" IsForeignKey="true" />
+    </Type>
+  </Table>
+  <Table Name="dbo.PSImportStatus" Member="PSImportStatus">
+    <Type Name="PSImportStatus">
+      <Column Name="id" Type="System.Int32" DbType="Int NOT NULL IDENTITY" IsPrimaryKey="true" IsDbGenerated="true" CanBeNull="false" />
+      <Column Name="importDate" Type="System.DateTime" DbType="DateTime NOT NULL" CanBeNull="false" />
+      <Column Name="filename" Type="System.String" DbType="NVarChar(MAX) NOT NULL" CanBeNull="false" />
+      <Column Name="success" Type="System.Boolean" DbType="Bit NOT NULL" CanBeNull="false" />
+      <Column Name="message" Type="System.String" DbType="NVarChar(MAX)" CanBeNull="true" />
+    </Type>
+  </Table>
+  <Table Name="dbo.Jobs" Member="Jobs">
+    <Type Name="Job">
+      <Column Name="JobCode" Type="System.String" DbType="NVarChar(50) NOT NULL" IsPrimaryKey="true" CanBeNull="false" />
+      <Column Name="JobDescription" Type="System.String" DbType="NVarChar(MAX) NOT NULL" CanBeNull="false" />
+      <Column Name="DateAdded" Type="System.DateTime" DbType="Date NOT NULL" CanBeNull="false" />
+      <Column Name="DisplayDescription" Type="System.String" DbType="nvarchar(MAX)" CanBeNull="true" />
+      <Column Name="Credentials" Type="System.String" DbType="NVarChar(MAX)" CanBeNull="true" />
+      <Association Name="JCLRoleRule_Job" Member="JCLRoleRule" ThisKey="JobCode" OtherKey="JobCode" Type="JCLRoleRule" IsForeignKey="true" />
+    </Type>
+  </Table>
+  <Table Name="dbo.Departments" Member="Departments">
+    <Type Name="Department">
+      <Column Name="DeptID" Type="System.String" DbType="NVarChar(50) NOT NULL" IsPrimaryKey="true" CanBeNull="false" />
+      <Column Name="DeptDescr" Type="System.String" DbType="NVarChar(MAX) NOT NULL" CanBeNull="false" />
+      <Column Name="DateAdded" Type="System.DateTime" DbType="DateTime NOT NULL" CanBeNull="false" />
+      <Association Name="JCLRoleRule_Department" Member="JCLRoleRule" ThisKey="DeptID" OtherKey="DeptID" Type="JCLRoleRule" IsForeignKey="true" />
+    </Type>
+  </Table>
+  <Table Name="dbo.NewJobs" Member="NewJobs">
+    <Type Name="NewJob">
+      <Column Name="JobCode" Type="System.String" DbType="NVarChar(50) NOT NULL" CanBeNull="false" />
+      <Column Name="JobDescr" Type="System.String" DbType="NVarChar(50)" CanBeNull="true" />
+    </Type>
+  </Table>
+  <Table Name="dbo.NewDepartments" Member="NewDepartments">
+    <Type Name="NewDepartment">
+      <Column Name="DeptID" Type="System.String" DbType="NVarChar(50) NOT NULL" CanBeNull="false" />
+      <Column Name="DeptDescr" Type="System.String" DbType="NVarChar(50)" CanBeNull="true" />
+    </Type>
+  </Table>
+  <Table Name="dbo.NewLocations" Member="NewLocations">
+    <Type Name="NewLocation">
+      <Column Name="Facility" Type="System.String" DbType="NVarChar(50)" CanBeNull="true" />
+    </Type>
+  </Table>
+  <Table Name="dbo.JCLRoleRule" Member="JCLRoleRules">
+    <Type Name="JCLRoleRule" Id="ID4">
+      <Column Name="ID" Type="System.Int32" DbType="Int NOT NULL IDENTITY" IsPrimaryKey="true" IsDbGenerated="true" CanBeNull="false" />
+      <Column Name="JobCode" Type="System.String" DbType="NVarChar(50)" CanBeNull="false" />
+      <Column Name="DeptID" Type="System.String" DbType="NVarChar(50) NOT NULL" CanBeNull="false" />
+      <Column Name="Location" Type="System.Int32" DbType="Int NOT NULL" CanBeNull="false" />
+      <Association Name="JCLRoleRule_Job" Member="Job" Storage="_Jobs" ThisKey="JobCode" OtherKey="JobCode" Type="Job" Cardinality="One" />
+      <Association Name="JCLRoleRule_Department" Member="Departments" ThisKey="DeptID" OtherKey="DeptID" Type="Department" Cardinality="One" />
+      <Association Name="JCLRoleRule_JCLRole" Member="JCLRoles" ThisKey="ID" OtherKey="RuleID" Type="JCLRole" />
+      <Association Name="Location_JCLRoleRule" Member="Locations" ThisKey="Location" OtherKey="LocationID" Type="Location" IsForeignKey="true" />
+    </Type>
+  </Table>
+  <Table Name="dbo.JCLRole" Member="JCLRoles">
+    <Type Name="JCLRole">
+      <Column Name="ID" Type="System.Int32" DbType="Int NOT NULL IDENTITY" IsPrimaryKey="true" IsDbGenerated="true" CanBeNull="false" />
+      <Column Name="RuleID" Type="System.Int32" DbType="Int NOT NULL" CanBeNull="false" />
+      <Column Name="RoleID" Type="System.Int32" DbType="Int NOT NULL" CanBeNull="false" />
+      <Association Name="JCLRole_Role" Member="Role" ThisKey="RoleID" OtherKey="RoleID" Type="Role" Cardinality="One" />
+      <Association Name="JCLRoleRule_JCLRole" Member="JCLRoleRule" ThisKey="RuleID" OtherKey="ID" Type="JCLRoleRule" IsForeignKey="true" />
+    </Type>
+  </Table>
+  <Table Name="dbo.JCLRuleDisplay" Member="JCLRuleDisplays">
+    <Type Name="JCLRuleDisplay">
+      <Column Name="ID" Type="System.Int32" DbType="Int NOT NULL" CanBeNull="false" />
+      <Column Name="JobCode" Type="System.String" DbType="nvarchar(50) not null" CanBeNull="false" />
+      <Column Name="JobDescription" Type="System.String" DbType="NVarChar(MAX) NOT NULL" CanBeNull="false" />
+      <Column Name="DeptDescr" Type="System.String" DbType="NVarChar(MAX) NOT NULL" CanBeNull="false" />
+      <Column Name="LocationName" Type="System.String" DbType="NVarChar(50) NOT NULL" CanBeNull="false" />
+    </Type>
+  </Table>
+  <Table Name="dbo.PeopleRoles" Member="PeopleRoles">
+    <Type Name="PeopleRole">
+      <Column Name="ID" Type="System.Int32" DbType="Int NOT NULL IDENTITY" IsPrimaryKey="true" IsDbGenerated="true" CanBeNull="false" />
+      <Column Name="PersonID" Type="System.Int32" DbType="Int NOT NULL" CanBeNull="false" />
+      <Column Name="RoleID" Type="System.Int32" DbType="Int NOT NULL" CanBeNull="false" />
+      <Column Name="IsException" Type="System.Boolean" DbType="Bit NOT NULL" CanBeNull="false" />
+      <Association Name="Role_PeopleRole" Member="Role" ThisKey="RoleID" OtherKey="RoleID" Type="Role" IsForeignKey="true" DeleteRule="CASCADE" DeleteOnNull="true" />
+      <Association Name="Person_PeopleRole" Member="Person" ThisKey="PersonID" OtherKey="PersonID" Type="Person" IsForeignKey="true" />
+    </Type>
+  </Table>
+  <Table Name="dbo.NewFires" Member="NewFires">
+    <Type Name="NewFire">
+      <Column Name="PersonID" Type="System.Int32" DbType="Int NOT NULL" CanBeNull="false" />
+      <Column Name="FirstName" Type="System.String" DbType="NVarChar(50) NOT NULL" CanBeNull="false" />
+      <Column Name="LastName" Type="System.String" DbType="NVarChar(50) NOT NULL" CanBeNull="false" />
+      <Column Name="MiddleName" Type="System.String" DbType="NVarChar(50) NOT NULL" CanBeNull="false" />
+      <Column Name="DeptID" Type="System.String" DbType="NVarChar(50) NOT NULL" CanBeNull="false" />
+      <Column Name="DeptDescr" Type="System.String" DbType="NVarChar(50)" CanBeNull="true" />
+      <Column Name="JobCode" Type="System.String" DbType="NVarChar(50) NOT NULL" CanBeNull="false" />
+      <Column Name="JobDescr" Type="System.String" DbType="NVarChar(50)" CanBeNull="true" />
+      <Column Name="BadgeNumber" Type="System.String" DbType="NVarChar(50) NOT NULL" CanBeNull="false" />
+      <Column Name="Facility" Type="System.String" DbType="NVarChar(50)" CanBeNull="true" />
+      <Column Name="Active" Type="System.Boolean" DbType="Bit NOT NULL" CanBeNull="false" />
+      <Column Name="LastUpdated" Type="System.DateTime" DbType="Date" CanBeNull="true" />
+      <Column Name="LastUpdateMask" Type="System.Int32" DbType="Int NOT NULL" CanBeNull="false" />
+      <Column Name="username" Type="System.String" DbType="NChar(50)" CanBeNull="true" />
+      <Column Name="password" Type="System.String" DbType="NVarChar(MAX)" CanBeNull="true" />
+      <Column Name="LastLogin" Type="System.DateTime" DbType="DateTime" CanBeNull="true" />
+      <Column Name="LastActivity" Type="System.DateTime" DbType="DateTime" CanBeNull="true" />
+      <Column Name="FailedPasswordAttempts" Type="System.Int32" DbType="Int NOT NULL" CanBeNull="false" />
+      <Column Name="LockedOut" Type="System.Boolean" DbType="Bit NOT NULL" CanBeNull="false" />
+      <Column Name="IsAdmin" Type="System.Boolean" DbType="Bit NOT NULL" CanBeNull="false" />
+      <Column Name="NeedsApproval" Type="System.Boolean" DbType="Bit NOT NULL" CanBeNull="false" />
+      <Column Name="EmployeeID" Type="System.String" DbType="NVarChar(50) NOT NULL" CanBeNull="false" />
+    </Type>
+  </Table>
+  <Table Name="dbo.NewHires" Member="NewHires">
+    <Type Name="NewHire">
+      <Column Name="PersonID" Type="System.Int32" DbType="Int NOT NULL" CanBeNull="false" />
+      <Column Name="FirstName" Type="System.String" DbType="NVarChar(50) NOT NULL" CanBeNull="false" />
+      <Column Name="LastName" Type="System.String" DbType="NVarChar(50) NOT NULL" CanBeNull="false" />
+      <Column Name="MiddleName" Type="System.String" DbType="NVarChar(50) NOT NULL" CanBeNull="false" />
+      <Column Name="DeptID" Type="System.String" DbType="NVarChar(50) NOT NULL" CanBeNull="false" />
+      <Column Name="DeptDescr" Type="System.String" DbType="NVarChar(50)" CanBeNull="true" />
+      <Column Name="JobCode" Type="System.String" DbType="NVarChar(50) NOT NULL" CanBeNull="false" />
+      <Column Name="JobDescr" Type="System.String" DbType="NVarChar(50)" CanBeNull="true" />
+      <Column Name="BadgeNumber" Type="System.String" DbType="NVarChar(50) NOT NULL" CanBeNull="false" />
+      <Column Name="Facility" Type="System.String" DbType="NVarChar(50)" CanBeNull="true" />
+      <Column Name="Active" Type="System.Boolean" DbType="Bit NOT NULL" CanBeNull="false" />
+      <Column Name="LastUpdated" Type="System.DateTime" DbType="Date" CanBeNull="true" />
+      <Column Name="LastUpdateMask" Type="System.Int32" DbType="Int NOT NULL" CanBeNull="false" />
+      <Column Name="username" Type="System.String" DbType="NChar(50)" CanBeNull="true" />
+      <Column Name="password" Type="System.String" DbType="NVarChar(MAX)" CanBeNull="true" />
+      <Column Name="LastLogin" Type="System.DateTime" DbType="DateTime" CanBeNull="true" />
+      <Column Name="LastActivity" Type="System.DateTime" DbType="DateTime" CanBeNull="true" />
+      <Column Name="FailedPasswordAttempts" Type="System.Int32" DbType="Int NOT NULL" CanBeNull="false" />
+      <Column Name="LockedOut" Type="System.Boolean" DbType="Bit NOT NULL" CanBeNull="false" />
+      <Column Name="IsAdmin" Type="System.Boolean" DbType="Bit NOT NULL" CanBeNull="false" />
+      <Column Name="NeedsApproval" Type="System.Boolean" DbType="Bit NOT NULL" CanBeNull="false" />
+      <Column Name="EmployeeID" Type="System.String" DbType="NVarChar(50) NOT NULL" CanBeNull="false" />
+    </Type>
+  </Table>
+  <Table Name="dbo.EmpWithNonStatusChanges" Member="EmpWithNonStatusChanges">
+    <Type Name="EmpWithNonStatusChange">
+      <Column Name="PersonID" Type="System.Int32" DbType="Int NOT NULL" CanBeNull="false" />
+      <Column Name="FirstName" Type="System.String" DbType="NVarChar(50) NOT NULL" CanBeNull="false" />
+      <Column Name="LastName" Type="System.String" DbType="NVarChar(50) NOT NULL" CanBeNull="false" />
+      <Column Name="MiddleName" Type="System.String" DbType="NVarChar(50) NOT NULL" CanBeNull="false" />
+      <Column Name="DeptID" Type="System.String" DbType="NVarChar(50) NOT NULL" CanBeNull="false" />
+      <Column Name="DeptDescr" Type="System.String" DbType="NVarChar(50)" CanBeNull="true" />
+      <Column Name="JobCode" Type="System.String" DbType="NVarChar(50) NOT NULL" CanBeNull="false" />
+      <Column Name="JobDescr" Type="System.String" DbType="NVarChar(50)" CanBeNull="true" />
+      <Column Name="BadgeNumber" Type="System.String" DbType="NVarChar(50) NOT NULL" CanBeNull="false" />
+      <Column Name="Facility" Type="System.String" DbType="NVarChar(50)" CanBeNull="true" />
+      <Column Name="Active" Type="System.Boolean" DbType="Bit NOT NULL" CanBeNull="false" />
+      <Column Name="LastUpdated" Type="System.DateTime" DbType="Date" CanBeNull="true" />
+      <Column Name="LastUpdateMask" Type="System.Int32" DbType="Int NOT NULL" CanBeNull="false" />
+      <Column Name="username" Type="System.String" DbType="NChar(50)" CanBeNull="true" />
+      <Column Name="password" Type="System.String" DbType="NVarChar(MAX)" CanBeNull="true" />
+      <Column Name="LastLogin" Type="System.DateTime" DbType="DateTime" CanBeNull="true" />
+      <Column Name="LastActivity" Type="System.DateTime" DbType="DateTime" CanBeNull="true" />
+      <Column Name="FailedPasswordAttempts" Type="System.Int32" DbType="Int NOT NULL" CanBeNull="false" />
+      <Column Name="LockedOut" Type="System.Boolean" DbType="Bit NOT NULL" CanBeNull="false" />
+      <Column Name="IsAdmin" Type="System.Boolean" DbType="Bit NOT NULL" CanBeNull="false" />
+      <Column Name="NeedsApproval" Type="System.Boolean" DbType="Bit NOT NULL" CanBeNull="false" />
+      <Column Name="EmployeeID" Type="System.String" DbType="NVarChar(50) NOT NULL" CanBeNull="false" />
+    </Type>
+  </Table>
+  <Table Name="dbo.Roles" Member="Roles">
+    <Type Name="Role" Id="ID1">
+      <Column Name="RoleID" Type="System.Int32" DbType="Int NOT NULL IDENTITY" IsPrimaryKey="true" IsDbGenerated="true" CanBeNull="false" />
+      <Column Name="RoleName" Type="System.String" DbType="NVarChar(50) NOT NULL" CanBeNull="false" />
+      <Column Name="RoleDesc" Type="System.String" DbType="NVarChar(MAX) NOT NULL" CanBeNull="false" />
+      <Association Name="Role_AccessLevelRole" Member="AccessLevelRoles" ThisKey="RoleID" OtherKey="RoleID" Type="AccessLevelRole" />
+      <Association Name="Role_PeopleRole" Member="PeopleRoles" ThisKey="RoleID" OtherKey="RoleID" Type="PeopleRole" />
+      <Association Name="JCLRole_Role" Member="JCLRole" ThisKey="RoleID" OtherKey="RoleID" Type="JCLRole" IsForeignKey="true" />
+    </Type>
+  </Table>
+  <Table Name="dbo.AccessLevels" Member="AccessLevels">
+    <Type Name="AccessLevel" Id="ID2">
+      <Column Name="AccessLevelID" Type="System.Int32" DbType="Int NOT NULL" IsPrimaryKey="true" CanBeNull="false" />
+      <Column Name="AccessLevelName" Type="System.String" DbType="NVarChar(50) NOT NULL" CanBeNull="false" />
+      <Column Name="AccessLevelDesc" Type="System.String" DbType="NVarChar(MAX)" CanBeNull="true" />
+      <Column Name="ReaderGroupID" Type="System.Int32" DbType="Int" CanBeNull="true" />
+      <Column Name="TimeSpecID" Type="System.Int32" DbType="Int" CanBeNull="true" />
+      <Column Name="ThreatLevelGroupID" Type="System.Int32" DbType="Int" CanBeNull="true" />
+      <Column Name="Missing" Type="System.Boolean" DbType="Bit NOT NULL" CanBeNull="false" />
+      <Association Name="AccessLevel_AccessLevelRole" Member="AccessLevelRoles" ThisKey="AccessLevelID" OtherKey="AccessLevelID" Type="AccessLevelRole" />
+    </Type>
+  </Table>
+  <Table Name="dbo.JobDisplay" Member="JobDisplays">
+    <Type Name="JobDisplay">
+      <Column Name="JobCode" Type="System.String" DbType="NVarChar(50) NOT NULL" CanBeNull="false" />
+      <Column Name="JobDescription" Type="System.String" DbType="NVarChar(MAX)" CanBeNull="true" />
+      <Column Name="DateAdded" Type="System.DateTime" DbType="Date NOT NULL" CanBeNull="false" />
+    </Type>
+  </Table>
+  <Table Name="dbo.AccessLevelReport" Member="AccessLevelReports">
+    <Type Name="AccessLevelReport">
+      <Column Name="AccessLevelName" Type="System.String" DbType="NVarChar(50) NOT NULL" CanBeNull="false" />
+      <Column Name="AccessLevelDesc" Type="System.String" DbType="NVarChar(MAX)" CanBeNull="true" />
+      <Column Name="ReaderGroupID" Type="System.Int32" DbType="Int" CanBeNull="true" />
+      <Column Name="people" Type="System.String" DbType="VarChar(2000)" CanBeNull="true" />
+    </Type>
+  </Table>
+  <Table Name="dbo.EmpAccessLevelReport" Member="EmpAccessLevelReports">
+    <Type Name="EmpAccessLevelReport">
+      <Column Name="firstname" Type="System.String" DbType="NVarChar(50) NOT NULL" CanBeNull="false" />
+      <Column Name="lastname" Type="System.String" DbType="NVarChar(50) NOT NULL" CanBeNull="false" />
+      <Column Name="Deptdescr" Type="System.String" DbType="NVarChar(50)" CanBeNull="true" />
+      <Column Name="jobdescr" Type="System.String" DbType="NVarChar(50)" CanBeNull="true" />
+      <Column Name="levels" Type="System.String" DbType="VarChar(2000)" CanBeNull="true" />
+    </Type>
+  </Table>
+  <Table Name="dbo.LogEntries" Member="LogEntries">
+    <Type Name="LogEntry">
+      <Column Name="ID" Type="System.Int32" DbType="Int NOT NULL IDENTITY" IsPrimaryKey="true" IsDbGenerated="true" CanBeNull="false" />
+      <Column Name="EventDate" Type="System.DateTime" DbType="DateTime NOT NULL" CanBeNull="false" />
+      <Column Name="Source" Type="System.Int32" DbType="Int NOT NULL" CanBeNull="false" />
+      <Column Name="Severity" Type="System.Int32" DbType="Int NOT NULL" CanBeNull="false" />
+      <Column Name="Message" Type="System.String" DbType="NVarChar(MAX) NOT NULL" CanBeNull="false" />
+      <Column Name="Details" Type="System.String" DbType="Text" CanBeNull="true" UpdateCheck="Never" />
+    </Type>
+  </Table>
+  <Table Name="dbo.ExternalSystems" Member="ExternalSystems">
+    <Type Name="ExternalSystem">
+      <Column Name="Id" Type="System.Int32" DbType="Int NOT NULL" IsPrimaryKey="true" CanBeNull="false" />
+      <Column Name="Name" Type="System.String" DbType="NVarChar(50) NOT NULL" CanBeNull="false" />
+      <Column Name="Direction" Type="System.Int32" DbType="Int NOT NULL" CanBeNull="false" />
+      <Association Name="ExternalSystem_Setting" Member="Settings" ThisKey="Id" OtherKey="SystemId" Type="Setting" />
+      <Association Name="ExternalSystem_ExternalApplicationKey" Member="ExternalApplicationKeys" ThisKey="Id" OtherKey="SystemId" Type="ExternalApplicationKey" />
+    </Type>
+  </Table>
+  <Table Name="dbo.AccessHistory" Member="AccessHistories">
+    <Type Name="AccessHistory">
+      <Column Name="Id" Type="System.Int32" DbType="Int NOT NULL IDENTITY" IsPrimaryKey="true" IsDbGenerated="true" CanBeNull="false" />
+      <Column Name="Accessed" Type="System.DateTime" DbType="DateTime NOT NULL" CanBeNull="false" />
+      <Column Name="PersonId" Type="System.Int32" DbType="Int NOT NULL" CanBeNull="false" />
+      <Column Name="PortalId" Type="System.Int32" DbType="Int NOT NULL" CanBeNull="false" />
+      <Column Name="ReaderId" Type="System.Int32" DbType="Int NOT NULL" CanBeNull="false" />
+      <Column Name="Type" Type="System.Int32" DbType="Int NOT NULL" CanBeNull="false" />
+      <Column Name="Reason" Type="System.Int32" DbType="Int" CanBeNull="true" />
+      <Association Name="Reader_AccessHistory" Member="Reader" ThisKey="ReaderId" OtherKey="Id" Type="Reader" IsForeignKey="true" />
+      <Association Name="Portal_AccessHistory" Member="Portal" ThisKey="PortalId" OtherKey="Id" Type="Portal" IsForeignKey="true" />
+      <Association Name="Person_AccessHistory" Member="Person" ThisKey="PersonId" OtherKey="PersonID" Type="Person" IsForeignKey="true" />
+    </Type>
+  </Table>
+  <Table Name="dbo.Locations" Member="Locations">
+    <Type Name="Location">
+      <Column Name="LocationID" Type="System.Int32" DbType="Int NOT NULL IDENTITY" IsPrimaryKey="true" IsDbGenerated="true" CanBeNull="false" />
+      <Column Name="LocationName" Type="System.String" DbType="NVarChar(100) NOT NULL" CanBeNull="false" />
+      <Column Name="DateAdded" Type="System.DateTime" DbType="Date NOT NULL" CanBeNull="false" />
+      <Association Name="Location_JCLRoleRule" Member="JCLRoleRules" ThisKey="LocationID" OtherKey="Location" Type="JCLRoleRule" />
+      <Association Name="Location_Portal" Member="Portals" ThisKey="LocationID" OtherKey="LocationId" Type="Portal" />
+    </Type>
+  </Table>
+  <Table Name="dbo.Reader" Member="Readers">
+    <Type Name="Reader">
+      <Column Name="Id" Type="System.Int32" DbType="Int NOT NULL IDENTITY" IsPrimaryKey="true" IsDbGenerated="true" CanBeNull="false" />
+      <Column Name="Name" Type="System.String" DbType="VarChar(200) NOT NULL" CanBeNull="false" />
+      <Column Name="PortalId" Type="System.Int32" DbType="Int NOT NULL" CanBeNull="false" />
+      <Column Name="Added" Type="System.DateTime" DbType="DateTime NOT NULL" CanBeNull="false" />
+      <Column Name="Direction" Type="System.Int32" DbType="Int NOT NULL" CanBeNull="false" />
+      <Association Name="Reader_AccessHistory" Member="AccessHistories" ThisKey="Id" OtherKey="ReaderId" Type="AccessHistory" />
+      <Association Name="Portal_Reader" Member="Portal" ThisKey="PortalId" OtherKey="Id" Type="Portal" IsForeignKey="true" />
+    </Type>
+  </Table>
+  <Table Name="dbo.Portal" Member="Portals">
+    <Type Name="Portal">
+      <Column Name="Id" Type="System.Int32" DbType="Int NOT NULL IDENTITY" IsPrimaryKey="true" IsDbGenerated="true" CanBeNull="false" />
+      <Column Name="Name" Type="System.String" DbType="VarChar(200) NOT NULL" CanBeNull="false" />
+      <Column Name="Added" Type="System.DateTime" DbType="DateTime NOT NULL" CanBeNull="false" />
+      <Column Name="LocationId" Type="System.Int32" DbType="Int NOT NULL" CanBeNull="false" />
+      <Column Name="NetworkAddress" Type="System.String" DbType="VarChar(255)" CanBeNull="true" />
+      <Column Name="DeviceType" Type="System.Int32" DbType="Int" CanBeNull="true" />
+      <Column Name="Capabilities" Type="System.String" DbType="VarChar(100)" CanBeNull="true" />
+      <Association Name="Portal_AccessHistory" Member="AccessHistories" ThisKey="Id" OtherKey="PortalId" Type="AccessHistory" />
+      <Association Name="Portal_Reader" Member="Readers" ThisKey="Id" OtherKey="PortalId" Type="Reader" />
+      <Association Name="Location_Portal" Member="Location" ThisKey="LocationId" OtherKey="LocationID" Type="Location" IsForeignKey="true" />
+    </Type>
+  </Table>
+  <Table Name="dbo.BatchHistory" Member="BatchHistories">
+    <Type Name="BatchHistory">
+      <Column Name="Id" Type="System.Int32" DbType="Int NOT NULL IDENTITY" IsPrimaryKey="true" IsDbGenerated="true" CanBeNull="false" />
+      <Column Name="SystemId" Type="System.Int32" DbType="Int NOT NULL" CanBeNull="false" />
+      <Column Name="RunStart" Type="System.DateTime" DbType="DateTime NOT NULL" CanBeNull="false" />
+      <Column Name="RunEnd" Type="System.DateTime" DbType="DateTime NOT NULL" CanBeNull="false" />
+      <Column Name="Filename" Type="System.String" DbType="NVarChar(250)" CanBeNull="true" />
+      <Column Name="Outcome" Type="System.Int32" DbType="Int NOT NULL" CanBeNull="false" />
+      <Column Name="Message" Type="System.String" DbType="NVarChar(MAX)" CanBeNull="true" />
+    </Type>
+  </Table>
+  <Table Name="dbo.People" Member="Persons">
+    <Type Name="Person" Id="ID3">
+      <Column Name="PersonID" Type="System.Int32" DbType="Int NOT NULL IDENTITY" IsPrimaryKey="true" IsDbGenerated="true" CanBeNull="false" />
+      <Column Name="FirstName" Type="System.String" DbType="NVarChar(50) NOT NULL" CanBeNull="false" />
+      <Column Name="LastName" Type="System.String" DbType="NVarChar(50) NOT NULL" CanBeNull="false" />
+      <Column Name="MiddleName" Type="System.String" DbType="NVarChar(50)" CanBeNull="true" />
+      <Column Name="DeptID" Type="System.String" DbType="NVarChar(50)" CanBeNull="true" />
+      <Column Name="DeptDescr" Type="System.String" DbType="NVarChar(50)" CanBeNull="true" />
+      <Column Name="JobCode" Type="System.String" DbType="NVarChar(50)" CanBeNull="true" />
+      <Column Name="JobDescr" Type="System.String" DbType="NVarChar(50)" CanBeNull="true" />
+      <Column Name="BadgeNumber" Type="System.String" DbType="NVarChar(50)" CanBeNull="true" />
+      <Column Name="Facility" Type="System.String" DbType="NVarChar(50)" CanBeNull="true" />
+      <Column Name="Active" Type="System.Boolean" DbType="Bit NOT NULL" CanBeNull="false" />
+      <Column Name="LastUpdated" Type="System.DateTime" DbType="DateTime NOT NULL" CanBeNull="false" />
+      <Column Name="LastUpdateMask" Type="System.Int32" DbType="Int NOT NULL" CanBeNull="false" />
+      <Column Name="username" Type="System.String" DbType="NChar(10)" CanBeNull="true" />
+      <Column Name="password" Type="System.String" DbType="NVarChar(MAX)" CanBeNull="true" />
+      <Column Name="LastLogin" Type="System.DateTime" DbType="DateTime" CanBeNull="true" />
+      <Column Name="LastActivity" Type="System.DateTime" DbType="DateTime" CanBeNull="true" />
+      <Column Name="FailedPasswordAttempts" Type="System.Int32" DbType="Int NOT NULL" CanBeNull="false" />
+      <Column Name="LockedOut" Type="System.Boolean" DbType="Bit NOT NULL" CanBeNull="false" />
+      <Column Name="IsAdmin" Type="System.Boolean" DbType="Bit NOT NULL" CanBeNull="false" />
+      <Column Name="NeedsApproval" Type="System.Boolean" DbType="Bit NOT NULL" CanBeNull="false" />
+      <Column Name="NeedsRulePass" Type="System.Boolean" DbType="Bit NOT NULL" CanBeNull="false" />
+      <Column Name="NeedsUpload" Type="System.Boolean" DbType="Bit NOT NULL" CanBeNull="false" />
+      <Column Name="EmployeeID" Type="System.String" DbType="VarChar(50)" CanBeNull="true" />
+      <Column Name="Credentials" Type="System.String" DbType="NVarChar(MAX)" CanBeNull="true" />
+      <Column Name="NickFirst" Type="System.String" DbType="NVarChar(MAX)" CanBeNull="true" />
+      <Column Name="UDF1" Type="System.String" DbType="NVarChar(MAX)" CanBeNull="true" />
+      <Column Name="UDF2" Type="System.String" DbType="NVarChar(MAX)" CanBeNull="true" />
+      <Column Name="UDF3" Type="System.String" DbType="NVarChar(MAX)" CanBeNull="true" />
+      <Column Name="UDF4" Type="System.String" DbType="NVarChar(MAX)" CanBeNull="true" />
+      <Column Name="UDF5" Type="System.String" DbType="NVarChar(MAX)" CanBeNull="true" />
+      <Column Name="UDF6" Type="System.String" DbType="NVarChar(MAX)" CanBeNull="true" />
+      <Column Name="UDF7" Type="System.String" DbType="NVarChar(MAX)" CanBeNull="true" />
+      <Column Name="UDF8" Type="System.String" DbType="NVarChar(MAX)" CanBeNull="true" />
+      <Column Name="UDF9" Type="System.String" DbType="NVarChar(MAX)" CanBeNull="true" />
+      <Column Name="UDF10" Type="System.String" DbType="NVarChar(MAX)" CanBeNull="true" />
+      <Column Name="UDF11" Type="System.String" DbType="NVarChar(MAX)" CanBeNull="true" />
+      <Column Name="UDF12" Type="System.String" DbType="NVarChar(MAX)" CanBeNull="true" />
+      <Column Name="UDF13" Type="System.String" DbType="NVarChar(MAX)" CanBeNull="true" />
+      <Column Name="UDF14" Type="System.String" DbType="NVarChar(MAX)" CanBeNull="true" />
+      <Column Name="UDF15" Type="System.String" DbType="NVarChar(MAX)" CanBeNull="true" />
+      <Column Name="UDF16" Type="System.String" DbType="NVarChar(MAX)" CanBeNull="true" />
+      <Column Name="UDF17" Type="System.String" DbType="NVarChar(MAX)" CanBeNull="true" />
+      <Column Name="UDF18" Type="System.String" DbType="NVarChar(MAX)" CanBeNull="true" />
+      <Column Name="UDF19" Type="System.String" DbType="NVarChar(MAX)" CanBeNull="true" />
+      <Column Name="UDF20" Type="System.String" DbType="NVarChar(MAX)" CanBeNull="true" />
+      <Column Name="Added" Type="System.DateTime" DbType="DateTime NOT NULL" CanBeNull="false" />
+      <Column Name="Image" Type="System.Data.Linq.Binary" DbType="VarBinary(MAX)" CanBeNull="true" UpdateCheck="Never" />
+      <Association Name="Person_PeopleRole" Member="PeopleRoles" ThisKey="PersonID" OtherKey="PersonID" Type="PeopleRole" />
+      <Association Name="Person_AccessHistory" Member="AccessHistories" ThisKey="PersonID" OtherKey="PersonId" Type="AccessHistory" />
+    </Type>
+  </Table>
+  <Table Name="dbo.Settings" Member="Settings">
+    <Type Name="Setting">
+      <Column Name="Id" Type="System.Int32" DbType="Int NOT NULL IDENTITY" IsPrimaryKey="true" IsDbGenerated="true" CanBeNull="false" />
+      <Column Name="Viewable" Type="System.Boolean" DbType="Bit NOT NULL" CanBeNull="false" />
+      <Column Name="SystemId" Type="System.Int32" DbType="Int NOT NULL" CanBeNull="false" />
+      <Column Name="InputType" Type="System.String" DbType="NVarChar(10) NOT NULL" CanBeNull="false" />
+      <Column Name="Name" Type="System.String" DbType="NVarChar(50) NOT NULL" CanBeNull="false" />
+      <Column Name="Label" Type="System.String" DbType="NVarChar(250) NOT NULL" CanBeNull="false" />
+      <Column Name="Value" Type="System.String" DbType="NVarChar(250) NOT NULL" CanBeNull="false" />
+      <Column Name="OrderBy" Type="System.Int32" DbType="Int NOT NULL" CanBeNull="false" />
+      <Association Name="ExternalSystem_Setting" Member="ExternalSystem" ThisKey="SystemId" OtherKey="Id" Type="ExternalSystem" IsForeignKey="true" />
+    </Type>
+  </Table>
+  <Table Name="dbo.ExternalApplicationKeys" Member="ExternalApplicationKeys">
+    <Type Name="ExternalApplicationKey">
+      <Column Name="EntityType" Type="System.String" DbType="NVarChar(50) NOT NULL" IsPrimaryKey="true" CanBeNull="false" />
+      <Column Name="InternalId" Type="System.Int32" DbType="Int NOT NULL" IsPrimaryKey="true" CanBeNull="false" />
+      <Column Name="ExternalId" Type="System.String" DbType="NVarChar(100) NOT NULL" IsPrimaryKey="true" CanBeNull="false" />
+      <Column Name="SystemId" Type="System.Int32" DbType="Int NOT NULL" IsPrimaryKey="true" CanBeNull="false" />
+      <Column Name="Added" Type="System.DateTime" DbType="DateTime NOT NULL" CanBeNull="false" />
+      <Column Name="ExternalEntityLastUpdated" Type="System.DateTime" DbType="DateTime" CanBeNull="true" />
+      <Association Name="ExternalSystem_ExternalApplicationKey" Member="ExternalSystem" ThisKey="SystemId" OtherKey="Id" Type="ExternalSystem" IsForeignKey="true" />
+    </Type>
+  </Table>
+  <Function Name="dbo.LevelsAvailableForRole" Method="LevelsAvailableForRole">
+    <Parameter Name="RoleID" Parameter="roleID" Type="System.Int32" DbType="Int" />
+    <ElementType Name="LevelsAvailableForRoleResult">
+      <Column Name="AccessLevelID" Type="System.Int32" DbType="Int NOT NULL" CanBeNull="false" />
+      <Column Name="AccessLevelName" Type="System.String" DbType="NVarChar(50) NOT NULL" CanBeNull="false" />
+      <Column Name="AccessLevelDesc" Type="System.String" DbType="NVarChar(MAX)" CanBeNull="true" />
+    </ElementType>
+  </Function>
+  <Function Name="dbo.RolesAvialableForPerson" Method="RolesAvialableForPerson">
+    <Parameter Name="PersonID" Parameter="personID" Type="System.Int32" DbType="Int" />
+    <ElementType IdRef="ID1" />
+  </Function>
+  <Function Name="dbo.LevelsAssignedToPerson" Method="LevelsAssignedToPerson">
+    <Parameter Name="PersonID" Parameter="personID" Type="System.Int32" DbType="Int" />
+    <ElementType IdRef="ID2" />
+  </Function>
+  <Function Name="dbo.PeopleWithRole" Method="PeopleWithRole">
+    <Parameter Name="RoleID" Parameter="roleID" Type="System.Int32" DbType="Int" />
+    <ElementType IdRef="ID3" />
+  </Function>
+  <Function Name="dbo.RolesWithLevel" Method="RolesWithLevel">
+    <Parameter Name="LevelID" Parameter="levelID" Type="System.Int32" DbType="Int" />
+    <ElementType IdRef="ID1" />
+  </Function>
+  <Function Name="dbo.RolesAvialableForRule" Method="RolesAvialableForRule">
+    <Parameter Name="RuleID" Parameter="ruleID" Type="System.Int32" DbType="Int" />
+    <ElementType IdRef="ID1" />
+  </Function>
+  <Function Name="dbo.GetEmpsWithNonStatusChanges" Method="GetEmpsWithNonStatusChanges">
+    <ElementType IdRef="ID3" />
+  </Function>
+  <Function Name="dbo.RulesWithRole" Method="RulesWithRole">
+    <Parameter Name="RoleID" Parameter="roleID" Type="System.Int32" DbType="Int" />
+    <ElementType IdRef="ID4" />
+  </Function>
+  <Function Name="dbo.DeleteRole" Method="DeleteRole">
+    <Parameter Name="ID" Parameter="iD" Type="System.Int32" DbType="Int" />
+    <Return Type="System.Int32" />
+  </Function>
+  <Function Name="dbo.DeleteRule" Method="DeleteRule">
+    <Parameter Name="ID" Parameter="iD" Type="System.Int32" DbType="Int" />
+    <Return Type="System.Int32" />
+  </Function>
+  <Function Name="dbo.FlagAllLevelsAsMissing" Method="FlagAllLevelsAsMissing">
+    <Return Type="System.Int32" />
+  </Function>
+  <Function Name="dbo.DeleteMissingLevels" Method="DeleteMissingLevels">
+    <Return Type="System.Int32" />
+  </Function>
+  <Function Name="dbo.DeleteLevel" Method="DeleteLevel">
+    <Parameter Name="ID" Parameter="iD" Type="System.Int32" DbType="Int" />
+    <Return Type="System.Int32" />
+  </Function>
+  <Function Name="dbo.PeopleWithLevel" Method="PeopleWithLevel">
+    <Parameter Name="LevelID" Parameter="levelID" Type="System.Int32" DbType="Int" />
+    <ElementType IdRef="ID3" />
+  </Function>
+</Database>

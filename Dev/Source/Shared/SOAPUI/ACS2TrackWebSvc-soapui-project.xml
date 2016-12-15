@@ -1,0 +1,2854 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<con:soapui-project activeEnvironment="Default" name="ACS2TrackWebSvc" resourceRoot="" soapui-version="4.5.1" abortOnError="false" runType="SEQUENTIAL" xmlns:con="http://eviware.com/soapui/config"><con:settings/><con:interface xsi:type="con:WsdlInterface" wsaVersion="NONE" name="ACS2TrackWebSvcSoap" type="wsdl" bindingName="{http://tracksoftware.net/}ACS2TrackWebSvcSoap" soapVersion="1_1" anonymous="optional" definition="file:/C:/R1SM/Dev/Source/Shared/ACS2TrackWebSvc.WSDL" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"><con:settings/><con:definitionCache type="TEXT" rootPart="file:/C:/R1SM/Dev/Source/Shared/ACS2TrackWebSvc.WSDL"><con:part><con:url>file:/C:/R1SM/Dev/Source/Shared/ACS2TrackWebSvc.WSDL</con:url><con:content><![CDATA[<wsdl:definitions targetNamespace="http://tracksoftware.net/" xmlns:s="http://www.w3.org/2001/XMLSchema" xmlns:soap12="http://schemas.xmlsoap.org/wsdl/soap12/" xmlns:mime="http://schemas.xmlsoap.org/wsdl/mime/" xmlns:tns="http://tracksoftware.net/" xmlns:soap="http://schemas.xmlsoap.org/wsdl/soap/" xmlns:tm="http://microsoft.com/wsdl/mime/textMatching/" xmlns:http="http://schemas.xmlsoap.org/wsdl/http/" xmlns:soapenc="http://schemas.xmlsoap.org/soap/encoding/" xmlns:wsdl="http://schemas.xmlsoap.org/wsdl/">
+  <wsdl:types>
+    <s:schema elementFormDefault="qualified" targetNamespace="http://tracksoftware.net/">
+      <s:element name="AddPerson">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="sDataSource" type="s:string"/>
+            <s:element minOccurs="0" maxOccurs="1" name="sLastName" type="s:string"/>
+            <s:element minOccurs="0" maxOccurs="1" name="sFirstName" type="s:string"/>
+            <s:element minOccurs="0" maxOccurs="1" name="sMiddleName" type="s:string"/>
+            <s:element minOccurs="0" maxOccurs="1" name="sExtEmpRef" type="s:string"/>
+            <s:element minOccurs="0" maxOccurs="1" name="sExtCmpRef" type="s:string"/>
+            <s:element minOccurs="0" maxOccurs="1" name="sLocationID" type="s:string"/>
+            <s:element minOccurs="0" maxOccurs="1" name="sSSN" type="s:string"/>
+            <s:element minOccurs="0" maxOccurs="1" name="sExtCardID" type="s:string"/>
+            <s:element minOccurs="0" maxOccurs="1" name="sPayGroupName" type="s:string"/>
+            <s:element minOccurs="0" maxOccurs="1" name="sErrorStr" type="s:string"/>
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="AddPersonResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="1" maxOccurs="1" name="AddPersonResult" type="s:boolean"/>
+            <s:element minOccurs="0" maxOccurs="1" name="sErrorStr" type="s:string"/>
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="AddPersonByEmpID">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="sDataSource" type="s:string"/>
+            <s:element minOccurs="0" maxOccurs="1" name="sLastName" type="s:string"/>
+            <s:element minOccurs="0" maxOccurs="1" name="sFirstName" type="s:string"/>
+            <s:element minOccurs="0" maxOccurs="1" name="sMiddleName" type="s:string"/>
+            <s:element minOccurs="0" maxOccurs="1" name="sEmpID" type="s:string"/>
+            <s:element minOccurs="0" maxOccurs="1" name="sLocationID" type="s:string"/>
+            <s:element minOccurs="0" maxOccurs="1" name="sCmpCode" type="s:string"/>
+            <s:element minOccurs="0" maxOccurs="1" name="sSSN" type="s:string"/>
+            <s:element minOccurs="0" maxOccurs="1" name="sErrorStr" type="s:string"/>
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="AddPersonByEmpIDResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="1" maxOccurs="1" name="AddPersonByEmpIDResult" type="s:boolean"/>
+            <s:element minOccurs="0" maxOccurs="1" name="sErrorStr" type="s:string"/>
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="AddCompany">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="sDataSource" type="s:string"/>
+            <s:element minOccurs="0" maxOccurs="1" name="sCompanyName" type="s:string"/>
+            <s:element minOccurs="0" maxOccurs="1" name="sExtCompanyCode" type="s:string"/>
+            <s:element minOccurs="0" maxOccurs="1" name="sLocationID" type="s:string"/>
+            <s:element minOccurs="0" maxOccurs="1" name="sErrorStr" type="s:string"/>
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="AddCompanyResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="1" maxOccurs="1" name="AddCompanyResult" type="s:boolean"/>
+            <s:element minOccurs="0" maxOccurs="1" name="sErrorStr" type="s:string"/>
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="GetInOutIndicator">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="sDataSource" type="s:string"/>
+            <s:element minOccurs="1" maxOccurs="1" name="iSysID" type="s:int"/>
+            <s:element minOccurs="1" maxOccurs="1" name="iDeviceID" type="s:int"/>
+            <s:element minOccurs="1" maxOccurs="1" name="iLocationID" type="s:int"/>
+            <s:element minOccurs="1" maxOccurs="1" name="iRetVal" type="s:int"/>
+            <s:element minOccurs="0" maxOccurs="1" name="sErrorStr" type="s:string"/>
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="GetInOutIndicatorResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="1" maxOccurs="1" name="GetInOutIndicatorResult" type="s:boolean"/>
+            <s:element minOccurs="1" maxOccurs="1" name="iRetVal" type="s:int"/>
+            <s:element minOccurs="0" maxOccurs="1" name="sErrorStr" type="s:string"/>
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="AddEventByExtEmpRefSimple">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="sDataSource" type="s:string"/>
+            <s:element minOccurs="0" maxOccurs="1" name="sEventDateTime" type="s:string"/>
+            <s:element minOccurs="0" maxOccurs="1" name="sExtEmpRef" type="s:string"/>
+            <s:element minOccurs="1" maxOccurs="1" name="iInOutNeut" type="s:int"/>
+            <s:element minOccurs="0" maxOccurs="1" name="sErrorStr" type="s:string"/>
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="AddEventByExtEmpRefSimpleResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="1" maxOccurs="1" name="AddEventByExtEmpRefSimpleResult" type="s:boolean"/>
+            <s:element minOccurs="0" maxOccurs="1" name="sErrorStr" type="s:string"/>
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="AddEventByExtEmpRefByLocation">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="sDataSource" type="s:string"/>
+            <s:element minOccurs="0" maxOccurs="1" name="sEventDateTime" type="s:string"/>
+            <s:element minOccurs="0" maxOccurs="1" name="sExtEmpRef" type="s:string"/>
+            <s:element minOccurs="1" maxOccurs="1" name="iSysID" type="s:int"/>
+            <s:element minOccurs="1" maxOccurs="1" name="iEvntLocID" type="s:int"/>
+            <s:element minOccurs="1" maxOccurs="1" name="iDeviceID" type="s:int"/>
+            <s:element minOccurs="1" maxOccurs="1" name="iEvntCode" type="s:int"/>
+            <s:element minOccurs="0" maxOccurs="1" name="sErrorStr" type="s:string"/>
+            <s:element minOccurs="0" maxOccurs="1" name="sLocationID" type="s:string"/>
+            <s:element minOccurs="0" maxOccurs="1" name="sCardID" type="s:string"/>
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="AddEventByExtEmpRefByLocationResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="1" maxOccurs="1" name="AddEventByExtEmpRefByLocationResult" type="s:boolean"/>
+            <s:element minOccurs="0" maxOccurs="1" name="sErrorStr" type="s:string"/>
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="AddEventByExtEmpRef">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="sDataSource" type="s:string"/>
+            <s:element minOccurs="0" maxOccurs="1" name="sEventDateTime" type="s:string"/>
+            <s:element minOccurs="0" maxOccurs="1" name="sExtEmpRef" type="s:string"/>
+            <s:element minOccurs="1" maxOccurs="1" name="iSysID" type="s:int"/>
+            <s:element minOccurs="1" maxOccurs="1" name="iEvntLocID" type="s:int"/>
+            <s:element minOccurs="1" maxOccurs="1" name="iDeviceID" type="s:int"/>
+            <s:element minOccurs="1" maxOccurs="1" name="iEvntCode" type="s:int"/>
+            <s:element minOccurs="0" maxOccurs="1" name="sErrorStr" type="s:string"/>
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="AddEventByExtEmpRefResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="1" maxOccurs="1" name="AddEventByExtEmpRefResult" type="s:boolean"/>
+            <s:element minOccurs="0" maxOccurs="1" name="sErrorStr" type="s:string"/>
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="AddEventByExtEmpRef2">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="sDataSource" type="s:string"/>
+            <s:element minOccurs="0" maxOccurs="1" name="sEventDateTime" type="s:string"/>
+            <s:element minOccurs="0" maxOccurs="1" name="sExtEmpRef" type="s:string"/>
+            <s:element minOccurs="1" maxOccurs="1" name="iSysID" type="s:int"/>
+            <s:element minOccurs="1" maxOccurs="1" name="iEvntLocID" type="s:int"/>
+            <s:element minOccurs="1" maxOccurs="1" name="iDeviceID" type="s:int"/>
+            <s:element minOccurs="0" maxOccurs="1" name="sDeviceName" type="s:string"/>
+            <s:element minOccurs="1" maxOccurs="1" name="iInOutNeut" type="s:int"/>
+            <s:element minOccurs="0" maxOccurs="1" name="sErrorStr" type="s:string"/>
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="AddEventByExtEmpRef2Response">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="1" maxOccurs="1" name="AddEventByExtEmpRef2Result" type="s:boolean"/>
+            <s:element minOccurs="0" maxOccurs="1" name="sErrorStr" type="s:string"/>
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="GetCompanyCode">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="sDataSource" type="s:string"/>
+            <s:element minOccurs="0" maxOccurs="1" name="sExtCmpRef" type="s:string"/>
+            <s:element minOccurs="0" maxOccurs="1" name="sLocationID" type="s:string"/>
+            <s:element minOccurs="0" maxOccurs="1" name="sCompanyCode" type="s:string"/>
+            <s:element minOccurs="0" maxOccurs="1" name="sErrorStr" type="s:string"/>
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="GetCompanyCodeResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="1" maxOccurs="1" name="GetCompanyCodeResult" type="s:boolean"/>
+            <s:element minOccurs="0" maxOccurs="1" name="sCompanyCode" type="s:string"/>
+            <s:element minOccurs="0" maxOccurs="1" name="sErrorStr" type="s:string"/>
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="GetTrackEmployee">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="sDataSource" type="s:string"/>
+            <s:element minOccurs="0" maxOccurs="1" name="sExtCmpRef" type="s:string"/>
+            <s:element minOccurs="0" maxOccurs="1" name="sLocationID" type="s:string"/>
+            <s:element minOccurs="0" maxOccurs="1" name="sExtEmpRef" type="s:string"/>
+            <s:element minOccurs="0" maxOccurs="1" name="dsTrackPerson">
+              <s:complexType>
+                <s:sequence>
+                  <s:element ref="s:schema"/>
+                  <s:any/>
+                </s:sequence>
+              </s:complexType>
+            </s:element>
+            <s:element minOccurs="0" maxOccurs="1" name="sErrorStr" type="s:string"/>
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="GetTrackEmployeeResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="1" maxOccurs="1" name="GetTrackEmployeeResult" type="s:boolean"/>
+            <s:element minOccurs="0" maxOccurs="1" name="dsTrackPerson">
+              <s:complexType>
+                <s:sequence>
+                  <s:element ref="s:schema"/>
+                  <s:any/>
+                </s:sequence>
+              </s:complexType>
+            </s:element>
+            <s:element minOccurs="0" maxOccurs="1" name="sErrorStr" type="s:string"/>
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="GetEmployeeID">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="sDataSource" type="s:string"/>
+            <s:element minOccurs="0" maxOccurs="1" name="sExtEmpRef" type="s:string"/>
+            <s:element minOccurs="0" maxOccurs="1" name="sLocationID" type="s:string"/>
+            <s:element minOccurs="0" maxOccurs="1" name="sEmpID" type="s:string"/>
+            <s:element minOccurs="0" maxOccurs="1" name="sErrorStr" type="s:string"/>
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="GetEmployeeIDResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="1" maxOccurs="1" name="GetEmployeeIDResult" type="s:boolean"/>
+            <s:element minOccurs="0" maxOccurs="1" name="sEmpID" type="s:string"/>
+            <s:element minOccurs="0" maxOccurs="1" name="sErrorStr" type="s:string"/>
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="AddReaderDevice">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="sDataSource" type="s:string"/>
+            <s:element minOccurs="0" maxOccurs="1" name="sDescription" type="s:string"/>
+            <s:element minOccurs="1" maxOccurs="1" name="iSysID" type="s:int"/>
+            <s:element minOccurs="1" maxOccurs="1" name="iLocationID" type="s:int"/>
+            <s:element minOccurs="1" maxOccurs="1" name="iDeviceID" type="s:int"/>
+            <s:element minOccurs="1" maxOccurs="1" name="iInOutNeut" type="s:int"/>
+            <s:element minOccurs="0" maxOccurs="1" name="sErrorStr" type="s:string"/>
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="AddReaderDeviceResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="1" maxOccurs="1" name="AddReaderDeviceResult" type="s:boolean"/>
+            <s:element minOccurs="0" maxOccurs="1" name="sErrorStr" type="s:string"/>
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="AddReaderDeviceByDescription">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="sDataSource" type="s:string"/>
+            <s:element minOccurs="0" maxOccurs="1" name="sDescription" type="s:string"/>
+            <s:element minOccurs="1" maxOccurs="1" name="iSysID" type="s:int"/>
+            <s:element minOccurs="1" maxOccurs="1" name="iLocationID" type="s:int"/>
+            <s:element minOccurs="1" maxOccurs="1" name="iInOutNeut" type="s:int"/>
+            <s:element minOccurs="0" maxOccurs="1" name="sErrorStr" type="s:string"/>
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="AddReaderDeviceByDescriptionResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="1" maxOccurs="1" name="AddReaderDeviceByDescriptionResult" type="s:boolean"/>
+            <s:element minOccurs="0" maxOccurs="1" name="sErrorStr" type="s:string"/>
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="AddAccessExpirationReason">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="sDataSource" type="s:string"/>
+            <s:element minOccurs="0" maxOccurs="1" name="sReason" type="s:string"/>
+            <s:element minOccurs="0" maxOccurs="1" name="sErrorStr" type="s:string"/>
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="AddAccessExpirationReasonResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="1" maxOccurs="1" name="AddAccessExpirationReasonResult" type="s:boolean"/>
+            <s:element minOccurs="0" maxOccurs="1" name="sErrorStr" type="s:string"/>
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="AddOrUpdateDeviceControlUnits">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="sDataSource" type="s:string"/>
+            <s:element minOccurs="1" maxOccurs="1" name="iID" type="s:int"/>
+            <s:element minOccurs="0" maxOccurs="1" name="sName" type="s:string"/>
+            <s:element minOccurs="1" maxOccurs="1" name="iNumDevices" type="s:int"/>
+            <s:element minOccurs="0" maxOccurs="1" name="sNetworkAddr" type="s:string"/>
+            <s:element minOccurs="1" maxOccurs="1" name="iType" type="s:int"/>
+            <s:element minOccurs="0" maxOccurs="1" name="sCapabilities" type="s:string"/>
+            <s:element minOccurs="1" maxOccurs="1" name="iSysID" type="s:int"/>
+            <s:element minOccurs="0" maxOccurs="1" name="sErrorStr" type="s:string"/>
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="AddOrUpdateDeviceControlUnitsResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="1" maxOccurs="1" name="AddOrUpdateDeviceControlUnitsResult" type="s:boolean"/>
+            <s:element minOccurs="0" maxOccurs="1" name="sErrorStr" type="s:string"/>
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="AddEvent">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="sDataSource" type="s:string"/>
+            <s:element minOccurs="0" maxOccurs="1" name="sEventDateTime" type="s:string"/>
+            <s:element minOccurs="0" maxOccurs="1" name="sCardID" type="s:string"/>
+            <s:element minOccurs="1" maxOccurs="1" name="iSysID" type="s:int"/>
+            <s:element minOccurs="1" maxOccurs="1" name="iLocID" type="s:int"/>
+            <s:element minOccurs="1" maxOccurs="1" name="iDeviceID" type="s:int"/>
+            <s:element minOccurs="1" maxOccurs="1" name="iEvntCode" type="s:int"/>
+            <s:element minOccurs="0" maxOccurs="1" name="sErrorStr" type="s:string"/>
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="AddEventResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="1" maxOccurs="1" name="AddEventResult" type="s:boolean"/>
+            <s:element minOccurs="0" maxOccurs="1" name="sErrorStr" type="s:string"/>
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="AddEventByEmpID">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="sDataSource" type="s:string"/>
+            <s:element minOccurs="0" maxOccurs="1" name="sEventDateTime" type="s:string"/>
+            <s:element minOccurs="0" maxOccurs="1" name="sCardID" type="s:string"/>
+            <s:element minOccurs="1" maxOccurs="1" name="iSysID" type="s:int"/>
+            <s:element minOccurs="1" maxOccurs="1" name="iLocID" type="s:int"/>
+            <s:element minOccurs="1" maxOccurs="1" name="iDeviceID" type="s:int"/>
+            <s:element minOccurs="1" maxOccurs="1" name="iEvntCode" type="s:int"/>
+            <s:element minOccurs="0" maxOccurs="1" name="sLocationID" type="s:string"/>
+            <s:element minOccurs="0" maxOccurs="1" name="sErrorStr" type="s:string"/>
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="AddEventByEmpIDResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="1" maxOccurs="1" name="AddEventByEmpIDResult" type="s:boolean"/>
+            <s:element minOccurs="0" maxOccurs="1" name="sErrorStr" type="s:string"/>
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="GetReaderIDByDescription">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="sDataSource" type="s:string"/>
+            <s:element minOccurs="1" maxOccurs="1" name="iSysId" type="s:int"/>
+            <s:element minOccurs="1" maxOccurs="1" name="iLocation" type="s:int"/>
+            <s:element minOccurs="0" maxOccurs="1" name="sReaderDesc" type="s:string"/>
+            <s:element minOccurs="1" maxOccurs="1" name="iReaderId" type="s:int"/>
+            <s:element minOccurs="0" maxOccurs="1" name="sErrorStr" type="s:string"/>
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="GetReaderIDByDescriptionResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="1" maxOccurs="1" name="GetReaderIDByDescriptionResult" type="s:boolean"/>
+            <s:element minOccurs="1" maxOccurs="1" name="iReaderId" type="s:int"/>
+            <s:element minOccurs="0" maxOccurs="1" name="sErrorStr" type="s:string"/>
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+    </s:schema>
+  </wsdl:types>
+  <wsdl:message name="AddPersonSoapIn">
+    <wsdl:part name="parameters" element="tns:AddPerson"/>
+  </wsdl:message>
+  <wsdl:message name="AddPersonSoapOut">
+    <wsdl:part name="parameters" element="tns:AddPersonResponse"/>
+  </wsdl:message>
+  <wsdl:message name="AddPersonByEmpIDSoapIn">
+    <wsdl:part name="parameters" element="tns:AddPersonByEmpID"/>
+  </wsdl:message>
+  <wsdl:message name="AddPersonByEmpIDSoapOut">
+    <wsdl:part name="parameters" element="tns:AddPersonByEmpIDResponse"/>
+  </wsdl:message>
+  <wsdl:message name="AddCompanySoapIn">
+    <wsdl:part name="parameters" element="tns:AddCompany"/>
+  </wsdl:message>
+  <wsdl:message name="AddCompanySoapOut">
+    <wsdl:part name="parameters" element="tns:AddCompanyResponse"/>
+  </wsdl:message>
+  <wsdl:message name="GetInOutIndicatorSoapIn">
+    <wsdl:part name="parameters" element="tns:GetInOutIndicator"/>
+  </wsdl:message>
+  <wsdl:message name="GetInOutIndicatorSoapOut">
+    <wsdl:part name="parameters" element="tns:GetInOutIndicatorResponse"/>
+  </wsdl:message>
+  <wsdl:message name="AddEventByExtEmpRefSimpleSoapIn">
+    <wsdl:part name="parameters" element="tns:AddEventByExtEmpRefSimple"/>
+  </wsdl:message>
+  <wsdl:message name="AddEventByExtEmpRefSimpleSoapOut">
+    <wsdl:part name="parameters" element="tns:AddEventByExtEmpRefSimpleResponse"/>
+  </wsdl:message>
+  <wsdl:message name="AddEventByExtEmpRefByLocationSoapIn">
+    <wsdl:part name="parameters" element="tns:AddEventByExtEmpRefByLocation"/>
+  </wsdl:message>
+  <wsdl:message name="AddEventByExtEmpRefByLocationSoapOut">
+    <wsdl:part name="parameters" element="tns:AddEventByExtEmpRefByLocationResponse"/>
+  </wsdl:message>
+  <wsdl:message name="AddEventByExtEmpRefSoapIn">
+    <wsdl:part name="parameters" element="tns:AddEventByExtEmpRef"/>
+  </wsdl:message>
+  <wsdl:message name="AddEventByExtEmpRefSoapOut">
+    <wsdl:part name="parameters" element="tns:AddEventByExtEmpRefResponse"/>
+  </wsdl:message>
+  <wsdl:message name="AddEventByExtEmpRef2SoapIn">
+    <wsdl:part name="parameters" element="tns:AddEventByExtEmpRef2"/>
+  </wsdl:message>
+  <wsdl:message name="AddEventByExtEmpRef2SoapOut">
+    <wsdl:part name="parameters" element="tns:AddEventByExtEmpRef2Response"/>
+  </wsdl:message>
+  <wsdl:message name="GetCompanyCodeSoapIn">
+    <wsdl:part name="parameters" element="tns:GetCompanyCode"/>
+  </wsdl:message>
+  <wsdl:message name="GetCompanyCodeSoapOut">
+    <wsdl:part name="parameters" element="tns:GetCompanyCodeResponse"/>
+  </wsdl:message>
+  <wsdl:message name="GetTrackEmployeeSoapIn">
+    <wsdl:part name="parameters" element="tns:GetTrackEmployee"/>
+  </wsdl:message>
+  <wsdl:message name="GetTrackEmployeeSoapOut">
+    <wsdl:part name="parameters" element="tns:GetTrackEmployeeResponse"/>
+  </wsdl:message>
+  <wsdl:message name="GetEmployeeIDSoapIn">
+    <wsdl:part name="parameters" element="tns:GetEmployeeID"/>
+  </wsdl:message>
+  <wsdl:message name="GetEmployeeIDSoapOut">
+    <wsdl:part name="parameters" element="tns:GetEmployeeIDResponse"/>
+  </wsdl:message>
+  <wsdl:message name="AddReaderDeviceSoapIn">
+    <wsdl:part name="parameters" element="tns:AddReaderDevice"/>
+  </wsdl:message>
+  <wsdl:message name="AddReaderDeviceSoapOut">
+    <wsdl:part name="parameters" element="tns:AddReaderDeviceResponse"/>
+  </wsdl:message>
+  <wsdl:message name="AddReaderDeviceByDescriptionSoapIn">
+    <wsdl:part name="parameters" element="tns:AddReaderDeviceByDescription"/>
+  </wsdl:message>
+  <wsdl:message name="AddReaderDeviceByDescriptionSoapOut">
+    <wsdl:part name="parameters" element="tns:AddReaderDeviceByDescriptionResponse"/>
+  </wsdl:message>
+  <wsdl:message name="AddAccessExpirationReasonSoapIn">
+    <wsdl:part name="parameters" element="tns:AddAccessExpirationReason"/>
+  </wsdl:message>
+  <wsdl:message name="AddAccessExpirationReasonSoapOut">
+    <wsdl:part name="parameters" element="tns:AddAccessExpirationReasonResponse"/>
+  </wsdl:message>
+  <wsdl:message name="AddOrUpdateDeviceControlUnitsSoapIn">
+    <wsdl:part name="parameters" element="tns:AddOrUpdateDeviceControlUnits"/>
+  </wsdl:message>
+  <wsdl:message name="AddOrUpdateDeviceControlUnitsSoapOut">
+    <wsdl:part name="parameters" element="tns:AddOrUpdateDeviceControlUnitsResponse"/>
+  </wsdl:message>
+  <wsdl:message name="AddEventSoapIn">
+    <wsdl:part name="parameters" element="tns:AddEvent"/>
+  </wsdl:message>
+  <wsdl:message name="AddEventSoapOut">
+    <wsdl:part name="parameters" element="tns:AddEventResponse"/>
+  </wsdl:message>
+  <wsdl:message name="AddEventByEmpIDSoapIn">
+    <wsdl:part name="parameters" element="tns:AddEventByEmpID"/>
+  </wsdl:message>
+  <wsdl:message name="AddEventByEmpIDSoapOut">
+    <wsdl:part name="parameters" element="tns:AddEventByEmpIDResponse"/>
+  </wsdl:message>
+  <wsdl:message name="GetReaderIDByDescriptionSoapIn">
+    <wsdl:part name="parameters" element="tns:GetReaderIDByDescription"/>
+  </wsdl:message>
+  <wsdl:message name="GetReaderIDByDescriptionSoapOut">
+    <wsdl:part name="parameters" element="tns:GetReaderIDByDescriptionResponse"/>
+  </wsdl:message>
+  <wsdl:portType name="ACS2TrackWebSvcSoap">
+    <wsdl:operation name="AddPerson">
+      <wsdl:input message="tns:AddPersonSoapIn"/>
+      <wsdl:output message="tns:AddPersonSoapOut"/>
+    </wsdl:operation>
+    <wsdl:operation name="AddPersonByEmpID">
+      <wsdl:input message="tns:AddPersonByEmpIDSoapIn"/>
+      <wsdl:output message="tns:AddPersonByEmpIDSoapOut"/>
+    </wsdl:operation>
+    <wsdl:operation name="AddCompany">
+      <wsdl:input message="tns:AddCompanySoapIn"/>
+      <wsdl:output message="tns:AddCompanySoapOut"/>
+    </wsdl:operation>
+    <wsdl:operation name="GetInOutIndicator">
+      <wsdl:input message="tns:GetInOutIndicatorSoapIn"/>
+      <wsdl:output message="tns:GetInOutIndicatorSoapOut"/>
+    </wsdl:operation>
+    <wsdl:operation name="AddEventByExtEmpRefSimple">
+      <wsdl:input message="tns:AddEventByExtEmpRefSimpleSoapIn"/>
+      <wsdl:output message="tns:AddEventByExtEmpRefSimpleSoapOut"/>
+    </wsdl:operation>
+    <wsdl:operation name="AddEventByExtEmpRefByLocation">
+      <wsdl:input message="tns:AddEventByExtEmpRefByLocationSoapIn"/>
+      <wsdl:output message="tns:AddEventByExtEmpRefByLocationSoapOut"/>
+    </wsdl:operation>
+    <wsdl:operation name="AddEventByExtEmpRef">
+      <wsdl:input message="tns:AddEventByExtEmpRefSoapIn"/>
+      <wsdl:output message="tns:AddEventByExtEmpRefSoapOut"/>
+    </wsdl:operation>
+    <wsdl:operation name="AddEventByExtEmpRef2">
+      <wsdl:input message="tns:AddEventByExtEmpRef2SoapIn"/>
+      <wsdl:output message="tns:AddEventByExtEmpRef2SoapOut"/>
+    </wsdl:operation>
+    <wsdl:operation name="GetCompanyCode">
+      <wsdl:input message="tns:GetCompanyCodeSoapIn"/>
+      <wsdl:output message="tns:GetCompanyCodeSoapOut"/>
+    </wsdl:operation>
+    <wsdl:operation name="GetTrackEmployee">
+      <wsdl:input message="tns:GetTrackEmployeeSoapIn"/>
+      <wsdl:output message="tns:GetTrackEmployeeSoapOut"/>
+    </wsdl:operation>
+    <wsdl:operation name="GetEmployeeID">
+      <wsdl:input message="tns:GetEmployeeIDSoapIn"/>
+      <wsdl:output message="tns:GetEmployeeIDSoapOut"/>
+    </wsdl:operation>
+    <wsdl:operation name="AddReaderDevice">
+      <wsdl:input message="tns:AddReaderDeviceSoapIn"/>
+      <wsdl:output message="tns:AddReaderDeviceSoapOut"/>
+    </wsdl:operation>
+    <wsdl:operation name="AddReaderDeviceByDescription">
+      <wsdl:input message="tns:AddReaderDeviceByDescriptionSoapIn"/>
+      <wsdl:output message="tns:AddReaderDeviceByDescriptionSoapOut"/>
+    </wsdl:operation>
+    <wsdl:operation name="AddAccessExpirationReason">
+      <wsdl:input message="tns:AddAccessExpirationReasonSoapIn"/>
+      <wsdl:output message="tns:AddAccessExpirationReasonSoapOut"/>
+    </wsdl:operation>
+    <wsdl:operation name="AddOrUpdateDeviceControlUnits">
+      <wsdl:input message="tns:AddOrUpdateDeviceControlUnitsSoapIn"/>
+      <wsdl:output message="tns:AddOrUpdateDeviceControlUnitsSoapOut"/>
+    </wsdl:operation>
+    <wsdl:operation name="AddEvent">
+      <wsdl:input message="tns:AddEventSoapIn"/>
+      <wsdl:output message="tns:AddEventSoapOut"/>
+    </wsdl:operation>
+    <wsdl:operation name="AddEventByEmpID">
+      <wsdl:input message="tns:AddEventByEmpIDSoapIn"/>
+      <wsdl:output message="tns:AddEventByEmpIDSoapOut"/>
+    </wsdl:operation>
+    <wsdl:operation name="GetReaderIDByDescription">
+      <wsdl:input message="tns:GetReaderIDByDescriptionSoapIn"/>
+      <wsdl:output message="tns:GetReaderIDByDescriptionSoapOut"/>
+    </wsdl:operation>
+  </wsdl:portType>
+  <wsdl:binding name="ACS2TrackWebSvcSoap" type="tns:ACS2TrackWebSvcSoap">
+    <soap:binding transport="http://schemas.xmlsoap.org/soap/http"/>
+    <wsdl:operation name="AddPerson">
+      <soap:operation soapAction="http://tracksoftware.net/AddPerson" style="document"/>
+      <wsdl:input>
+        <soap:body use="literal"/>
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal"/>
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="AddPersonByEmpID">
+      <soap:operation soapAction="http://tracksoftware.net/AddPersonByEmpID" style="document"/>
+      <wsdl:input>
+        <soap:body use="literal"/>
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal"/>
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="AddCompany">
+      <soap:operation soapAction="http://tracksoftware.net/AddCompany" style="document"/>
+      <wsdl:input>
+        <soap:body use="literal"/>
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal"/>
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GetInOutIndicator">
+      <soap:operation soapAction="http://tracksoftware.net/GetInOutIndicator" style="document"/>
+      <wsdl:input>
+        <soap:body use="literal"/>
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal"/>
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="AddEventByExtEmpRefSimple">
+      <soap:operation soapAction="http://tracksoftware.net/AddEventByExtEmpRefSimple" style="document"/>
+      <wsdl:input>
+        <soap:body use="literal"/>
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal"/>
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="AddEventByExtEmpRefByLocation">
+      <soap:operation soapAction="http://tracksoftware.net/AddEventByExtEmpRefByLocation" style="document"/>
+      <wsdl:input>
+        <soap:body use="literal"/>
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal"/>
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="AddEventByExtEmpRef">
+      <soap:operation soapAction="http://tracksoftware.net/AddEventByExtEmpRef" style="document"/>
+      <wsdl:input>
+        <soap:body use="literal"/>
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal"/>
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="AddEventByExtEmpRef2">
+      <soap:operation soapAction="http://tracksoftware.net/AddEventByExtEmpRef2" style="document"/>
+      <wsdl:input>
+        <soap:body use="literal"/>
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal"/>
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GetCompanyCode">
+      <soap:operation soapAction="http://tracksoftware.net/GetCompanyCode" style="document"/>
+      <wsdl:input>
+        <soap:body use="literal"/>
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal"/>
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GetTrackEmployee">
+      <soap:operation soapAction="http://tracksoftware.net/GetTrackEmployee" style="document"/>
+      <wsdl:input>
+        <soap:body use="literal"/>
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal"/>
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GetEmployeeID">
+      <soap:operation soapAction="http://tracksoftware.net/GetEmployeeID" style="document"/>
+      <wsdl:input>
+        <soap:body use="literal"/>
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal"/>
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="AddReaderDevice">
+      <soap:operation soapAction="http://tracksoftware.net/AddReaderDevice" style="document"/>
+      <wsdl:input>
+        <soap:body use="literal"/>
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal"/>
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="AddReaderDeviceByDescription">
+      <soap:operation soapAction="http://tracksoftware.net/AddReaderDeviceByDescription" style="document"/>
+      <wsdl:input>
+        <soap:body use="literal"/>
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal"/>
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="AddAccessExpirationReason">
+      <soap:operation soapAction="http://tracksoftware.net/AddAccessExpirationReason" style="document"/>
+      <wsdl:input>
+        <soap:body use="literal"/>
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal"/>
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="AddOrUpdateDeviceControlUnits">
+      <soap:operation soapAction="http://tracksoftware.net/AddOrUpdateDeviceControlUnits" style="document"/>
+      <wsdl:input>
+        <soap:body use="literal"/>
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal"/>
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="AddEvent">
+      <soap:operation soapAction="http://tracksoftware.net/AddEvent" style="document"/>
+      <wsdl:input>
+        <soap:body use="literal"/>
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal"/>
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="AddEventByEmpID">
+      <soap:operation soapAction="http://tracksoftware.net/AddEventByEmpID" style="document"/>
+      <wsdl:input>
+        <soap:body use="literal"/>
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal"/>
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GetReaderIDByDescription">
+      <soap:operation soapAction="http://tracksoftware.net/GetReaderIDByDescription" style="document"/>
+      <wsdl:input>
+        <soap:body use="literal"/>
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal"/>
+      </wsdl:output>
+    </wsdl:operation>
+  </wsdl:binding>
+  <wsdl:binding name="ACS2TrackWebSvcSoap12" type="tns:ACS2TrackWebSvcSoap">
+    <soap12:binding transport="http://schemas.xmlsoap.org/soap/http"/>
+    <wsdl:operation name="AddPerson">
+      <soap12:operation soapAction="http://tracksoftware.net/AddPerson" style="document"/>
+      <wsdl:input>
+        <soap12:body use="literal"/>
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal"/>
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="AddPersonByEmpID">
+      <soap12:operation soapAction="http://tracksoftware.net/AddPersonByEmpID" style="document"/>
+      <wsdl:input>
+        <soap12:body use="literal"/>
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal"/>
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="AddCompany">
+      <soap12:operation soapAction="http://tracksoftware.net/AddCompany" style="document"/>
+      <wsdl:input>
+        <soap12:body use="literal"/>
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal"/>
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GetInOutIndicator">
+      <soap12:operation soapAction="http://tracksoftware.net/GetInOutIndicator" style="document"/>
+      <wsdl:input>
+        <soap12:body use="literal"/>
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal"/>
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="AddEventByExtEmpRefSimple">
+      <soap12:operation soapAction="http://tracksoftware.net/AddEventByExtEmpRefSimple" style="document"/>
+      <wsdl:input>
+        <soap12:body use="literal"/>
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal"/>
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="AddEventByExtEmpRefByLocation">
+      <soap12:operation soapAction="http://tracksoftware.net/AddEventByExtEmpRefByLocation" style="document"/>
+      <wsdl:input>
+        <soap12:body use="literal"/>
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal"/>
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="AddEventByExtEmpRef">
+      <soap12:operation soapAction="http://tracksoftware.net/AddEventByExtEmpRef" style="document"/>
+      <wsdl:input>
+        <soap12:body use="literal"/>
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal"/>
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="AddEventByExtEmpRef2">
+      <soap12:operation soapAction="http://tracksoftware.net/AddEventByExtEmpRef2" style="document"/>
+      <wsdl:input>
+        <soap12:body use="literal"/>
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal"/>
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GetCompanyCode">
+      <soap12:operation soapAction="http://tracksoftware.net/GetCompanyCode" style="document"/>
+      <wsdl:input>
+        <soap12:body use="literal"/>
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal"/>
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GetTrackEmployee">
+      <soap12:operation soapAction="http://tracksoftware.net/GetTrackEmployee" style="document"/>
+      <wsdl:input>
+        <soap12:body use="literal"/>
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal"/>
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GetEmployeeID">
+      <soap12:operation soapAction="http://tracksoftware.net/GetEmployeeID" style="document"/>
+      <wsdl:input>
+        <soap12:body use="literal"/>
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal"/>
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="AddReaderDevice">
+      <soap12:operation soapAction="http://tracksoftware.net/AddReaderDevice" style="document"/>
+      <wsdl:input>
+        <soap12:body use="literal"/>
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal"/>
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="AddReaderDeviceByDescription">
+      <soap12:operation soapAction="http://tracksoftware.net/AddReaderDeviceByDescription" style="document"/>
+      <wsdl:input>
+        <soap12:body use="literal"/>
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal"/>
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="AddAccessExpirationReason">
+      <soap12:operation soapAction="http://tracksoftware.net/AddAccessExpirationReason" style="document"/>
+      <wsdl:input>
+        <soap12:body use="literal"/>
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal"/>
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="AddOrUpdateDeviceControlUnits">
+      <soap12:operation soapAction="http://tracksoftware.net/AddOrUpdateDeviceControlUnits" style="document"/>
+      <wsdl:input>
+        <soap12:body use="literal"/>
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal"/>
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="AddEvent">
+      <soap12:operation soapAction="http://tracksoftware.net/AddEvent" style="document"/>
+      <wsdl:input>
+        <soap12:body use="literal"/>
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal"/>
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="AddEventByEmpID">
+      <soap12:operation soapAction="http://tracksoftware.net/AddEventByEmpID" style="document"/>
+      <wsdl:input>
+        <soap12:body use="literal"/>
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal"/>
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GetReaderIDByDescription">
+      <soap12:operation soapAction="http://tracksoftware.net/GetReaderIDByDescription" style="document"/>
+      <wsdl:input>
+        <soap12:body use="literal"/>
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal"/>
+      </wsdl:output>
+    </wsdl:operation>
+  </wsdl:binding>
+  <wsdl:service name="ACS2TrackWebSvc">
+    <wsdl:port name="ACS2TrackWebSvcSoap" binding="tns:ACS2TrackWebSvcSoap">
+      <soap:address location="http://localhost/ACStoTrackWS/ACS2TrackWebSvc.asmx"/>
+    </wsdl:port>
+    <wsdl:port name="ACS2TrackWebSvcSoap12" binding="tns:ACS2TrackWebSvcSoap12">
+      <soap12:address location="http://localhost/ACStoTrackWS/ACS2TrackWebSvc.asmx"/>
+    </wsdl:port>
+  </wsdl:service>
+</wsdl:definitions>]]></con:content><con:type>http://schemas.xmlsoap.org/wsdl/</con:type></con:part></con:definitionCache><con:endpoints><con:endpoint>http://localhost/ACStoTrackWS/ACS2TrackWebSvc.asmx</con:endpoint><con:endpoint>http://cencle10:8088/mockACS2TrackWebSvcSoap</con:endpoint></con:endpoints><con:operation isOneWay="false" action="http://tracksoftware.net/AddAccessExpirationReason" name="AddAccessExpirationReason" bindingOperationName="AddAccessExpirationReason" type="Request-Response" inputName="" receivesAttachments="false" sendsAttachments="false" anonymous="optional"><con:settings/><con:call name="Request 1"><con:settings/><con:encoding>UTF-8</con:encoding><con:endpoint>http://localhost/ACStoTrackWS/ACS2TrackWebSvc.asmx</con:endpoint><con:request><![CDATA[<soapenv:Envelope xmlns:soapenv="http://schemas.xmlsoap.org/soap/envelope/" xmlns:trac="http://tracksoftware.net/">
+   <soapenv:Header/>
+   <soapenv:Body>
+      <trac:AddAccessExpirationReason>
+         <!--Optional:-->
+         <trac:sDataSource>?</trac:sDataSource>
+         <!--Optional:-->
+         <trac:sReason>?</trac:sReason>
+         <!--Optional:-->
+         <trac:sErrorStr>?</trac:sErrorStr>
+      </trac:AddAccessExpirationReason>
+   </soapenv:Body>
+</soapenv:Envelope>]]></con:request><con:wsaConfig mustUnderstand="NONE" version="200508" action="http://tracksoftware.net/AddAccessExpirationReason"/></con:call></con:operation><con:operation isOneWay="false" action="http://tracksoftware.net/AddCompany" name="AddCompany" bindingOperationName="AddCompany" type="Request-Response" inputName="" receivesAttachments="false" sendsAttachments="false" anonymous="optional"><con:settings/><con:call name="Request 1"><con:settings><con:setting id="com.eviware.soapui.impl.wsdl.WsdlRequest@request-headers">&lt;xml-fragment/></con:setting></con:settings><con:encoding>UTF-8</con:encoding><con:endpoint>http://cencle10:8088/mockACS2TrackWebSvcSoap</con:endpoint><con:request><![CDATA[<soapenv:Envelope xmlns:soapenv="http://schemas.xmlsoap.org/soap/envelope/" xmlns:trac="http://tracksoftware.net/">
+   <soapenv:Header/>
+   <soapenv:Body>
+      <trac:AddCompany>
+         <!--Optional:-->
+         <trac:sDataSource>?</trac:sDataSource>
+         <!--Optional:-->
+         <trac:sCompanyName>?</trac:sCompanyName>
+         <!--Optional:-->
+         <trac:sExtCompanyCode>?</trac:sExtCompanyCode>
+         <!--Optional:-->
+         <trac:sLocationID>?</trac:sLocationID>
+         <!--Optional:-->
+         <trac:sErrorStr>?</trac:sErrorStr>
+      </trac:AddCompany>
+   </soapenv:Body>
+</soapenv:Envelope>]]></con:request><con:credentials><con:authType>Global HTTP Settings</con:authType></con:credentials><con:jmsConfig JMSDeliveryMode="PERSISTENT"/><con:jmsPropertyConfig/><con:wsaConfig mustUnderstand="NONE" version="200508" action="http://tracksoftware.net/AddCompany"/><con:wsrmConfig version="1.2"/></con:call></con:operation><con:operation isOneWay="false" action="http://tracksoftware.net/AddEvent" name="AddEvent" bindingOperationName="AddEvent" type="Request-Response" inputName="" receivesAttachments="false" sendsAttachments="false" anonymous="optional"><con:settings/><con:call name="Request 1"><con:settings/><con:encoding>UTF-8</con:encoding><con:endpoint>http://localhost/ACStoTrackWS/ACS2TrackWebSvc.asmx</con:endpoint><con:request><![CDATA[<soapenv:Envelope xmlns:soapenv="http://schemas.xmlsoap.org/soap/envelope/" xmlns:trac="http://tracksoftware.net/">
+   <soapenv:Header/>
+   <soapenv:Body>
+      <trac:AddEvent>
+         <!--Optional:-->
+         <trac:sDataSource>?</trac:sDataSource>
+         <!--Optional:-->
+         <trac:sEventDateTime>?</trac:sEventDateTime>
+         <!--Optional:-->
+         <trac:sCardID>?</trac:sCardID>
+         <trac:iSysID>?</trac:iSysID>
+         <trac:iLocID>?</trac:iLocID>
+         <trac:iDeviceID>?</trac:iDeviceID>
+         <trac:iEvntCode>?</trac:iEvntCode>
+         <!--Optional:-->
+         <trac:sErrorStr>?</trac:sErrorStr>
+      </trac:AddEvent>
+   </soapenv:Body>
+</soapenv:Envelope>]]></con:request><con:wsaConfig mustUnderstand="NONE" version="200508" action="http://tracksoftware.net/AddEvent"/></con:call></con:operation><con:operation isOneWay="false" action="http://tracksoftware.net/AddEventByEmpID" name="AddEventByEmpID" bindingOperationName="AddEventByEmpID" type="Request-Response" inputName="" receivesAttachments="false" sendsAttachments="false" anonymous="optional"><con:settings/><con:call name="Request 1"><con:settings/><con:encoding>UTF-8</con:encoding><con:endpoint>http://localhost/ACStoTrackWS/ACS2TrackWebSvc.asmx</con:endpoint><con:request><![CDATA[<soapenv:Envelope xmlns:soapenv="http://schemas.xmlsoap.org/soap/envelope/" xmlns:trac="http://tracksoftware.net/">
+   <soapenv:Header/>
+   <soapenv:Body>
+      <trac:AddEventByEmpID>
+         <!--Optional:-->
+         <trac:sDataSource>?</trac:sDataSource>
+         <!--Optional:-->
+         <trac:sEventDateTime>?</trac:sEventDateTime>
+         <!--Optional:-->
+         <trac:sCardID>?</trac:sCardID>
+         <trac:iSysID>?</trac:iSysID>
+         <trac:iLocID>?</trac:iLocID>
+         <trac:iDeviceID>?</trac:iDeviceID>
+         <trac:iEvntCode>?</trac:iEvntCode>
+         <!--Optional:-->
+         <trac:sLocationID>?</trac:sLocationID>
+         <!--Optional:-->
+         <trac:sErrorStr>?</trac:sErrorStr>
+      </trac:AddEventByEmpID>
+   </soapenv:Body>
+</soapenv:Envelope>]]></con:request><con:wsaConfig mustUnderstand="NONE" version="200508" action="http://tracksoftware.net/AddEventByEmpID"/></con:call></con:operation><con:operation isOneWay="false" action="http://tracksoftware.net/AddEventByExtEmpRef" name="AddEventByExtEmpRef" bindingOperationName="AddEventByExtEmpRef" type="Request-Response" inputName="" receivesAttachments="false" sendsAttachments="false" anonymous="optional"><con:settings/><con:call name="Request 1"><con:settings/><con:encoding>UTF-8</con:encoding><con:endpoint>http://localhost/ACStoTrackWS/ACS2TrackWebSvc.asmx</con:endpoint><con:request><![CDATA[<soapenv:Envelope xmlns:soapenv="http://schemas.xmlsoap.org/soap/envelope/" xmlns:trac="http://tracksoftware.net/">
+   <soapenv:Header/>
+   <soapenv:Body>
+      <trac:AddEventByExtEmpRef>
+         <!--Optional:-->
+         <trac:sDataSource>?</trac:sDataSource>
+         <!--Optional:-->
+         <trac:sEventDateTime>?</trac:sEventDateTime>
+         <!--Optional:-->
+         <trac:sExtEmpRef>?</trac:sExtEmpRef>
+         <trac:iSysID>?</trac:iSysID>
+         <trac:iEvntLocID>?</trac:iEvntLocID>
+         <trac:iDeviceID>?</trac:iDeviceID>
+         <trac:iEvntCode>?</trac:iEvntCode>
+         <!--Optional:-->
+         <trac:sErrorStr>?</trac:sErrorStr>
+      </trac:AddEventByExtEmpRef>
+   </soapenv:Body>
+</soapenv:Envelope>]]></con:request><con:wsaConfig mustUnderstand="NONE" version="200508" action="http://tracksoftware.net/AddEventByExtEmpRef"/></con:call></con:operation><con:operation isOneWay="false" action="http://tracksoftware.net/AddEventByExtEmpRef2" name="AddEventByExtEmpRef2" bindingOperationName="AddEventByExtEmpRef2" type="Request-Response" inputName="" receivesAttachments="false" sendsAttachments="false" anonymous="optional"><con:settings/><con:call name="Request 1"><con:settings/><con:encoding>UTF-8</con:encoding><con:endpoint>http://localhost/ACStoTrackWS/ACS2TrackWebSvc.asmx</con:endpoint><con:request><![CDATA[<soapenv:Envelope xmlns:soapenv="http://schemas.xmlsoap.org/soap/envelope/" xmlns:trac="http://tracksoftware.net/">
+   <soapenv:Header/>
+   <soapenv:Body>
+      <trac:AddEventByExtEmpRef2>
+         <!--Optional:-->
+         <trac:sDataSource>?</trac:sDataSource>
+         <!--Optional:-->
+         <trac:sEventDateTime>?</trac:sEventDateTime>
+         <!--Optional:-->
+         <trac:sExtEmpRef>?</trac:sExtEmpRef>
+         <trac:iSysID>?</trac:iSysID>
+         <trac:iEvntLocID>?</trac:iEvntLocID>
+         <trac:iDeviceID>?</trac:iDeviceID>
+         <!--Optional:-->
+         <trac:sDeviceName>?</trac:sDeviceName>
+         <trac:iInOutNeut>?</trac:iInOutNeut>
+         <!--Optional:-->
+         <trac:sErrorStr>?</trac:sErrorStr>
+      </trac:AddEventByExtEmpRef2>
+   </soapenv:Body>
+</soapenv:Envelope>]]></con:request><con:wsaConfig mustUnderstand="NONE" version="200508" action="http://tracksoftware.net/AddEventByExtEmpRef2"/></con:call></con:operation><con:operation isOneWay="false" action="http://tracksoftware.net/AddEventByExtEmpRefByLocation" name="AddEventByExtEmpRefByLocation" bindingOperationName="AddEventByExtEmpRefByLocation" type="Request-Response" inputName="" receivesAttachments="false" sendsAttachments="false" anonymous="optional"><con:settings/><con:call name="Request 1"><con:settings/><con:encoding>UTF-8</con:encoding><con:endpoint>http://localhost/ACStoTrackWS/ACS2TrackWebSvc.asmx</con:endpoint><con:request><![CDATA[<soapenv:Envelope xmlns:soapenv="http://schemas.xmlsoap.org/soap/envelope/" xmlns:trac="http://tracksoftware.net/">
+   <soapenv:Header/>
+   <soapenv:Body>
+      <trac:AddEventByExtEmpRefByLocation>
+         <!--Optional:-->
+         <trac:sDataSource>?</trac:sDataSource>
+         <!--Optional:-->
+         <trac:sEventDateTime>?</trac:sEventDateTime>
+         <!--Optional:-->
+         <trac:sExtEmpRef>?</trac:sExtEmpRef>
+         <trac:iSysID>?</trac:iSysID>
+         <trac:iEvntLocID>?</trac:iEvntLocID>
+         <trac:iDeviceID>?</trac:iDeviceID>
+         <trac:iEvntCode>?</trac:iEvntCode>
+         <!--Optional:-->
+         <trac:sErrorStr>?</trac:sErrorStr>
+         <!--Optional:-->
+         <trac:sLocationID>?</trac:sLocationID>
+         <!--Optional:-->
+         <trac:sCardID>?</trac:sCardID>
+      </trac:AddEventByExtEmpRefByLocation>
+   </soapenv:Body>
+</soapenv:Envelope>]]></con:request><con:wsaConfig mustUnderstand="NONE" version="200508" action="http://tracksoftware.net/AddEventByExtEmpRefByLocation"/></con:call></con:operation><con:operation isOneWay="false" action="http://tracksoftware.net/AddEventByExtEmpRefSimple" name="AddEventByExtEmpRefSimple" bindingOperationName="AddEventByExtEmpRefSimple" type="Request-Response" inputName="" receivesAttachments="false" sendsAttachments="false" anonymous="optional"><con:settings/><con:call name="Request 1"><con:settings/><con:encoding>UTF-8</con:encoding><con:endpoint>http://localhost/ACStoTrackWS/ACS2TrackWebSvc.asmx</con:endpoint><con:request><![CDATA[<soapenv:Envelope xmlns:soapenv="http://schemas.xmlsoap.org/soap/envelope/" xmlns:trac="http://tracksoftware.net/">
+   <soapenv:Header/>
+   <soapenv:Body>
+      <trac:AddEventByExtEmpRefSimple>
+         <!--Optional:-->
+         <trac:sDataSource>?</trac:sDataSource>
+         <!--Optional:-->
+         <trac:sEventDateTime>?</trac:sEventDateTime>
+         <!--Optional:-->
+         <trac:sExtEmpRef>?</trac:sExtEmpRef>
+         <trac:iInOutNeut>?</trac:iInOutNeut>
+         <!--Optional:-->
+         <trac:sErrorStr>?</trac:sErrorStr>
+      </trac:AddEventByExtEmpRefSimple>
+   </soapenv:Body>
+</soapenv:Envelope>]]></con:request><con:wsaConfig mustUnderstand="NONE" version="200508" action="http://tracksoftware.net/AddEventByExtEmpRefSimple"/></con:call></con:operation><con:operation isOneWay="false" action="http://tracksoftware.net/AddOrUpdateDeviceControlUnits" name="AddOrUpdateDeviceControlUnits" bindingOperationName="AddOrUpdateDeviceControlUnits" type="Request-Response" inputName="" receivesAttachments="false" sendsAttachments="false" anonymous="optional"><con:settings/><con:call name="Request 1"><con:settings/><con:encoding>UTF-8</con:encoding><con:endpoint>http://localhost/ACStoTrackWS/ACS2TrackWebSvc.asmx</con:endpoint><con:request><![CDATA[<soapenv:Envelope xmlns:soapenv="http://schemas.xmlsoap.org/soap/envelope/" xmlns:trac="http://tracksoftware.net/">
+   <soapenv:Header/>
+   <soapenv:Body>
+      <trac:AddOrUpdateDeviceControlUnits>
+         <!--Optional:-->
+         <trac:sDataSource>?</trac:sDataSource>
+         <trac:iID>?</trac:iID>
+         <!--Optional:-->
+         <trac:sName>?</trac:sName>
+         <trac:iNumDevices>?</trac:iNumDevices>
+         <!--Optional:-->
+         <trac:sNetworkAddr>?</trac:sNetworkAddr>
+         <trac:iType>?</trac:iType>
+         <!--Optional:-->
+         <trac:sCapabilities>?</trac:sCapabilities>
+         <trac:iSysID>?</trac:iSysID>
+         <!--Optional:-->
+         <trac:sErrorStr>?</trac:sErrorStr>
+      </trac:AddOrUpdateDeviceControlUnits>
+   </soapenv:Body>
+</soapenv:Envelope>]]></con:request><con:wsaConfig mustUnderstand="NONE" version="200508" action="http://tracksoftware.net/AddOrUpdateDeviceControlUnits"/></con:call></con:operation><con:operation isOneWay="false" action="http://tracksoftware.net/AddPerson" name="AddPerson" bindingOperationName="AddPerson" type="Request-Response" inputName="" receivesAttachments="false" sendsAttachments="false" anonymous="optional"><con:settings/><con:call name="Request 1"><con:settings/><con:encoding>UTF-8</con:encoding><con:endpoint>http://localhost/ACStoTrackWS/ACS2TrackWebSvc.asmx</con:endpoint><con:request><![CDATA[<soapenv:Envelope xmlns:soapenv="http://schemas.xmlsoap.org/soap/envelope/" xmlns:trac="http://tracksoftware.net/">
+   <soapenv:Header/>
+   <soapenv:Body>
+      <trac:AddPerson>
+         <!--Optional:-->
+         <trac:sDataSource>?</trac:sDataSource>
+         <!--Optional:-->
+         <trac:sLastName>?</trac:sLastName>
+         <!--Optional:-->
+         <trac:sFirstName>?</trac:sFirstName>
+         <!--Optional:-->
+         <trac:sMiddleName>?</trac:sMiddleName>
+         <!--Optional:-->
+         <trac:sExtEmpRef>?</trac:sExtEmpRef>
+         <!--Optional:-->
+         <trac:sExtCmpRef>?</trac:sExtCmpRef>
+         <!--Optional:-->
+         <trac:sLocationID>?</trac:sLocationID>
+         <!--Optional:-->
+         <trac:sSSN>?</trac:sSSN>
+         <!--Optional:-->
+         <trac:sExtCardID>?</trac:sExtCardID>
+         <!--Optional:-->
+         <trac:sPayGroupName>?</trac:sPayGroupName>
+         <!--Optional:-->
+         <trac:sErrorStr>?</trac:sErrorStr>
+      </trac:AddPerson>
+   </soapenv:Body>
+</soapenv:Envelope>]]></con:request><con:wsaConfig mustUnderstand="NONE" version="200508" action="http://tracksoftware.net/AddPerson"/></con:call></con:operation><con:operation isOneWay="false" action="http://tracksoftware.net/AddPersonByEmpID" name="AddPersonByEmpID" bindingOperationName="AddPersonByEmpID" type="Request-Response" inputName="" receivesAttachments="false" sendsAttachments="false" anonymous="optional"><con:settings/><con:call name="Request 1"><con:settings/><con:encoding>UTF-8</con:encoding><con:endpoint>http://localhost/ACStoTrackWS/ACS2TrackWebSvc.asmx</con:endpoint><con:request><![CDATA[<soapenv:Envelope xmlns:soapenv="http://schemas.xmlsoap.org/soap/envelope/" xmlns:trac="http://tracksoftware.net/">
+   <soapenv:Header/>
+   <soapenv:Body>
+      <trac:AddPersonByEmpID>
+         <!--Optional:-->
+         <trac:sDataSource>?</trac:sDataSource>
+         <!--Optional:-->
+         <trac:sLastName>?</trac:sLastName>
+         <!--Optional:-->
+         <trac:sFirstName>?</trac:sFirstName>
+         <!--Optional:-->
+         <trac:sMiddleName>?</trac:sMiddleName>
+         <!--Optional:-->
+         <trac:sEmpID>?</trac:sEmpID>
+         <!--Optional:-->
+         <trac:sLocationID>?</trac:sLocationID>
+         <!--Optional:-->
+         <trac:sCmpCode>?</trac:sCmpCode>
+         <!--Optional:-->
+         <trac:sSSN>?</trac:sSSN>
+         <!--Optional:-->
+         <trac:sErrorStr>?</trac:sErrorStr>
+      </trac:AddPersonByEmpID>
+   </soapenv:Body>
+</soapenv:Envelope>]]></con:request><con:wsaConfig mustUnderstand="NONE" version="200508" action="http://tracksoftware.net/AddPersonByEmpID"/></con:call></con:operation><con:operation isOneWay="false" action="http://tracksoftware.net/AddReaderDevice" name="AddReaderDevice" bindingOperationName="AddReaderDevice" type="Request-Response" inputName="" receivesAttachments="false" sendsAttachments="false" anonymous="optional"><con:settings/><con:call name="Request 1"><con:settings/><con:encoding>UTF-8</con:encoding><con:endpoint>http://localhost/ACStoTrackWS/ACS2TrackWebSvc.asmx</con:endpoint><con:request><![CDATA[<soapenv:Envelope xmlns:soapenv="http://schemas.xmlsoap.org/soap/envelope/" xmlns:trac="http://tracksoftware.net/">
+   <soapenv:Header/>
+   <soapenv:Body>
+      <trac:AddReaderDevice>
+         <!--Optional:-->
+         <trac:sDataSource>?</trac:sDataSource>
+         <!--Optional:-->
+         <trac:sDescription>?</trac:sDescription>
+         <trac:iSysID>?</trac:iSysID>
+         <trac:iLocationID>?</trac:iLocationID>
+         <trac:iDeviceID>?</trac:iDeviceID>
+         <trac:iInOutNeut>?</trac:iInOutNeut>
+         <!--Optional:-->
+         <trac:sErrorStr>?</trac:sErrorStr>
+      </trac:AddReaderDevice>
+   </soapenv:Body>
+</soapenv:Envelope>]]></con:request><con:wsaConfig mustUnderstand="NONE" version="200508" action="http://tracksoftware.net/AddReaderDevice"/></con:call></con:operation><con:operation isOneWay="false" action="http://tracksoftware.net/AddReaderDeviceByDescription" name="AddReaderDeviceByDescription" bindingOperationName="AddReaderDeviceByDescription" type="Request-Response" inputName="" receivesAttachments="false" sendsAttachments="false" anonymous="optional"><con:settings/><con:call name="Request 1"><con:settings/><con:encoding>UTF-8</con:encoding><con:endpoint>http://localhost/ACStoTrackWS/ACS2TrackWebSvc.asmx</con:endpoint><con:request><![CDATA[<soapenv:Envelope xmlns:soapenv="http://schemas.xmlsoap.org/soap/envelope/" xmlns:trac="http://tracksoftware.net/">
+   <soapenv:Header/>
+   <soapenv:Body>
+      <trac:AddReaderDeviceByDescription>
+         <!--Optional:-->
+         <trac:sDataSource>?</trac:sDataSource>
+         <!--Optional:-->
+         <trac:sDescription>?</trac:sDescription>
+         <trac:iSysID>?</trac:iSysID>
+         <trac:iLocationID>?</trac:iLocationID>
+         <trac:iInOutNeut>?</trac:iInOutNeut>
+         <!--Optional:-->
+         <trac:sErrorStr>?</trac:sErrorStr>
+      </trac:AddReaderDeviceByDescription>
+   </soapenv:Body>
+</soapenv:Envelope>]]></con:request><con:wsaConfig mustUnderstand="NONE" version="200508" action="http://tracksoftware.net/AddReaderDeviceByDescription"/></con:call></con:operation><con:operation isOneWay="false" action="http://tracksoftware.net/GetCompanyCode" name="GetCompanyCode" bindingOperationName="GetCompanyCode" type="Request-Response" inputName="" receivesAttachments="false" sendsAttachments="false" anonymous="optional"><con:settings/><con:call name="Request 1"><con:settings/><con:encoding>UTF-8</con:encoding><con:endpoint>http://localhost/ACStoTrackWS/ACS2TrackWebSvc.asmx</con:endpoint><con:request><![CDATA[<soapenv:Envelope xmlns:soapenv="http://schemas.xmlsoap.org/soap/envelope/" xmlns:trac="http://tracksoftware.net/">
+   <soapenv:Header/>
+   <soapenv:Body>
+      <trac:GetCompanyCode>
+         <!--Optional:-->
+         <trac:sDataSource>?</trac:sDataSource>
+         <!--Optional:-->
+         <trac:sExtCmpRef>?</trac:sExtCmpRef>
+         <!--Optional:-->
+         <trac:sLocationID>?</trac:sLocationID>
+         <!--Optional:-->
+         <trac:sCompanyCode>?</trac:sCompanyCode>
+         <!--Optional:-->
+         <trac:sErrorStr>?</trac:sErrorStr>
+      </trac:GetCompanyCode>
+   </soapenv:Body>
+</soapenv:Envelope>]]></con:request><con:wsaConfig mustUnderstand="NONE" version="200508" action="http://tracksoftware.net/GetCompanyCode"/></con:call></con:operation><con:operation isOneWay="false" action="http://tracksoftware.net/GetEmployeeID" name="GetEmployeeID" bindingOperationName="GetEmployeeID" type="Request-Response" inputName="" receivesAttachments="false" sendsAttachments="false" anonymous="optional"><con:settings/><con:call name="Request 1"><con:settings/><con:encoding>UTF-8</con:encoding><con:endpoint>http://localhost/ACStoTrackWS/ACS2TrackWebSvc.asmx</con:endpoint><con:request><![CDATA[<soapenv:Envelope xmlns:soapenv="http://schemas.xmlsoap.org/soap/envelope/" xmlns:trac="http://tracksoftware.net/">
+   <soapenv:Header/>
+   <soapenv:Body>
+      <trac:GetEmployeeID>
+         <!--Optional:-->
+         <trac:sDataSource>?</trac:sDataSource>
+         <!--Optional:-->
+         <trac:sExtEmpRef>?</trac:sExtEmpRef>
+         <!--Optional:-->
+         <trac:sLocationID>?</trac:sLocationID>
+         <!--Optional:-->
+         <trac:sEmpID>?</trac:sEmpID>
+         <!--Optional:-->
+         <trac:sErrorStr>?</trac:sErrorStr>
+      </trac:GetEmployeeID>
+   </soapenv:Body>
+</soapenv:Envelope>]]></con:request><con:wsaConfig mustUnderstand="NONE" version="200508" action="http://tracksoftware.net/GetEmployeeID"/></con:call></con:operation><con:operation isOneWay="false" action="http://tracksoftware.net/GetInOutIndicator" name="GetInOutIndicator" bindingOperationName="GetInOutIndicator" type="Request-Response" inputName="" receivesAttachments="false" sendsAttachments="false" anonymous="optional"><con:settings/><con:call name="Request 1"><con:settings/><con:encoding>UTF-8</con:encoding><con:endpoint>http://localhost/ACStoTrackWS/ACS2TrackWebSvc.asmx</con:endpoint><con:request><![CDATA[<soapenv:Envelope xmlns:soapenv="http://schemas.xmlsoap.org/soap/envelope/" xmlns:trac="http://tracksoftware.net/">
+   <soapenv:Header/>
+   <soapenv:Body>
+      <trac:GetInOutIndicator>
+         <!--Optional:-->
+         <trac:sDataSource>?</trac:sDataSource>
+         <trac:iSysID>?</trac:iSysID>
+         <trac:iDeviceID>?</trac:iDeviceID>
+         <trac:iLocationID>?</trac:iLocationID>
+         <trac:iRetVal>?</trac:iRetVal>
+         <!--Optional:-->
+         <trac:sErrorStr>?</trac:sErrorStr>
+      </trac:GetInOutIndicator>
+   </soapenv:Body>
+</soapenv:Envelope>]]></con:request><con:wsaConfig mustUnderstand="NONE" version="200508" action="http://tracksoftware.net/GetInOutIndicator"/></con:call></con:operation><con:operation isOneWay="false" action="http://tracksoftware.net/GetReaderIDByDescription" name="GetReaderIDByDescription" bindingOperationName="GetReaderIDByDescription" type="Request-Response" inputName="" receivesAttachments="false" sendsAttachments="false" anonymous="optional"><con:settings/><con:call name="Request 1"><con:settings/><con:encoding>UTF-8</con:encoding><con:endpoint>http://localhost/ACStoTrackWS/ACS2TrackWebSvc.asmx</con:endpoint><con:request><![CDATA[<soapenv:Envelope xmlns:soapenv="http://schemas.xmlsoap.org/soap/envelope/" xmlns:trac="http://tracksoftware.net/">
+   <soapenv:Header/>
+   <soapenv:Body>
+      <trac:GetReaderIDByDescription>
+         <!--Optional:-->
+         <trac:sDataSource>?</trac:sDataSource>
+         <trac:iSysId>?</trac:iSysId>
+         <trac:iLocation>?</trac:iLocation>
+         <!--Optional:-->
+         <trac:sReaderDesc>?</trac:sReaderDesc>
+         <trac:iReaderId>?</trac:iReaderId>
+         <!--Optional:-->
+         <trac:sErrorStr>?</trac:sErrorStr>
+      </trac:GetReaderIDByDescription>
+   </soapenv:Body>
+</soapenv:Envelope>]]></con:request><con:wsaConfig mustUnderstand="NONE" version="200508" action="http://tracksoftware.net/GetReaderIDByDescription"/></con:call></con:operation><con:operation isOneWay="false" action="http://tracksoftware.net/GetTrackEmployee" name="GetTrackEmployee" bindingOperationName="GetTrackEmployee" type="Request-Response" inputName="" receivesAttachments="false" sendsAttachments="false" anonymous="optional"><con:settings/><con:call name="Request 1"><con:settings/><con:encoding>UTF-8</con:encoding><con:endpoint>http://localhost/ACStoTrackWS/ACS2TrackWebSvc.asmx</con:endpoint><con:request><![CDATA[<soapenv:Envelope xmlns:soapenv="http://schemas.xmlsoap.org/soap/envelope/" xmlns:trac="http://tracksoftware.net/" xmlns:xs="http://www.w3.org/2001/XMLSchema">
+   <soapenv:Header/>
+   <soapenv:Body>
+      <trac:GetTrackEmployee>
+         <!--Optional:-->
+         <trac:sDataSource>?</trac:sDataSource>
+         <!--Optional:-->
+         <trac:sExtCmpRef>?</trac:sExtCmpRef>
+         <!--Optional:-->
+         <trac:sLocationID>?</trac:sLocationID>
+         <!--Optional:-->
+         <trac:sExtEmpRef>?</trac:sExtEmpRef>
+         <!--Optional:-->
+         <trac:dsTrackPerson>
+            <xs:schema>
+               <!--Ignoring type [{http://www.w3.org/2001/XMLSchema}schema]-->
+            </xs:schema>
+            <!--You may enter ANY elements at this point-->
+         </trac:dsTrackPerson>
+         <!--Optional:-->
+         <trac:sErrorStr>?</trac:sErrorStr>
+      </trac:GetTrackEmployee>
+   </soapenv:Body>
+</soapenv:Envelope>]]></con:request><con:wsaConfig mustUnderstand="NONE" version="200508" action="http://tracksoftware.net/GetTrackEmployee"/></con:call></con:operation></con:interface><con:interface xsi:type="con:WsdlInterface" wsaVersion="NONE" name="ACS2TrackWebSvcSoap12" type="wsdl" bindingName="{http://tracksoftware.net/}ACS2TrackWebSvcSoap12" soapVersion="1_2" anonymous="optional" definition="file:/C:/R1SM/Dev/Source/Shared/ACS2TrackWebSvc.WSDL" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"><con:settings/><con:definitionCache type="TEXT" rootPart="file:\C:\R1SM\Dev\Source\Shared\ACS2TrackWebSvc.WSDL"><con:part><con:url>file:\C:\R1SM\Dev\Source\Shared\ACS2TrackWebSvc.WSDL</con:url><con:content><![CDATA[<wsdl:definitions targetNamespace="http://tracksoftware.net/" xmlns:s="http://www.w3.org/2001/XMLSchema" xmlns:soap12="http://schemas.xmlsoap.org/wsdl/soap12/" xmlns:mime="http://schemas.xmlsoap.org/wsdl/mime/" xmlns:tns="http://tracksoftware.net/" xmlns:soap="http://schemas.xmlsoap.org/wsdl/soap/" xmlns:tm="http://microsoft.com/wsdl/mime/textMatching/" xmlns:http="http://schemas.xmlsoap.org/wsdl/http/" xmlns:soapenc="http://schemas.xmlsoap.org/soap/encoding/" xmlns:wsdl="http://schemas.xmlsoap.org/wsdl/">
+  <wsdl:types>
+    <s:schema elementFormDefault="qualified" targetNamespace="http://tracksoftware.net/">
+      <s:element name="AddPerson">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="sDataSource" type="s:string"/>
+            <s:element minOccurs="0" maxOccurs="1" name="sLastName" type="s:string"/>
+            <s:element minOccurs="0" maxOccurs="1" name="sFirstName" type="s:string"/>
+            <s:element minOccurs="0" maxOccurs="1" name="sMiddleName" type="s:string"/>
+            <s:element minOccurs="0" maxOccurs="1" name="sExtEmpRef" type="s:string"/>
+            <s:element minOccurs="0" maxOccurs="1" name="sExtCmpRef" type="s:string"/>
+            <s:element minOccurs="0" maxOccurs="1" name="sLocationID" type="s:string"/>
+            <s:element minOccurs="0" maxOccurs="1" name="sSSN" type="s:string"/>
+            <s:element minOccurs="0" maxOccurs="1" name="sExtCardID" type="s:string"/>
+            <s:element minOccurs="0" maxOccurs="1" name="sPayGroupName" type="s:string"/>
+            <s:element minOccurs="0" maxOccurs="1" name="sErrorStr" type="s:string"/>
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="AddPersonResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="1" maxOccurs="1" name="AddPersonResult" type="s:boolean"/>
+            <s:element minOccurs="0" maxOccurs="1" name="sErrorStr" type="s:string"/>
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="AddPersonByEmpID">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="sDataSource" type="s:string"/>
+            <s:element minOccurs="0" maxOccurs="1" name="sLastName" type="s:string"/>
+            <s:element minOccurs="0" maxOccurs="1" name="sFirstName" type="s:string"/>
+            <s:element minOccurs="0" maxOccurs="1" name="sMiddleName" type="s:string"/>
+            <s:element minOccurs="0" maxOccurs="1" name="sEmpID" type="s:string"/>
+            <s:element minOccurs="0" maxOccurs="1" name="sLocationID" type="s:string"/>
+            <s:element minOccurs="0" maxOccurs="1" name="sCmpCode" type="s:string"/>
+            <s:element minOccurs="0" maxOccurs="1" name="sSSN" type="s:string"/>
+            <s:element minOccurs="0" maxOccurs="1" name="sErrorStr" type="s:string"/>
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="AddPersonByEmpIDResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="1" maxOccurs="1" name="AddPersonByEmpIDResult" type="s:boolean"/>
+            <s:element minOccurs="0" maxOccurs="1" name="sErrorStr" type="s:string"/>
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="AddCompany">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="sDataSource" type="s:string"/>
+            <s:element minOccurs="0" maxOccurs="1" name="sCompanyName" type="s:string"/>
+            <s:element minOccurs="0" maxOccurs="1" name="sExtCompanyCode" type="s:string"/>
+            <s:element minOccurs="0" maxOccurs="1" name="sLocationID" type="s:string"/>
+            <s:element minOccurs="0" maxOccurs="1" name="sErrorStr" type="s:string"/>
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="AddCompanyResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="1" maxOccurs="1" name="AddCompanyResult" type="s:boolean"/>
+            <s:element minOccurs="0" maxOccurs="1" name="sErrorStr" type="s:string"/>
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="GetInOutIndicator">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="sDataSource" type="s:string"/>
+            <s:element minOccurs="1" maxOccurs="1" name="iSysID" type="s:int"/>
+            <s:element minOccurs="1" maxOccurs="1" name="iDeviceID" type="s:int"/>
+            <s:element minOccurs="1" maxOccurs="1" name="iLocationID" type="s:int"/>
+            <s:element minOccurs="1" maxOccurs="1" name="iRetVal" type="s:int"/>
+            <s:element minOccurs="0" maxOccurs="1" name="sErrorStr" type="s:string"/>
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="GetInOutIndicatorResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="1" maxOccurs="1" name="GetInOutIndicatorResult" type="s:boolean"/>
+            <s:element minOccurs="1" maxOccurs="1" name="iRetVal" type="s:int"/>
+            <s:element minOccurs="0" maxOccurs="1" name="sErrorStr" type="s:string"/>
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="AddEventByExtEmpRefSimple">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="sDataSource" type="s:string"/>
+            <s:element minOccurs="0" maxOccurs="1" name="sEventDateTime" type="s:string"/>
+            <s:element minOccurs="0" maxOccurs="1" name="sExtEmpRef" type="s:string"/>
+            <s:element minOccurs="1" maxOccurs="1" name="iInOutNeut" type="s:int"/>
+            <s:element minOccurs="0" maxOccurs="1" name="sErrorStr" type="s:string"/>
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="AddEventByExtEmpRefSimpleResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="1" maxOccurs="1" name="AddEventByExtEmpRefSimpleResult" type="s:boolean"/>
+            <s:element minOccurs="0" maxOccurs="1" name="sErrorStr" type="s:string"/>
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="AddEventByExtEmpRefByLocation">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="sDataSource" type="s:string"/>
+            <s:element minOccurs="0" maxOccurs="1" name="sEventDateTime" type="s:string"/>
+            <s:element minOccurs="0" maxOccurs="1" name="sExtEmpRef" type="s:string"/>
+            <s:element minOccurs="1" maxOccurs="1" name="iSysID" type="s:int"/>
+            <s:element minOccurs="1" maxOccurs="1" name="iEvntLocID" type="s:int"/>
+            <s:element minOccurs="1" maxOccurs="1" name="iDeviceID" type="s:int"/>
+            <s:element minOccurs="1" maxOccurs="1" name="iEvntCode" type="s:int"/>
+            <s:element minOccurs="0" maxOccurs="1" name="sErrorStr" type="s:string"/>
+            <s:element minOccurs="0" maxOccurs="1" name="sLocationID" type="s:string"/>
+            <s:element minOccurs="0" maxOccurs="1" name="sCardID" type="s:string"/>
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="AddEventByExtEmpRefByLocationResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="1" maxOccurs="1" name="AddEventByExtEmpRefByLocationResult" type="s:boolean"/>
+            <s:element minOccurs="0" maxOccurs="1" name="sErrorStr" type="s:string"/>
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="AddEventByExtEmpRef">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="sDataSource" type="s:string"/>
+            <s:element minOccurs="0" maxOccurs="1" name="sEventDateTime" type="s:string"/>
+            <s:element minOccurs="0" maxOccurs="1" name="sExtEmpRef" type="s:string"/>
+            <s:element minOccurs="1" maxOccurs="1" name="iSysID" type="s:int"/>
+            <s:element minOccurs="1" maxOccurs="1" name="iEvntLocID" type="s:int"/>
+            <s:element minOccurs="1" maxOccurs="1" name="iDeviceID" type="s:int"/>
+            <s:element minOccurs="1" maxOccurs="1" name="iEvntCode" type="s:int"/>
+            <s:element minOccurs="0" maxOccurs="1" name="sErrorStr" type="s:string"/>
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="AddEventByExtEmpRefResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="1" maxOccurs="1" name="AddEventByExtEmpRefResult" type="s:boolean"/>
+            <s:element minOccurs="0" maxOccurs="1" name="sErrorStr" type="s:string"/>
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="AddEventByExtEmpRef2">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="sDataSource" type="s:string"/>
+            <s:element minOccurs="0" maxOccurs="1" name="sEventDateTime" type="s:string"/>
+            <s:element minOccurs="0" maxOccurs="1" name="sExtEmpRef" type="s:string"/>
+            <s:element minOccurs="1" maxOccurs="1" name="iSysID" type="s:int"/>
+            <s:element minOccurs="1" maxOccurs="1" name="iEvntLocID" type="s:int"/>
+            <s:element minOccurs="1" maxOccurs="1" name="iDeviceID" type="s:int"/>
+            <s:element minOccurs="0" maxOccurs="1" name="sDeviceName" type="s:string"/>
+            <s:element minOccurs="1" maxOccurs="1" name="iInOutNeut" type="s:int"/>
+            <s:element minOccurs="0" maxOccurs="1" name="sErrorStr" type="s:string"/>
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="AddEventByExtEmpRef2Response">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="1" maxOccurs="1" name="AddEventByExtEmpRef2Result" type="s:boolean"/>
+            <s:element minOccurs="0" maxOccurs="1" name="sErrorStr" type="s:string"/>
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="GetCompanyCode">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="sDataSource" type="s:string"/>
+            <s:element minOccurs="0" maxOccurs="1" name="sExtCmpRef" type="s:string"/>
+            <s:element minOccurs="0" maxOccurs="1" name="sLocationID" type="s:string"/>
+            <s:element minOccurs="0" maxOccurs="1" name="sCompanyCode" type="s:string"/>
+            <s:element minOccurs="0" maxOccurs="1" name="sErrorStr" type="s:string"/>
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="GetCompanyCodeResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="1" maxOccurs="1" name="GetCompanyCodeResult" type="s:boolean"/>
+            <s:element minOccurs="0" maxOccurs="1" name="sCompanyCode" type="s:string"/>
+            <s:element minOccurs="0" maxOccurs="1" name="sErrorStr" type="s:string"/>
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="GetTrackEmployee">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="sDataSource" type="s:string"/>
+            <s:element minOccurs="0" maxOccurs="1" name="sExtCmpRef" type="s:string"/>
+            <s:element minOccurs="0" maxOccurs="1" name="sLocationID" type="s:string"/>
+            <s:element minOccurs="0" maxOccurs="1" name="sExtEmpRef" type="s:string"/>
+            <s:element minOccurs="0" maxOccurs="1" name="dsTrackPerson">
+              <s:complexType>
+                <s:sequence>
+                  <s:element ref="s:schema"/>
+                  <s:any/>
+                </s:sequence>
+              </s:complexType>
+            </s:element>
+            <s:element minOccurs="0" maxOccurs="1" name="sErrorStr" type="s:string"/>
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="GetTrackEmployeeResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="1" maxOccurs="1" name="GetTrackEmployeeResult" type="s:boolean"/>
+            <s:element minOccurs="0" maxOccurs="1" name="dsTrackPerson">
+              <s:complexType>
+                <s:sequence>
+                  <s:element ref="s:schema"/>
+                  <s:any/>
+                </s:sequence>
+              </s:complexType>
+            </s:element>
+            <s:element minOccurs="0" maxOccurs="1" name="sErrorStr" type="s:string"/>
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="GetEmployeeID">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="sDataSource" type="s:string"/>
+            <s:element minOccurs="0" maxOccurs="1" name="sExtEmpRef" type="s:string"/>
+            <s:element minOccurs="0" maxOccurs="1" name="sLocationID" type="s:string"/>
+            <s:element minOccurs="0" maxOccurs="1" name="sEmpID" type="s:string"/>
+            <s:element minOccurs="0" maxOccurs="1" name="sErrorStr" type="s:string"/>
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="GetEmployeeIDResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="1" maxOccurs="1" name="GetEmployeeIDResult" type="s:boolean"/>
+            <s:element minOccurs="0" maxOccurs="1" name="sEmpID" type="s:string"/>
+            <s:element minOccurs="0" maxOccurs="1" name="sErrorStr" type="s:string"/>
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="AddReaderDevice">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="sDataSource" type="s:string"/>
+            <s:element minOccurs="0" maxOccurs="1" name="sDescription" type="s:string"/>
+            <s:element minOccurs="1" maxOccurs="1" name="iSysID" type="s:int"/>
+            <s:element minOccurs="1" maxOccurs="1" name="iLocationID" type="s:int"/>
+            <s:element minOccurs="1" maxOccurs="1" name="iDeviceID" type="s:int"/>
+            <s:element minOccurs="1" maxOccurs="1" name="iInOutNeut" type="s:int"/>
+            <s:element minOccurs="0" maxOccurs="1" name="sErrorStr" type="s:string"/>
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="AddReaderDeviceResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="1" maxOccurs="1" name="AddReaderDeviceResult" type="s:boolean"/>
+            <s:element minOccurs="0" maxOccurs="1" name="sErrorStr" type="s:string"/>
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="AddReaderDeviceByDescription">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="sDataSource" type="s:string"/>
+            <s:element minOccurs="0" maxOccurs="1" name="sDescription" type="s:string"/>
+            <s:element minOccurs="1" maxOccurs="1" name="iSysID" type="s:int"/>
+            <s:element minOccurs="1" maxOccurs="1" name="iLocationID" type="s:int"/>
+            <s:element minOccurs="1" maxOccurs="1" name="iInOutNeut" type="s:int"/>
+            <s:element minOccurs="0" maxOccurs="1" name="sErrorStr" type="s:string"/>
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="AddReaderDeviceByDescriptionResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="1" maxOccurs="1" name="AddReaderDeviceByDescriptionResult" type="s:boolean"/>
+            <s:element minOccurs="0" maxOccurs="1" name="sErrorStr" type="s:string"/>
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="AddAccessExpirationReason">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="sDataSource" type="s:string"/>
+            <s:element minOccurs="0" maxOccurs="1" name="sReason" type="s:string"/>
+            <s:element minOccurs="0" maxOccurs="1" name="sErrorStr" type="s:string"/>
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="AddAccessExpirationReasonResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="1" maxOccurs="1" name="AddAccessExpirationReasonResult" type="s:boolean"/>
+            <s:element minOccurs="0" maxOccurs="1" name="sErrorStr" type="s:string"/>
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="AddOrUpdateDeviceControlUnits">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="sDataSource" type="s:string"/>
+            <s:element minOccurs="1" maxOccurs="1" name="iID" type="s:int"/>
+            <s:element minOccurs="0" maxOccurs="1" name="sName" type="s:string"/>
+            <s:element minOccurs="1" maxOccurs="1" name="iNumDevices" type="s:int"/>
+            <s:element minOccurs="0" maxOccurs="1" name="sNetworkAddr" type="s:string"/>
+            <s:element minOccurs="1" maxOccurs="1" name="iType" type="s:int"/>
+            <s:element minOccurs="0" maxOccurs="1" name="sCapabilities" type="s:string"/>
+            <s:element minOccurs="1" maxOccurs="1" name="iSysID" type="s:int"/>
+            <s:element minOccurs="0" maxOccurs="1" name="sErrorStr" type="s:string"/>
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="AddOrUpdateDeviceControlUnitsResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="1" maxOccurs="1" name="AddOrUpdateDeviceControlUnitsResult" type="s:boolean"/>
+            <s:element minOccurs="0" maxOccurs="1" name="sErrorStr" type="s:string"/>
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="AddEvent">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="sDataSource" type="s:string"/>
+            <s:element minOccurs="0" maxOccurs="1" name="sEventDateTime" type="s:string"/>
+            <s:element minOccurs="0" maxOccurs="1" name="sCardID" type="s:string"/>
+            <s:element minOccurs="1" maxOccurs="1" name="iSysID" type="s:int"/>
+            <s:element minOccurs="1" maxOccurs="1" name="iLocID" type="s:int"/>
+            <s:element minOccurs="1" maxOccurs="1" name="iDeviceID" type="s:int"/>
+            <s:element minOccurs="1" maxOccurs="1" name="iEvntCode" type="s:int"/>
+            <s:element minOccurs="0" maxOccurs="1" name="sErrorStr" type="s:string"/>
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="AddEventResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="1" maxOccurs="1" name="AddEventResult" type="s:boolean"/>
+            <s:element minOccurs="0" maxOccurs="1" name="sErrorStr" type="s:string"/>
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="AddEventByEmpID">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="sDataSource" type="s:string"/>
+            <s:element minOccurs="0" maxOccurs="1" name="sEventDateTime" type="s:string"/>
+            <s:element minOccurs="0" maxOccurs="1" name="sCardID" type="s:string"/>
+            <s:element minOccurs="1" maxOccurs="1" name="iSysID" type="s:int"/>
+            <s:element minOccurs="1" maxOccurs="1" name="iLocID" type="s:int"/>
+            <s:element minOccurs="1" maxOccurs="1" name="iDeviceID" type="s:int"/>
+            <s:element minOccurs="1" maxOccurs="1" name="iEvntCode" type="s:int"/>
+            <s:element minOccurs="0" maxOccurs="1" name="sLocationID" type="s:string"/>
+            <s:element minOccurs="0" maxOccurs="1" name="sErrorStr" type="s:string"/>
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="AddEventByEmpIDResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="1" maxOccurs="1" name="AddEventByEmpIDResult" type="s:boolean"/>
+            <s:element minOccurs="0" maxOccurs="1" name="sErrorStr" type="s:string"/>
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="GetReaderIDByDescription">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="sDataSource" type="s:string"/>
+            <s:element minOccurs="1" maxOccurs="1" name="iSysId" type="s:int"/>
+            <s:element minOccurs="1" maxOccurs="1" name="iLocation" type="s:int"/>
+            <s:element minOccurs="0" maxOccurs="1" name="sReaderDesc" type="s:string"/>
+            <s:element minOccurs="1" maxOccurs="1" name="iReaderId" type="s:int"/>
+            <s:element minOccurs="0" maxOccurs="1" name="sErrorStr" type="s:string"/>
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="GetReaderIDByDescriptionResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="1" maxOccurs="1" name="GetReaderIDByDescriptionResult" type="s:boolean"/>
+            <s:element minOccurs="1" maxOccurs="1" name="iReaderId" type="s:int"/>
+            <s:element minOccurs="0" maxOccurs="1" name="sErrorStr" type="s:string"/>
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+    </s:schema>
+  </wsdl:types>
+  <wsdl:message name="AddPersonSoapIn">
+    <wsdl:part name="parameters" element="tns:AddPerson"/>
+  </wsdl:message>
+  <wsdl:message name="AddPersonSoapOut">
+    <wsdl:part name="parameters" element="tns:AddPersonResponse"/>
+  </wsdl:message>
+  <wsdl:message name="AddPersonByEmpIDSoapIn">
+    <wsdl:part name="parameters" element="tns:AddPersonByEmpID"/>
+  </wsdl:message>
+  <wsdl:message name="AddPersonByEmpIDSoapOut">
+    <wsdl:part name="parameters" element="tns:AddPersonByEmpIDResponse"/>
+  </wsdl:message>
+  <wsdl:message name="AddCompanySoapIn">
+    <wsdl:part name="parameters" element="tns:AddCompany"/>
+  </wsdl:message>
+  <wsdl:message name="AddCompanySoapOut">
+    <wsdl:part name="parameters" element="tns:AddCompanyResponse"/>
+  </wsdl:message>
+  <wsdl:message name="GetInOutIndicatorSoapIn">
+    <wsdl:part name="parameters" element="tns:GetInOutIndicator"/>
+  </wsdl:message>
+  <wsdl:message name="GetInOutIndicatorSoapOut">
+    <wsdl:part name="parameters" element="tns:GetInOutIndicatorResponse"/>
+  </wsdl:message>
+  <wsdl:message name="AddEventByExtEmpRefSimpleSoapIn">
+    <wsdl:part name="parameters" element="tns:AddEventByExtEmpRefSimple"/>
+  </wsdl:message>
+  <wsdl:message name="AddEventByExtEmpRefSimpleSoapOut">
+    <wsdl:part name="parameters" element="tns:AddEventByExtEmpRefSimpleResponse"/>
+  </wsdl:message>
+  <wsdl:message name="AddEventByExtEmpRefByLocationSoapIn">
+    <wsdl:part name="parameters" element="tns:AddEventByExtEmpRefByLocation"/>
+  </wsdl:message>
+  <wsdl:message name="AddEventByExtEmpRefByLocationSoapOut">
+    <wsdl:part name="parameters" element="tns:AddEventByExtEmpRefByLocationResponse"/>
+  </wsdl:message>
+  <wsdl:message name="AddEventByExtEmpRefSoapIn">
+    <wsdl:part name="parameters" element="tns:AddEventByExtEmpRef"/>
+  </wsdl:message>
+  <wsdl:message name="AddEventByExtEmpRefSoapOut">
+    <wsdl:part name="parameters" element="tns:AddEventByExtEmpRefResponse"/>
+  </wsdl:message>
+  <wsdl:message name="AddEventByExtEmpRef2SoapIn">
+    <wsdl:part name="parameters" element="tns:AddEventByExtEmpRef2"/>
+  </wsdl:message>
+  <wsdl:message name="AddEventByExtEmpRef2SoapOut">
+    <wsdl:part name="parameters" element="tns:AddEventByExtEmpRef2Response"/>
+  </wsdl:message>
+  <wsdl:message name="GetCompanyCodeSoapIn">
+    <wsdl:part name="parameters" element="tns:GetCompanyCode"/>
+  </wsdl:message>
+  <wsdl:message name="GetCompanyCodeSoapOut">
+    <wsdl:part name="parameters" element="tns:GetCompanyCodeResponse"/>
+  </wsdl:message>
+  <wsdl:message name="GetTrackEmployeeSoapIn">
+    <wsdl:part name="parameters" element="tns:GetTrackEmployee"/>
+  </wsdl:message>
+  <wsdl:message name="GetTrackEmployeeSoapOut">
+    <wsdl:part name="parameters" element="tns:GetTrackEmployeeResponse"/>
+  </wsdl:message>
+  <wsdl:message name="GetEmployeeIDSoapIn">
+    <wsdl:part name="parameters" element="tns:GetEmployeeID"/>
+  </wsdl:message>
+  <wsdl:message name="GetEmployeeIDSoapOut">
+    <wsdl:part name="parameters" element="tns:GetEmployeeIDResponse"/>
+  </wsdl:message>
+  <wsdl:message name="AddReaderDeviceSoapIn">
+    <wsdl:part name="parameters" element="tns:AddReaderDevice"/>
+  </wsdl:message>
+  <wsdl:message name="AddReaderDeviceSoapOut">
+    <wsdl:part name="parameters" element="tns:AddReaderDeviceResponse"/>
+  </wsdl:message>
+  <wsdl:message name="AddReaderDeviceByDescriptionSoapIn">
+    <wsdl:part name="parameters" element="tns:AddReaderDeviceByDescription"/>
+  </wsdl:message>
+  <wsdl:message name="AddReaderDeviceByDescriptionSoapOut">
+    <wsdl:part name="parameters" element="tns:AddReaderDeviceByDescriptionResponse"/>
+  </wsdl:message>
+  <wsdl:message name="AddAccessExpirationReasonSoapIn">
+    <wsdl:part name="parameters" element="tns:AddAccessExpirationReason"/>
+  </wsdl:message>
+  <wsdl:message name="AddAccessExpirationReasonSoapOut">
+    <wsdl:part name="parameters" element="tns:AddAccessExpirationReasonResponse"/>
+  </wsdl:message>
+  <wsdl:message name="AddOrUpdateDeviceControlUnitsSoapIn">
+    <wsdl:part name="parameters" element="tns:AddOrUpdateDeviceControlUnits"/>
+  </wsdl:message>
+  <wsdl:message name="AddOrUpdateDeviceControlUnitsSoapOut">
+    <wsdl:part name="parameters" element="tns:AddOrUpdateDeviceControlUnitsResponse"/>
+  </wsdl:message>
+  <wsdl:message name="AddEventSoapIn">
+    <wsdl:part name="parameters" element="tns:AddEvent"/>
+  </wsdl:message>
+  <wsdl:message name="AddEventSoapOut">
+    <wsdl:part name="parameters" element="tns:AddEventResponse"/>
+  </wsdl:message>
+  <wsdl:message name="AddEventByEmpIDSoapIn">
+    <wsdl:part name="parameters" element="tns:AddEventByEmpID"/>
+  </wsdl:message>
+  <wsdl:message name="AddEventByEmpIDSoapOut">
+    <wsdl:part name="parameters" element="tns:AddEventByEmpIDResponse"/>
+  </wsdl:message>
+  <wsdl:message name="GetReaderIDByDescriptionSoapIn">
+    <wsdl:part name="parameters" element="tns:GetReaderIDByDescription"/>
+  </wsdl:message>
+  <wsdl:message name="GetReaderIDByDescriptionSoapOut">
+    <wsdl:part name="parameters" element="tns:GetReaderIDByDescriptionResponse"/>
+  </wsdl:message>
+  <wsdl:portType name="ACS2TrackWebSvcSoap">
+    <wsdl:operation name="AddPerson">
+      <wsdl:input message="tns:AddPersonSoapIn"/>
+      <wsdl:output message="tns:AddPersonSoapOut"/>
+    </wsdl:operation>
+    <wsdl:operation name="AddPersonByEmpID">
+      <wsdl:input message="tns:AddPersonByEmpIDSoapIn"/>
+      <wsdl:output message="tns:AddPersonByEmpIDSoapOut"/>
+    </wsdl:operation>
+    <wsdl:operation name="AddCompany">
+      <wsdl:input message="tns:AddCompanySoapIn"/>
+      <wsdl:output message="tns:AddCompanySoapOut"/>
+    </wsdl:operation>
+    <wsdl:operation name="GetInOutIndicator">
+      <wsdl:input message="tns:GetInOutIndicatorSoapIn"/>
+      <wsdl:output message="tns:GetInOutIndicatorSoapOut"/>
+    </wsdl:operation>
+    <wsdl:operation name="AddEventByExtEmpRefSimple">
+      <wsdl:input message="tns:AddEventByExtEmpRefSimpleSoapIn"/>
+      <wsdl:output message="tns:AddEventByExtEmpRefSimpleSoapOut"/>
+    </wsdl:operation>
+    <wsdl:operation name="AddEventByExtEmpRefByLocation">
+      <wsdl:input message="tns:AddEventByExtEmpRefByLocationSoapIn"/>
+      <wsdl:output message="tns:AddEventByExtEmpRefByLocationSoapOut"/>
+    </wsdl:operation>
+    <wsdl:operation name="AddEventByExtEmpRef">
+      <wsdl:input message="tns:AddEventByExtEmpRefSoapIn"/>
+      <wsdl:output message="tns:AddEventByExtEmpRefSoapOut"/>
+    </wsdl:operation>
+    <wsdl:operation name="AddEventByExtEmpRef2">
+      <wsdl:input message="tns:AddEventByExtEmpRef2SoapIn"/>
+      <wsdl:output message="tns:AddEventByExtEmpRef2SoapOut"/>
+    </wsdl:operation>
+    <wsdl:operation name="GetCompanyCode">
+      <wsdl:input message="tns:GetCompanyCodeSoapIn"/>
+      <wsdl:output message="tns:GetCompanyCodeSoapOut"/>
+    </wsdl:operation>
+    <wsdl:operation name="GetTrackEmployee">
+      <wsdl:input message="tns:GetTrackEmployeeSoapIn"/>
+      <wsdl:output message="tns:GetTrackEmployeeSoapOut"/>
+    </wsdl:operation>
+    <wsdl:operation name="GetEmployeeID">
+      <wsdl:input message="tns:GetEmployeeIDSoapIn"/>
+      <wsdl:output message="tns:GetEmployeeIDSoapOut"/>
+    </wsdl:operation>
+    <wsdl:operation name="AddReaderDevice">
+      <wsdl:input message="tns:AddReaderDeviceSoapIn"/>
+      <wsdl:output message="tns:AddReaderDeviceSoapOut"/>
+    </wsdl:operation>
+    <wsdl:operation name="AddReaderDeviceByDescription">
+      <wsdl:input message="tns:AddReaderDeviceByDescriptionSoapIn"/>
+      <wsdl:output message="tns:AddReaderDeviceByDescriptionSoapOut"/>
+    </wsdl:operation>
+    <wsdl:operation name="AddAccessExpirationReason">
+      <wsdl:input message="tns:AddAccessExpirationReasonSoapIn"/>
+      <wsdl:output message="tns:AddAccessExpirationReasonSoapOut"/>
+    </wsdl:operation>
+    <wsdl:operation name="AddOrUpdateDeviceControlUnits">
+      <wsdl:input message="tns:AddOrUpdateDeviceControlUnitsSoapIn"/>
+      <wsdl:output message="tns:AddOrUpdateDeviceControlUnitsSoapOut"/>
+    </wsdl:operation>
+    <wsdl:operation name="AddEvent">
+      <wsdl:input message="tns:AddEventSoapIn"/>
+      <wsdl:output message="tns:AddEventSoapOut"/>
+    </wsdl:operation>
+    <wsdl:operation name="AddEventByEmpID">
+      <wsdl:input message="tns:AddEventByEmpIDSoapIn"/>
+      <wsdl:output message="tns:AddEventByEmpIDSoapOut"/>
+    </wsdl:operation>
+    <wsdl:operation name="GetReaderIDByDescription">
+      <wsdl:input message="tns:GetReaderIDByDescriptionSoapIn"/>
+      <wsdl:output message="tns:GetReaderIDByDescriptionSoapOut"/>
+    </wsdl:operation>
+  </wsdl:portType>
+  <wsdl:binding name="ACS2TrackWebSvcSoap" type="tns:ACS2TrackWebSvcSoap">
+    <soap:binding transport="http://schemas.xmlsoap.org/soap/http"/>
+    <wsdl:operation name="AddPerson">
+      <soap:operation soapAction="http://tracksoftware.net/AddPerson" style="document"/>
+      <wsdl:input>
+        <soap:body use="literal"/>
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal"/>
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="AddPersonByEmpID">
+      <soap:operation soapAction="http://tracksoftware.net/AddPersonByEmpID" style="document"/>
+      <wsdl:input>
+        <soap:body use="literal"/>
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal"/>
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="AddCompany">
+      <soap:operation soapAction="http://tracksoftware.net/AddCompany" style="document"/>
+      <wsdl:input>
+        <soap:body use="literal"/>
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal"/>
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GetInOutIndicator">
+      <soap:operation soapAction="http://tracksoftware.net/GetInOutIndicator" style="document"/>
+      <wsdl:input>
+        <soap:body use="literal"/>
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal"/>
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="AddEventByExtEmpRefSimple">
+      <soap:operation soapAction="http://tracksoftware.net/AddEventByExtEmpRefSimple" style="document"/>
+      <wsdl:input>
+        <soap:body use="literal"/>
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal"/>
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="AddEventByExtEmpRefByLocation">
+      <soap:operation soapAction="http://tracksoftware.net/AddEventByExtEmpRefByLocation" style="document"/>
+      <wsdl:input>
+        <soap:body use="literal"/>
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal"/>
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="AddEventByExtEmpRef">
+      <soap:operation soapAction="http://tracksoftware.net/AddEventByExtEmpRef" style="document"/>
+      <wsdl:input>
+        <soap:body use="literal"/>
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal"/>
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="AddEventByExtEmpRef2">
+      <soap:operation soapAction="http://tracksoftware.net/AddEventByExtEmpRef2" style="document"/>
+      <wsdl:input>
+        <soap:body use="literal"/>
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal"/>
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GetCompanyCode">
+      <soap:operation soapAction="http://tracksoftware.net/GetCompanyCode" style="document"/>
+      <wsdl:input>
+        <soap:body use="literal"/>
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal"/>
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GetTrackEmployee">
+      <soap:operation soapAction="http://tracksoftware.net/GetTrackEmployee" style="document"/>
+      <wsdl:input>
+        <soap:body use="literal"/>
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal"/>
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GetEmployeeID">
+      <soap:operation soapAction="http://tracksoftware.net/GetEmployeeID" style="document"/>
+      <wsdl:input>
+        <soap:body use="literal"/>
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal"/>
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="AddReaderDevice">
+      <soap:operation soapAction="http://tracksoftware.net/AddReaderDevice" style="document"/>
+      <wsdl:input>
+        <soap:body use="literal"/>
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal"/>
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="AddReaderDeviceByDescription">
+      <soap:operation soapAction="http://tracksoftware.net/AddReaderDeviceByDescription" style="document"/>
+      <wsdl:input>
+        <soap:body use="literal"/>
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal"/>
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="AddAccessExpirationReason">
+      <soap:operation soapAction="http://tracksoftware.net/AddAccessExpirationReason" style="document"/>
+      <wsdl:input>
+        <soap:body use="literal"/>
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal"/>
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="AddOrUpdateDeviceControlUnits">
+      <soap:operation soapAction="http://tracksoftware.net/AddOrUpdateDeviceControlUnits" style="document"/>
+      <wsdl:input>
+        <soap:body use="literal"/>
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal"/>
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="AddEvent">
+      <soap:operation soapAction="http://tracksoftware.net/AddEvent" style="document"/>
+      <wsdl:input>
+        <soap:body use="literal"/>
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal"/>
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="AddEventByEmpID">
+      <soap:operation soapAction="http://tracksoftware.net/AddEventByEmpID" style="document"/>
+      <wsdl:input>
+        <soap:body use="literal"/>
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal"/>
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GetReaderIDByDescription">
+      <soap:operation soapAction="http://tracksoftware.net/GetReaderIDByDescription" style="document"/>
+      <wsdl:input>
+        <soap:body use="literal"/>
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal"/>
+      </wsdl:output>
+    </wsdl:operation>
+  </wsdl:binding>
+  <wsdl:binding name="ACS2TrackWebSvcSoap12" type="tns:ACS2TrackWebSvcSoap">
+    <soap12:binding transport="http://schemas.xmlsoap.org/soap/http"/>
+    <wsdl:operation name="AddPerson">
+      <soap12:operation soapAction="http://tracksoftware.net/AddPerson" style="document"/>
+      <wsdl:input>
+        <soap12:body use="literal"/>
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal"/>
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="AddPersonByEmpID">
+      <soap12:operation soapAction="http://tracksoftware.net/AddPersonByEmpID" style="document"/>
+      <wsdl:input>
+        <soap12:body use="literal"/>
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal"/>
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="AddCompany">
+      <soap12:operation soapAction="http://tracksoftware.net/AddCompany" style="document"/>
+      <wsdl:input>
+        <soap12:body use="literal"/>
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal"/>
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GetInOutIndicator">
+      <soap12:operation soapAction="http://tracksoftware.net/GetInOutIndicator" style="document"/>
+      <wsdl:input>
+        <soap12:body use="literal"/>
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal"/>
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="AddEventByExtEmpRefSimple">
+      <soap12:operation soapAction="http://tracksoftware.net/AddEventByExtEmpRefSimple" style="document"/>
+      <wsdl:input>
+        <soap12:body use="literal"/>
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal"/>
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="AddEventByExtEmpRefByLocation">
+      <soap12:operation soapAction="http://tracksoftware.net/AddEventByExtEmpRefByLocation" style="document"/>
+      <wsdl:input>
+        <soap12:body use="literal"/>
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal"/>
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="AddEventByExtEmpRef">
+      <soap12:operation soapAction="http://tracksoftware.net/AddEventByExtEmpRef" style="document"/>
+      <wsdl:input>
+        <soap12:body use="literal"/>
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal"/>
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="AddEventByExtEmpRef2">
+      <soap12:operation soapAction="http://tracksoftware.net/AddEventByExtEmpRef2" style="document"/>
+      <wsdl:input>
+        <soap12:body use="literal"/>
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal"/>
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GetCompanyCode">
+      <soap12:operation soapAction="http://tracksoftware.net/GetCompanyCode" style="document"/>
+      <wsdl:input>
+        <soap12:body use="literal"/>
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal"/>
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GetTrackEmployee">
+      <soap12:operation soapAction="http://tracksoftware.net/GetTrackEmployee" style="document"/>
+      <wsdl:input>
+        <soap12:body use="literal"/>
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal"/>
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GetEmployeeID">
+      <soap12:operation soapAction="http://tracksoftware.net/GetEmployeeID" style="document"/>
+      <wsdl:input>
+        <soap12:body use="literal"/>
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal"/>
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="AddReaderDevice">
+      <soap12:operation soapAction="http://tracksoftware.net/AddReaderDevice" style="document"/>
+      <wsdl:input>
+        <soap12:body use="literal"/>
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal"/>
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="AddReaderDeviceByDescription">
+      <soap12:operation soapAction="http://tracksoftware.net/AddReaderDeviceByDescription" style="document"/>
+      <wsdl:input>
+        <soap12:body use="literal"/>
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal"/>
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="AddAccessExpirationReason">
+      <soap12:operation soapAction="http://tracksoftware.net/AddAccessExpirationReason" style="document"/>
+      <wsdl:input>
+        <soap12:body use="literal"/>
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal"/>
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="AddOrUpdateDeviceControlUnits">
+      <soap12:operation soapAction="http://tracksoftware.net/AddOrUpdateDeviceControlUnits" style="document"/>
+      <wsdl:input>
+        <soap12:body use="literal"/>
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal"/>
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="AddEvent">
+      <soap12:operation soapAction="http://tracksoftware.net/AddEvent" style="document"/>
+      <wsdl:input>
+        <soap12:body use="literal"/>
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal"/>
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="AddEventByEmpID">
+      <soap12:operation soapAction="http://tracksoftware.net/AddEventByEmpID" style="document"/>
+      <wsdl:input>
+        <soap12:body use="literal"/>
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal"/>
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GetReaderIDByDescription">
+      <soap12:operation soapAction="http://tracksoftware.net/GetReaderIDByDescription" style="document"/>
+      <wsdl:input>
+        <soap12:body use="literal"/>
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal"/>
+      </wsdl:output>
+    </wsdl:operation>
+  </wsdl:binding>
+  <wsdl:service name="ACS2TrackWebSvc">
+    <wsdl:port name="ACS2TrackWebSvcSoap" binding="tns:ACS2TrackWebSvcSoap">
+      <soap:address location="http://localhost/ACStoTrackWS/ACS2TrackWebSvc.asmx"/>
+    </wsdl:port>
+    <wsdl:port name="ACS2TrackWebSvcSoap12" binding="tns:ACS2TrackWebSvcSoap12">
+      <soap12:address location="http://localhost/ACStoTrackWS/ACS2TrackWebSvc.asmx"/>
+    </wsdl:port>
+  </wsdl:service>
+</wsdl:definitions>]]></con:content><con:type>http://schemas.xmlsoap.org/wsdl/</con:type></con:part></con:definitionCache><con:endpoints><con:endpoint>http://localhost/ACStoTrackWS/ACS2TrackWebSvc.asmx</con:endpoint><con:endpoint>http://cencle10:8088/mockACS2TrackWebSvcSoap12</con:endpoint></con:endpoints><con:operation isOneWay="false" action="http://tracksoftware.net/AddAccessExpirationReason" name="AddAccessExpirationReason" bindingOperationName="AddAccessExpirationReason" type="Request-Response" inputName="" receivesAttachments="false" sendsAttachments="false" anonymous="optional"><con:settings/><con:call name="Request 1"><con:settings/><con:encoding>UTF-8</con:encoding><con:endpoint>http://localhost/ACStoTrackWS/ACS2TrackWebSvc.asmx</con:endpoint><con:request><![CDATA[<soap:Envelope xmlns:soap="http://www.w3.org/2003/05/soap-envelope" xmlns:trac="http://tracksoftware.net/">
+   <soap:Header/>
+   <soap:Body>
+      <trac:AddAccessExpirationReason>
+         <!--Optional:-->
+         <trac:sDataSource>?</trac:sDataSource>
+         <!--Optional:-->
+         <trac:sReason>?</trac:sReason>
+         <!--Optional:-->
+         <trac:sErrorStr>?</trac:sErrorStr>
+      </trac:AddAccessExpirationReason>
+   </soap:Body>
+</soap:Envelope>]]></con:request><con:wsaConfig mustUnderstand="NONE" version="200508" action="http://tracksoftware.net/ACS2TrackWebSvcSoap/AddAccessExpirationReasonRequest"/></con:call></con:operation><con:operation isOneWay="false" action="http://tracksoftware.net/AddCompany" name="AddCompany" bindingOperationName="AddCompany" type="Request-Response" inputName="" receivesAttachments="false" sendsAttachments="false" anonymous="optional"><con:settings/><con:call name="Request 1"><con:settings/><con:encoding>UTF-8</con:encoding><con:endpoint>http://localhost/ACStoTrackWS/ACS2TrackWebSvc.asmx</con:endpoint><con:request><![CDATA[<soap:Envelope xmlns:soap="http://www.w3.org/2003/05/soap-envelope" xmlns:trac="http://tracksoftware.net/">
+   <soap:Header/>
+   <soap:Body>
+      <trac:AddCompany>
+         <!--Optional:-->
+         <trac:sDataSource>?</trac:sDataSource>
+         <!--Optional:-->
+         <trac:sCompanyName>?</trac:sCompanyName>
+         <!--Optional:-->
+         <trac:sExtCompanyCode>?</trac:sExtCompanyCode>
+         <!--Optional:-->
+         <trac:sLocationID>?</trac:sLocationID>
+         <!--Optional:-->
+         <trac:sErrorStr>?</trac:sErrorStr>
+      </trac:AddCompany>
+   </soap:Body>
+</soap:Envelope>]]></con:request><con:wsaConfig mustUnderstand="NONE" version="200508" action="http://tracksoftware.net/ACS2TrackWebSvcSoap/AddCompanyRequest"/></con:call></con:operation><con:operation isOneWay="false" action="http://tracksoftware.net/AddEvent" name="AddEvent" bindingOperationName="AddEvent" type="Request-Response" inputName="" receivesAttachments="false" sendsAttachments="false" anonymous="optional"><con:settings/><con:call name="Request 1"><con:settings/><con:encoding>UTF-8</con:encoding><con:endpoint>http://localhost/ACStoTrackWS/ACS2TrackWebSvc.asmx</con:endpoint><con:request><![CDATA[<soap:Envelope xmlns:soap="http://www.w3.org/2003/05/soap-envelope" xmlns:trac="http://tracksoftware.net/">
+   <soap:Header/>
+   <soap:Body>
+      <trac:AddEvent>
+         <!--Optional:-->
+         <trac:sDataSource>?</trac:sDataSource>
+         <!--Optional:-->
+         <trac:sEventDateTime>?</trac:sEventDateTime>
+         <!--Optional:-->
+         <trac:sCardID>?</trac:sCardID>
+         <trac:iSysID>?</trac:iSysID>
+         <trac:iLocID>?</trac:iLocID>
+         <trac:iDeviceID>?</trac:iDeviceID>
+         <trac:iEvntCode>?</trac:iEvntCode>
+         <!--Optional:-->
+         <trac:sErrorStr>?</trac:sErrorStr>
+      </trac:AddEvent>
+   </soap:Body>
+</soap:Envelope>]]></con:request><con:wsaConfig mustUnderstand="NONE" version="200508" action="http://tracksoftware.net/ACS2TrackWebSvcSoap/AddEventRequest"/></con:call></con:operation><con:operation isOneWay="false" action="http://tracksoftware.net/AddEventByEmpID" name="AddEventByEmpID" bindingOperationName="AddEventByEmpID" type="Request-Response" inputName="" receivesAttachments="false" sendsAttachments="false" anonymous="optional"><con:settings/><con:call name="Request 1"><con:settings/><con:encoding>UTF-8</con:encoding><con:endpoint>http://localhost/ACStoTrackWS/ACS2TrackWebSvc.asmx</con:endpoint><con:request><![CDATA[<soap:Envelope xmlns:soap="http://www.w3.org/2003/05/soap-envelope" xmlns:trac="http://tracksoftware.net/">
+   <soap:Header/>
+   <soap:Body>
+      <trac:AddEventByEmpID>
+         <!--Optional:-->
+         <trac:sDataSource>?</trac:sDataSource>
+         <!--Optional:-->
+         <trac:sEventDateTime>?</trac:sEventDateTime>
+         <!--Optional:-->
+         <trac:sCardID>?</trac:sCardID>
+         <trac:iSysID>?</trac:iSysID>
+         <trac:iLocID>?</trac:iLocID>
+         <trac:iDeviceID>?</trac:iDeviceID>
+         <trac:iEvntCode>?</trac:iEvntCode>
+         <!--Optional:-->
+         <trac:sLocationID>?</trac:sLocationID>
+         <!--Optional:-->
+         <trac:sErrorStr>?</trac:sErrorStr>
+      </trac:AddEventByEmpID>
+   </soap:Body>
+</soap:Envelope>]]></con:request><con:wsaConfig mustUnderstand="NONE" version="200508" action="http://tracksoftware.net/ACS2TrackWebSvcSoap/AddEventByEmpIDRequest"/></con:call></con:operation><con:operation isOneWay="false" action="http://tracksoftware.net/AddEventByExtEmpRef" name="AddEventByExtEmpRef" bindingOperationName="AddEventByExtEmpRef" type="Request-Response" inputName="" receivesAttachments="false" sendsAttachments="false" anonymous="optional"><con:settings/><con:call name="Request 1"><con:settings/><con:encoding>UTF-8</con:encoding><con:endpoint>http://localhost/ACStoTrackWS/ACS2TrackWebSvc.asmx</con:endpoint><con:request><![CDATA[<soap:Envelope xmlns:soap="http://www.w3.org/2003/05/soap-envelope" xmlns:trac="http://tracksoftware.net/">
+   <soap:Header/>
+   <soap:Body>
+      <trac:AddEventByExtEmpRef>
+         <!--Optional:-->
+         <trac:sDataSource>?</trac:sDataSource>
+         <!--Optional:-->
+         <trac:sEventDateTime>?</trac:sEventDateTime>
+         <!--Optional:-->
+         <trac:sExtEmpRef>?</trac:sExtEmpRef>
+         <trac:iSysID>?</trac:iSysID>
+         <trac:iEvntLocID>?</trac:iEvntLocID>
+         <trac:iDeviceID>?</trac:iDeviceID>
+         <trac:iEvntCode>?</trac:iEvntCode>
+         <!--Optional:-->
+         <trac:sErrorStr>?</trac:sErrorStr>
+      </trac:AddEventByExtEmpRef>
+   </soap:Body>
+</soap:Envelope>]]></con:request><con:wsaConfig mustUnderstand="NONE" version="200508" action="http://tracksoftware.net/ACS2TrackWebSvcSoap/AddEventByExtEmpRefRequest"/></con:call></con:operation><con:operation isOneWay="false" action="http://tracksoftware.net/AddEventByExtEmpRef2" name="AddEventByExtEmpRef2" bindingOperationName="AddEventByExtEmpRef2" type="Request-Response" inputName="" receivesAttachments="false" sendsAttachments="false" anonymous="optional"><con:settings/><con:call name="Request 1"><con:settings/><con:encoding>UTF-8</con:encoding><con:endpoint>http://localhost/ACStoTrackWS/ACS2TrackWebSvc.asmx</con:endpoint><con:request><![CDATA[<soap:Envelope xmlns:soap="http://www.w3.org/2003/05/soap-envelope" xmlns:trac="http://tracksoftware.net/">
+   <soap:Header/>
+   <soap:Body>
+      <trac:AddEventByExtEmpRef2>
+         <!--Optional:-->
+         <trac:sDataSource>?</trac:sDataSource>
+         <!--Optional:-->
+         <trac:sEventDateTime>?</trac:sEventDateTime>
+         <!--Optional:-->
+         <trac:sExtEmpRef>?</trac:sExtEmpRef>
+         <trac:iSysID>?</trac:iSysID>
+         <trac:iEvntLocID>?</trac:iEvntLocID>
+         <trac:iDeviceID>?</trac:iDeviceID>
+         <!--Optional:-->
+         <trac:sDeviceName>?</trac:sDeviceName>
+         <trac:iInOutNeut>?</trac:iInOutNeut>
+         <!--Optional:-->
+         <trac:sErrorStr>?</trac:sErrorStr>
+      </trac:AddEventByExtEmpRef2>
+   </soap:Body>
+</soap:Envelope>]]></con:request><con:wsaConfig mustUnderstand="NONE" version="200508" action="http://tracksoftware.net/ACS2TrackWebSvcSoap/AddEventByExtEmpRef2Request"/></con:call></con:operation><con:operation isOneWay="false" action="http://tracksoftware.net/AddEventByExtEmpRefByLocation" name="AddEventByExtEmpRefByLocation" bindingOperationName="AddEventByExtEmpRefByLocation" type="Request-Response" inputName="" receivesAttachments="false" sendsAttachments="false" anonymous="optional"><con:settings/><con:call name="Request 1"><con:settings/><con:encoding>UTF-8</con:encoding><con:endpoint>http://localhost/ACStoTrackWS/ACS2TrackWebSvc.asmx</con:endpoint><con:request><![CDATA[<soap:Envelope xmlns:soap="http://www.w3.org/2003/05/soap-envelope" xmlns:trac="http://tracksoftware.net/">
+   <soap:Header/>
+   <soap:Body>
+      <trac:AddEventByExtEmpRefByLocation>
+         <!--Optional:-->
+         <trac:sDataSource>?</trac:sDataSource>
+         <!--Optional:-->
+         <trac:sEventDateTime>?</trac:sEventDateTime>
+         <!--Optional:-->
+         <trac:sExtEmpRef>?</trac:sExtEmpRef>
+         <trac:iSysID>?</trac:iSysID>
+         <trac:iEvntLocID>?</trac:iEvntLocID>
+         <trac:iDeviceID>?</trac:iDeviceID>
+         <trac:iEvntCode>?</trac:iEvntCode>
+         <!--Optional:-->
+         <trac:sErrorStr>?</trac:sErrorStr>
+         <!--Optional:-->
+         <trac:sLocationID>?</trac:sLocationID>
+         <!--Optional:-->
+         <trac:sCardID>?</trac:sCardID>
+      </trac:AddEventByExtEmpRefByLocation>
+   </soap:Body>
+</soap:Envelope>]]></con:request><con:wsaConfig mustUnderstand="NONE" version="200508" action="http://tracksoftware.net/ACS2TrackWebSvcSoap/AddEventByExtEmpRefByLocationRequest"/></con:call></con:operation><con:operation isOneWay="false" action="http://tracksoftware.net/AddEventByExtEmpRefSimple" name="AddEventByExtEmpRefSimple" bindingOperationName="AddEventByExtEmpRefSimple" type="Request-Response" inputName="" receivesAttachments="false" sendsAttachments="false" anonymous="optional"><con:settings/><con:call name="Request 1"><con:settings/><con:encoding>UTF-8</con:encoding><con:endpoint>http://localhost/ACStoTrackWS/ACS2TrackWebSvc.asmx</con:endpoint><con:request><![CDATA[<soap:Envelope xmlns:soap="http://www.w3.org/2003/05/soap-envelope" xmlns:trac="http://tracksoftware.net/">
+   <soap:Header/>
+   <soap:Body>
+      <trac:AddEventByExtEmpRefSimple>
+         <!--Optional:-->
+         <trac:sDataSource>?</trac:sDataSource>
+         <!--Optional:-->
+         <trac:sEventDateTime>?</trac:sEventDateTime>
+         <!--Optional:-->
+         <trac:sExtEmpRef>?</trac:sExtEmpRef>
+         <trac:iInOutNeut>?</trac:iInOutNeut>
+         <!--Optional:-->
+         <trac:sErrorStr>?</trac:sErrorStr>
+      </trac:AddEventByExtEmpRefSimple>
+   </soap:Body>
+</soap:Envelope>]]></con:request><con:wsaConfig mustUnderstand="NONE" version="200508" action="http://tracksoftware.net/ACS2TrackWebSvcSoap/AddEventByExtEmpRefSimpleRequest"/></con:call></con:operation><con:operation isOneWay="false" action="http://tracksoftware.net/AddOrUpdateDeviceControlUnits" name="AddOrUpdateDeviceControlUnits" bindingOperationName="AddOrUpdateDeviceControlUnits" type="Request-Response" inputName="" receivesAttachments="false" sendsAttachments="false" anonymous="optional"><con:settings/><con:call name="Request 1"><con:settings/><con:encoding>UTF-8</con:encoding><con:endpoint>http://localhost/ACStoTrackWS/ACS2TrackWebSvc.asmx</con:endpoint><con:request><![CDATA[<soap:Envelope xmlns:soap="http://www.w3.org/2003/05/soap-envelope" xmlns:trac="http://tracksoftware.net/">
+   <soap:Header/>
+   <soap:Body>
+      <trac:AddOrUpdateDeviceControlUnits>
+         <!--Optional:-->
+         <trac:sDataSource>?</trac:sDataSource>
+         <trac:iID>?</trac:iID>
+         <!--Optional:-->
+         <trac:sName>?</trac:sName>
+         <trac:iNumDevices>?</trac:iNumDevices>
+         <!--Optional:-->
+         <trac:sNetworkAddr>?</trac:sNetworkAddr>
+         <trac:iType>?</trac:iType>
+         <!--Optional:-->
+         <trac:sCapabilities>?</trac:sCapabilities>
+         <trac:iSysID>?</trac:iSysID>
+         <!--Optional:-->
+         <trac:sErrorStr>?</trac:sErrorStr>
+      </trac:AddOrUpdateDeviceControlUnits>
+   </soap:Body>
+</soap:Envelope>]]></con:request><con:wsaConfig mustUnderstand="NONE" version="200508" action="http://tracksoftware.net/ACS2TrackWebSvcSoap/AddOrUpdateDeviceControlUnitsRequest"/></con:call></con:operation><con:operation isOneWay="false" action="http://tracksoftware.net/AddPerson" name="AddPerson" bindingOperationName="AddPerson" type="Request-Response" inputName="" receivesAttachments="false" sendsAttachments="false" anonymous="optional"><con:settings/><con:call name="Request 1"><con:settings/><con:encoding>UTF-8</con:encoding><con:endpoint>http://localhost/ACStoTrackWS/ACS2TrackWebSvc.asmx</con:endpoint><con:request><![CDATA[<soap:Envelope xmlns:soap="http://www.w3.org/2003/05/soap-envelope" xmlns:trac="http://tracksoftware.net/">
+   <soap:Header/>
+   <soap:Body>
+      <trac:AddPerson>
+         <!--Optional:-->
+         <trac:sDataSource>?</trac:sDataSource>
+         <!--Optional:-->
+         <trac:sLastName>?</trac:sLastName>
+         <!--Optional:-->
+         <trac:sFirstName>?</trac:sFirstName>
+         <!--Optional:-->
+         <trac:sMiddleName>?</trac:sMiddleName>
+         <!--Optional:-->
+         <trac:sExtEmpRef>?</trac:sExtEmpRef>
+         <!--Optional:-->
+         <trac:sExtCmpRef>?</trac:sExtCmpRef>
+         <!--Optional:-->
+         <trac:sLocationID>?</trac:sLocationID>
+         <!--Optional:-->
+         <trac:sSSN>?</trac:sSSN>
+         <!--Optional:-->
+         <trac:sExtCardID>?</trac:sExtCardID>
+         <!--Optional:-->
+         <trac:sPayGroupName>?</trac:sPayGroupName>
+         <!--Optional:-->
+         <trac:sErrorStr>?</trac:sErrorStr>
+      </trac:AddPerson>
+   </soap:Body>
+</soap:Envelope>]]></con:request><con:wsaConfig mustUnderstand="NONE" version="200508" action="http://tracksoftware.net/ACS2TrackWebSvcSoap/AddPersonRequest"/></con:call></con:operation><con:operation isOneWay="false" action="http://tracksoftware.net/AddPersonByEmpID" name="AddPersonByEmpID" bindingOperationName="AddPersonByEmpID" type="Request-Response" inputName="" receivesAttachments="false" sendsAttachments="false" anonymous="optional"><con:settings/><con:call name="Request 1"><con:settings/><con:encoding>UTF-8</con:encoding><con:endpoint>http://localhost/ACStoTrackWS/ACS2TrackWebSvc.asmx</con:endpoint><con:request><![CDATA[<soap:Envelope xmlns:soap="http://www.w3.org/2003/05/soap-envelope" xmlns:trac="http://tracksoftware.net/">
+   <soap:Header/>
+   <soap:Body>
+      <trac:AddPersonByEmpID>
+         <!--Optional:-->
+         <trac:sDataSource>?</trac:sDataSource>
+         <!--Optional:-->
+         <trac:sLastName>?</trac:sLastName>
+         <!--Optional:-->
+         <trac:sFirstName>?</trac:sFirstName>
+         <!--Optional:-->
+         <trac:sMiddleName>?</trac:sMiddleName>
+         <!--Optional:-->
+         <trac:sEmpID>?</trac:sEmpID>
+         <!--Optional:-->
+         <trac:sLocationID>?</trac:sLocationID>
+         <!--Optional:-->
+         <trac:sCmpCode>?</trac:sCmpCode>
+         <!--Optional:-->
+         <trac:sSSN>?</trac:sSSN>
+         <!--Optional:-->
+         <trac:sErrorStr>?</trac:sErrorStr>
+      </trac:AddPersonByEmpID>
+   </soap:Body>
+</soap:Envelope>]]></con:request><con:wsaConfig mustUnderstand="NONE" version="200508" action="http://tracksoftware.net/ACS2TrackWebSvcSoap/AddPersonByEmpIDRequest"/></con:call></con:operation><con:operation isOneWay="false" action="http://tracksoftware.net/AddReaderDevice" name="AddReaderDevice" bindingOperationName="AddReaderDevice" type="Request-Response" inputName="" receivesAttachments="false" sendsAttachments="false" anonymous="optional"><con:settings/><con:call name="Request 1"><con:settings/><con:encoding>UTF-8</con:encoding><con:endpoint>http://localhost/ACStoTrackWS/ACS2TrackWebSvc.asmx</con:endpoint><con:request><![CDATA[<soap:Envelope xmlns:soap="http://www.w3.org/2003/05/soap-envelope" xmlns:trac="http://tracksoftware.net/">
+   <soap:Header/>
+   <soap:Body>
+      <trac:AddReaderDevice>
+         <!--Optional:-->
+         <trac:sDataSource>?</trac:sDataSource>
+         <!--Optional:-->
+         <trac:sDescription>?</trac:sDescription>
+         <trac:iSysID>?</trac:iSysID>
+         <trac:iLocationID>?</trac:iLocationID>
+         <trac:iDeviceID>?</trac:iDeviceID>
+         <trac:iInOutNeut>?</trac:iInOutNeut>
+         <!--Optional:-->
+         <trac:sErrorStr>?</trac:sErrorStr>
+      </trac:AddReaderDevice>
+   </soap:Body>
+</soap:Envelope>]]></con:request><con:wsaConfig mustUnderstand="NONE" version="200508" action="http://tracksoftware.net/ACS2TrackWebSvcSoap/AddReaderDeviceRequest"/></con:call></con:operation><con:operation isOneWay="false" action="http://tracksoftware.net/AddReaderDeviceByDescription" name="AddReaderDeviceByDescription" bindingOperationName="AddReaderDeviceByDescription" type="Request-Response" inputName="" receivesAttachments="false" sendsAttachments="false" anonymous="optional"><con:settings/><con:call name="Request 1"><con:settings/><con:encoding>UTF-8</con:encoding><con:endpoint>http://localhost/ACStoTrackWS/ACS2TrackWebSvc.asmx</con:endpoint><con:request><![CDATA[<soap:Envelope xmlns:soap="http://www.w3.org/2003/05/soap-envelope" xmlns:trac="http://tracksoftware.net/">
+   <soap:Header/>
+   <soap:Body>
+      <trac:AddReaderDeviceByDescription>
+         <!--Optional:-->
+         <trac:sDataSource>?</trac:sDataSource>
+         <!--Optional:-->
+         <trac:sDescription>?</trac:sDescription>
+         <trac:iSysID>?</trac:iSysID>
+         <trac:iLocationID>?</trac:iLocationID>
+         <trac:iInOutNeut>?</trac:iInOutNeut>
+         <!--Optional:-->
+         <trac:sErrorStr>?</trac:sErrorStr>
+      </trac:AddReaderDeviceByDescription>
+   </soap:Body>
+</soap:Envelope>]]></con:request><con:wsaConfig mustUnderstand="NONE" version="200508" action="http://tracksoftware.net/ACS2TrackWebSvcSoap/AddReaderDeviceByDescriptionRequest"/></con:call></con:operation><con:operation isOneWay="false" action="http://tracksoftware.net/GetCompanyCode" name="GetCompanyCode" bindingOperationName="GetCompanyCode" type="Request-Response" inputName="" receivesAttachments="false" sendsAttachments="false" anonymous="optional"><con:settings/><con:call name="Request 1"><con:settings/><con:encoding>UTF-8</con:encoding><con:endpoint>http://localhost/ACStoTrackWS/ACS2TrackWebSvc.asmx</con:endpoint><con:request><![CDATA[<soap:Envelope xmlns:soap="http://www.w3.org/2003/05/soap-envelope" xmlns:trac="http://tracksoftware.net/">
+   <soap:Header/>
+   <soap:Body>
+      <trac:GetCompanyCode>
+         <!--Optional:-->
+         <trac:sDataSource>?</trac:sDataSource>
+         <!--Optional:-->
+         <trac:sExtCmpRef>?</trac:sExtCmpRef>
+         <!--Optional:-->
+         <trac:sLocationID>?</trac:sLocationID>
+         <!--Optional:-->
+         <trac:sCompanyCode>?</trac:sCompanyCode>
+         <!--Optional:-->
+         <trac:sErrorStr>?</trac:sErrorStr>
+      </trac:GetCompanyCode>
+   </soap:Body>
+</soap:Envelope>]]></con:request><con:wsaConfig mustUnderstand="NONE" version="200508" action="http://tracksoftware.net/ACS2TrackWebSvcSoap/GetCompanyCodeRequest"/></con:call></con:operation><con:operation isOneWay="false" action="http://tracksoftware.net/GetEmployeeID" name="GetEmployeeID" bindingOperationName="GetEmployeeID" type="Request-Response" inputName="" receivesAttachments="false" sendsAttachments="false" anonymous="optional"><con:settings/><con:call name="Request 1"><con:settings/><con:encoding>UTF-8</con:encoding><con:endpoint>http://localhost/ACStoTrackWS/ACS2TrackWebSvc.asmx</con:endpoint><con:request><![CDATA[<soap:Envelope xmlns:soap="http://www.w3.org/2003/05/soap-envelope" xmlns:trac="http://tracksoftware.net/">
+   <soap:Header/>
+   <soap:Body>
+      <trac:GetEmployeeID>
+         <!--Optional:-->
+         <trac:sDataSource>?</trac:sDataSource>
+         <!--Optional:-->
+         <trac:sExtEmpRef>?</trac:sExtEmpRef>
+         <!--Optional:-->
+         <trac:sLocationID>?</trac:sLocationID>
+         <!--Optional:-->
+         <trac:sEmpID>?</trac:sEmpID>
+         <!--Optional:-->
+         <trac:sErrorStr>?</trac:sErrorStr>
+      </trac:GetEmployeeID>
+   </soap:Body>
+</soap:Envelope>]]></con:request><con:wsaConfig mustUnderstand="NONE" version="200508" action="http://tracksoftware.net/ACS2TrackWebSvcSoap/GetEmployeeIDRequest"/></con:call></con:operation><con:operation isOneWay="false" action="http://tracksoftware.net/GetInOutIndicator" name="GetInOutIndicator" bindingOperationName="GetInOutIndicator" type="Request-Response" inputName="" receivesAttachments="false" sendsAttachments="false" anonymous="optional"><con:settings/><con:call name="Request 1"><con:settings/><con:encoding>UTF-8</con:encoding><con:endpoint>http://localhost/ACStoTrackWS/ACS2TrackWebSvc.asmx</con:endpoint><con:request><![CDATA[<soap:Envelope xmlns:soap="http://www.w3.org/2003/05/soap-envelope" xmlns:trac="http://tracksoftware.net/">
+   <soap:Header/>
+   <soap:Body>
+      <trac:GetInOutIndicator>
+         <!--Optional:-->
+         <trac:sDataSource>?</trac:sDataSource>
+         <trac:iSysID>?</trac:iSysID>
+         <trac:iDeviceID>?</trac:iDeviceID>
+         <trac:iLocationID>?</trac:iLocationID>
+         <trac:iRetVal>?</trac:iRetVal>
+         <!--Optional:-->
+         <trac:sErrorStr>?</trac:sErrorStr>
+      </trac:GetInOutIndicator>
+   </soap:Body>
+</soap:Envelope>]]></con:request><con:wsaConfig mustUnderstand="NONE" version="200508" action="http://tracksoftware.net/ACS2TrackWebSvcSoap/GetInOutIndicatorRequest"/></con:call></con:operation><con:operation isOneWay="false" action="http://tracksoftware.net/GetReaderIDByDescription" name="GetReaderIDByDescription" bindingOperationName="GetReaderIDByDescription" type="Request-Response" inputName="" receivesAttachments="false" sendsAttachments="false" anonymous="optional"><con:settings/><con:call name="Request 1"><con:settings/><con:encoding>UTF-8</con:encoding><con:endpoint>http://localhost/ACStoTrackWS/ACS2TrackWebSvc.asmx</con:endpoint><con:request><![CDATA[<soap:Envelope xmlns:soap="http://www.w3.org/2003/05/soap-envelope" xmlns:trac="http://tracksoftware.net/">
+   <soap:Header/>
+   <soap:Body>
+      <trac:GetReaderIDByDescription>
+         <!--Optional:-->
+         <trac:sDataSource>?</trac:sDataSource>
+         <trac:iSysId>?</trac:iSysId>
+         <trac:iLocation>?</trac:iLocation>
+         <!--Optional:-->
+         <trac:sReaderDesc>?</trac:sReaderDesc>
+         <trac:iReaderId>?</trac:iReaderId>
+         <!--Optional:-->
+         <trac:sErrorStr>?</trac:sErrorStr>
+      </trac:GetReaderIDByDescription>
+   </soap:Body>
+</soap:Envelope>]]></con:request><con:wsaConfig mustUnderstand="NONE" version="200508" action="http://tracksoftware.net/ACS2TrackWebSvcSoap/GetReaderIDByDescriptionRequest"/></con:call></con:operation><con:operation isOneWay="false" action="http://tracksoftware.net/GetTrackEmployee" name="GetTrackEmployee" bindingOperationName="GetTrackEmployee" type="Request-Response" inputName="" receivesAttachments="false" sendsAttachments="false" anonymous="optional"><con:settings/><con:call name="Request 1"><con:settings/><con:encoding>UTF-8</con:encoding><con:endpoint>http://localhost/ACStoTrackWS/ACS2TrackWebSvc.asmx</con:endpoint><con:request><![CDATA[<soap:Envelope xmlns:soap="http://www.w3.org/2003/05/soap-envelope" xmlns:trac="http://tracksoftware.net/" xmlns:xs="http://www.w3.org/2001/XMLSchema">
+   <soap:Header/>
+   <soap:Body>
+      <trac:GetTrackEmployee>
+         <!--Optional:-->
+         <trac:sDataSource>?</trac:sDataSource>
+         <!--Optional:-->
+         <trac:sExtCmpRef>?</trac:sExtCmpRef>
+         <!--Optional:-->
+         <trac:sLocationID>?</trac:sLocationID>
+         <!--Optional:-->
+         <trac:sExtEmpRef>?</trac:sExtEmpRef>
+         <!--Optional:-->
+         <trac:dsTrackPerson>
+            <xs:schema>
+               <!--Ignoring type [{http://www.w3.org/2001/XMLSchema}schema]-->
+            </xs:schema>
+            <!--You may enter ANY elements at this point-->
+         </trac:dsTrackPerson>
+         <!--Optional:-->
+         <trac:sErrorStr>?</trac:sErrorStr>
+      </trac:GetTrackEmployee>
+   </soap:Body>
+</soap:Envelope>]]></con:request><con:wsaConfig mustUnderstand="NONE" version="200508" action="http://tracksoftware.net/ACS2TrackWebSvcSoap/GetTrackEmployeeRequest"/></con:call></con:operation></con:interface><con:mockService port="8088" path="/mockACS2TrackWebSvcSoap" host="cencle10" name="ACS2TrackWebSvcSoap MockService"><con:settings><con:setting id="com.eviware.soapui.impl.wsdl.mock.WsdlMockService@require-soap-action">false</con:setting></con:settings><con:mockOperation name="AddAccessExpirationReason" interface="ACS2TrackWebSvcSoap" operation="AddAccessExpirationReason"><con:settings/><con:dispatchStyle>SEQUENCE</con:dispatchStyle><con:defaultResponse>Response 1</con:defaultResponse><con:response name="Response 1" encoding="UTF-8"><con:settings/><con:responseContent><![CDATA[<soapenv:Envelope xmlns:soapenv="http://schemas.xmlsoap.org/soap/envelope/" xmlns:trac="http://tracksoftware.net/">
+   <soapenv:Header/>
+   <soapenv:Body>
+      <trac:AddAccessExpirationReasonResponse>
+         <trac:AddAccessExpirationReasonResult>?</trac:AddAccessExpirationReasonResult>
+         <!--Optional:-->
+         <trac:sErrorStr>?</trac:sErrorStr>
+      </trac:AddAccessExpirationReasonResponse>
+   </soapenv:Body>
+</soapenv:Envelope>]]></con:responseContent><con:wsaConfig mustUnderstand="NONE" version="200508" action="http://tracksoftware.net/AddAccessExpirationReason"/></con:response><con:dispatchConfig/></con:mockOperation><con:mockOperation name="AddCompany" interface="ACS2TrackWebSvcSoap" operation="AddCompany"><con:settings/><con:dispatchStyle>SEQUENCE</con:dispatchStyle><con:defaultResponse>Default Success</con:defaultResponse><con:response name="Default Success" encoding="UTF-8"><con:settings/><con:responseContent><![CDATA[<soapenv:Envelope xmlns:soapenv="http://schemas.xmlsoap.org/soap/envelope/" xmlns:trac="http://tracksoftware.net/">
+   <soapenv:Header/>
+   <soapenv:Body>
+      <trac:AddCompanyResponse>
+         <trac:AddCompanyResult>0</trac:AddCompanyResult>
+         <!--Optional:-->
+         <trac:sErrorStr></trac:sErrorStr>
+      </trac:AddCompanyResponse>
+   </soapenv:Body>
+</soapenv:Envelope>]]></con:responseContent><con:wsaConfig mustUnderstand="NONE" version="200508" action="http://tracksoftware.net/AddCompany" generateMessageId="true"/></con:response><con:dispatchConfig/></con:mockOperation><con:mockOperation name="AddEvent" interface="ACS2TrackWebSvcSoap" operation="AddEvent"><con:settings/><con:dispatchStyle>SEQUENCE</con:dispatchStyle><con:defaultResponse>Response 1</con:defaultResponse><con:response name="Response 1" encoding="UTF-8"><con:settings/><con:responseContent><![CDATA[<soapenv:Envelope xmlns:soapenv="http://schemas.xmlsoap.org/soap/envelope/" xmlns:trac="http://tracksoftware.net/">
+   <soapenv:Header/>
+   <soapenv:Body>
+      <trac:AddEventResponse>
+         <trac:AddEventResult>?</trac:AddEventResult>
+         <!--Optional:-->
+         <trac:sErrorStr>?</trac:sErrorStr>
+      </trac:AddEventResponse>
+   </soapenv:Body>
+</soapenv:Envelope>]]></con:responseContent><con:wsaConfig mustUnderstand="NONE" version="200508" action="http://tracksoftware.net/AddEvent"/></con:response><con:dispatchConfig/></con:mockOperation><con:mockOperation name="AddEventByEmpID" interface="ACS2TrackWebSvcSoap" operation="AddEventByEmpID"><con:settings/><con:dispatchStyle>SEQUENCE</con:dispatchStyle><con:defaultResponse>Response 1</con:defaultResponse><con:response name="Response 1" encoding="UTF-8"><con:settings/><con:responseContent><![CDATA[<soapenv:Envelope xmlns:soapenv="http://schemas.xmlsoap.org/soap/envelope/" xmlns:trac="http://tracksoftware.net/">
+   <soapenv:Header/>
+   <soapenv:Body>
+      <trac:AddEventByEmpIDResponse>
+         <trac:AddEventByEmpIDResult>?</trac:AddEventByEmpIDResult>
+         <!--Optional:-->
+         <trac:sErrorStr>?</trac:sErrorStr>
+      </trac:AddEventByEmpIDResponse>
+   </soapenv:Body>
+</soapenv:Envelope>]]></con:responseContent><con:wsaConfig mustUnderstand="NONE" version="200508" action="http://tracksoftware.net/AddEventByEmpID"/></con:response><con:dispatchConfig/></con:mockOperation><con:mockOperation name="AddEventByExtEmpRef" interface="ACS2TrackWebSvcSoap" operation="AddEventByExtEmpRef"><con:settings/><con:dispatchStyle>SEQUENCE</con:dispatchStyle><con:defaultResponse>Response 1</con:defaultResponse><con:response name="Response 1" encoding="UTF-8"><con:settings/><con:responseContent><![CDATA[<soapenv:Envelope xmlns:soapenv="http://schemas.xmlsoap.org/soap/envelope/" xmlns:trac="http://tracksoftware.net/">
+   <soapenv:Header/>
+   <soapenv:Body>
+      <trac:AddEventByExtEmpRefResponse>
+         <trac:AddEventByExtEmpRefResult>?</trac:AddEventByExtEmpRefResult>
+         <!--Optional:-->
+         <trac:sErrorStr>?</trac:sErrorStr>
+      </trac:AddEventByExtEmpRefResponse>
+   </soapenv:Body>
+</soapenv:Envelope>]]></con:responseContent><con:wsaConfig mustUnderstand="NONE" version="200508" action="http://tracksoftware.net/AddEventByExtEmpRef"/></con:response><con:dispatchConfig/></con:mockOperation><con:mockOperation name="AddEventByExtEmpRef2" interface="ACS2TrackWebSvcSoap" operation="AddEventByExtEmpRef2"><con:settings/><con:dispatchStyle>SEQUENCE</con:dispatchStyle><con:defaultResponse>Response 1</con:defaultResponse><con:response name="Response 1" encoding="UTF-8"><con:settings/><con:responseContent><![CDATA[<soapenv:Envelope xmlns:soapenv="http://schemas.xmlsoap.org/soap/envelope/" xmlns:trac="http://tracksoftware.net/">
+   <soapenv:Header/>
+   <soapenv:Body>
+      <trac:AddEventByExtEmpRef2Response>
+         <trac:AddEventByExtEmpRef2Result>?</trac:AddEventByExtEmpRef2Result>
+         <!--Optional:-->
+         <trac:sErrorStr>?</trac:sErrorStr>
+      </trac:AddEventByExtEmpRef2Response>
+   </soapenv:Body>
+</soapenv:Envelope>]]></con:responseContent><con:wsaConfig mustUnderstand="NONE" version="200508" action="http://tracksoftware.net/AddEventByExtEmpRef2"/></con:response><con:dispatchConfig/></con:mockOperation><con:mockOperation name="AddEventByExtEmpRefByLocation" interface="ACS2TrackWebSvcSoap" operation="AddEventByExtEmpRefByLocation"><con:settings/><con:dispatchStyle>SEQUENCE</con:dispatchStyle><con:defaultResponse>Response 1</con:defaultResponse><con:response name="Response 1" encoding="UTF-8"><con:settings/><con:responseContent><![CDATA[<soapenv:Envelope xmlns:soapenv="http://schemas.xmlsoap.org/soap/envelope/" xmlns:trac="http://tracksoftware.net/">
+   <soapenv:Header/>
+   <soapenv:Body>
+      <trac:AddEventByExtEmpRefByLocationResponse>
+         <trac:AddEventByExtEmpRefByLocationResult>?</trac:AddEventByExtEmpRefByLocationResult>
+         <!--Optional:-->
+         <trac:sErrorStr>?</trac:sErrorStr>
+      </trac:AddEventByExtEmpRefByLocationResponse>
+   </soapenv:Body>
+</soapenv:Envelope>]]></con:responseContent><con:wsaConfig mustUnderstand="NONE" version="200508" action="http://tracksoftware.net/AddEventByExtEmpRefByLocation"/></con:response><con:dispatchConfig/></con:mockOperation><con:mockOperation name="AddEventByExtEmpRefSimple" interface="ACS2TrackWebSvcSoap" operation="AddEventByExtEmpRefSimple"><con:settings/><con:dispatchStyle>SEQUENCE</con:dispatchStyle><con:defaultResponse>Response 1</con:defaultResponse><con:response name="Response 1" encoding="UTF-8"><con:settings/><con:responseContent><![CDATA[<soapenv:Envelope xmlns:soapenv="http://schemas.xmlsoap.org/soap/envelope/" xmlns:trac="http://tracksoftware.net/">
+   <soapenv:Header/>
+   <soapenv:Body>
+      <trac:AddEventByExtEmpRefSimpleResponse>
+         <trac:AddEventByExtEmpRefSimpleResult>?</trac:AddEventByExtEmpRefSimpleResult>
+         <!--Optional:-->
+         <trac:sErrorStr>?</trac:sErrorStr>
+      </trac:AddEventByExtEmpRefSimpleResponse>
+   </soapenv:Body>
+</soapenv:Envelope>]]></con:responseContent><con:wsaConfig mustUnderstand="NONE" version="200508" action="http://tracksoftware.net/AddEventByExtEmpRefSimple"/></con:response><con:dispatchConfig/></con:mockOperation><con:mockOperation name="AddOrUpdateDeviceControlUnits" interface="ACS2TrackWebSvcSoap" operation="AddOrUpdateDeviceControlUnits"><con:settings/><con:dispatchStyle>SEQUENCE</con:dispatchStyle><con:defaultResponse>Response 1</con:defaultResponse><con:response name="Response 1" encoding="UTF-8"><con:settings/><con:responseContent><![CDATA[<soapenv:Envelope xmlns:soapenv="http://schemas.xmlsoap.org/soap/envelope/" xmlns:trac="http://tracksoftware.net/">
+   <soapenv:Header/>
+   <soapenv:Body>
+      <trac:AddOrUpdateDeviceControlUnitsResponse>
+         <trac:AddOrUpdateDeviceControlUnitsResult>?</trac:AddOrUpdateDeviceControlUnitsResult>
+         <!--Optional:-->
+         <trac:sErrorStr>?</trac:sErrorStr>
+      </trac:AddOrUpdateDeviceControlUnitsResponse>
+   </soapenv:Body>
+</soapenv:Envelope>]]></con:responseContent><con:wsaConfig mustUnderstand="NONE" version="200508" action="http://tracksoftware.net/AddOrUpdateDeviceControlUnits"/></con:response><con:dispatchConfig/></con:mockOperation><con:mockOperation name="AddPerson" interface="ACS2TrackWebSvcSoap" operation="AddPerson"><con:settings/><con:dispatchStyle>SEQUENCE</con:dispatchStyle><con:defaultResponse>Response 1</con:defaultResponse><con:response name="Response 1" encoding="UTF-8"><con:settings/><con:responseContent><![CDATA[<soapenv:Envelope xmlns:soapenv="http://schemas.xmlsoap.org/soap/envelope/" xmlns:trac="http://tracksoftware.net/">
+   <soapenv:Header/>
+   <soapenv:Body>
+      <trac:AddPersonResponse>
+         <trac:AddPersonResult>true</trac:AddPersonResult>
+         <!--Optional:-->
+         <trac:sErrorStr></trac:sErrorStr>
+      </trac:AddPersonResponse>
+   </soapenv:Body>
+</soapenv:Envelope>]]></con:responseContent><con:wsaConfig mustUnderstand="NONE" version="200508" action="http://tracksoftware.net/AddPerson"/></con:response><con:dispatchConfig/></con:mockOperation><con:mockOperation name="AddPersonByEmpID" interface="ACS2TrackWebSvcSoap" operation="AddPersonByEmpID"><con:settings/><con:dispatchStyle>SEQUENCE</con:dispatchStyle><con:defaultResponse>Response 1</con:defaultResponse><con:response name="Response 1" encoding="UTF-8"><con:settings/><con:responseContent><![CDATA[<soapenv:Envelope xmlns:soapenv="http://schemas.xmlsoap.org/soap/envelope/" xmlns:trac="http://tracksoftware.net/">
+   <soapenv:Header/>
+   <soapenv:Body>
+      <trac:AddPersonByEmpIDResponse>
+         <trac:AddPersonByEmpIDResult>?</trac:AddPersonByEmpIDResult>
+         <!--Optional:-->
+         <trac:sErrorStr>?</trac:sErrorStr>
+      </trac:AddPersonByEmpIDResponse>
+   </soapenv:Body>
+</soapenv:Envelope>]]></con:responseContent><con:wsaConfig mustUnderstand="NONE" version="200508" action="http://tracksoftware.net/AddPersonByEmpID"/></con:response><con:dispatchConfig/></con:mockOperation><con:mockOperation name="AddReaderDevice" interface="ACS2TrackWebSvcSoap" operation="AddReaderDevice"><con:settings/><con:dispatchStyle>SEQUENCE</con:dispatchStyle><con:defaultResponse>Response 1</con:defaultResponse><con:response name="Response 1" encoding="UTF-8"><con:settings/><con:responseContent><![CDATA[<soapenv:Envelope xmlns:soapenv="http://schemas.xmlsoap.org/soap/envelope/" xmlns:trac="http://tracksoftware.net/">
+   <soapenv:Header/>
+   <soapenv:Body>
+      <trac:AddReaderDeviceResponse>
+         <trac:AddReaderDeviceResult>?</trac:AddReaderDeviceResult>
+         <!--Optional:-->
+         <trac:sErrorStr>?</trac:sErrorStr>
+      </trac:AddReaderDeviceResponse>
+   </soapenv:Body>
+</soapenv:Envelope>]]></con:responseContent><con:wsaConfig mustUnderstand="NONE" version="200508" action="http://tracksoftware.net/AddReaderDevice"/></con:response><con:dispatchConfig/></con:mockOperation><con:mockOperation name="AddReaderDeviceByDescription" interface="ACS2TrackWebSvcSoap" operation="AddReaderDeviceByDescription"><con:settings/><con:dispatchStyle>SEQUENCE</con:dispatchStyle><con:defaultResponse>Response 1</con:defaultResponse><con:response name="Response 1" encoding="UTF-8"><con:settings/><con:responseContent><![CDATA[<soapenv:Envelope xmlns:soapenv="http://schemas.xmlsoap.org/soap/envelope/" xmlns:trac="http://tracksoftware.net/">
+   <soapenv:Header/>
+   <soapenv:Body>
+      <trac:AddReaderDeviceByDescriptionResponse>
+         <trac:AddReaderDeviceByDescriptionResult>?</trac:AddReaderDeviceByDescriptionResult>
+         <!--Optional:-->
+         <trac:sErrorStr>?</trac:sErrorStr>
+      </trac:AddReaderDeviceByDescriptionResponse>
+   </soapenv:Body>
+</soapenv:Envelope>]]></con:responseContent><con:wsaConfig mustUnderstand="NONE" version="200508" action="http://tracksoftware.net/AddReaderDeviceByDescription"/></con:response><con:dispatchConfig/></con:mockOperation><con:mockOperation name="GetCompanyCode" interface="ACS2TrackWebSvcSoap" operation="GetCompanyCode"><con:settings/><con:dispatchStyle>SEQUENCE</con:dispatchStyle><con:defaultResponse>Response 1</con:defaultResponse><con:response name="Response 1" encoding="UTF-8"><con:settings/><con:responseContent><![CDATA[<soapenv:Envelope xmlns:soapenv="http://schemas.xmlsoap.org/soap/envelope/" xmlns:trac="http://tracksoftware.net/">
+   <soapenv:Header/>
+   <soapenv:Body>
+      <trac:GetCompanyCodeResponse>
+         <trac:GetCompanyCodeResult>?</trac:GetCompanyCodeResult>
+         <!--Optional:-->
+         <trac:sCompanyCode>?</trac:sCompanyCode>
+         <!--Optional:-->
+         <trac:sErrorStr>?</trac:sErrorStr>
+      </trac:GetCompanyCodeResponse>
+   </soapenv:Body>
+</soapenv:Envelope>]]></con:responseContent><con:wsaConfig mustUnderstand="NONE" version="200508" action="http://tracksoftware.net/GetCompanyCode"/></con:response><con:dispatchConfig/></con:mockOperation><con:mockOperation name="GetEmployeeID" interface="ACS2TrackWebSvcSoap" operation="GetEmployeeID"><con:settings/><con:dispatchStyle>SEQUENCE</con:dispatchStyle><con:defaultResponse>Response 1</con:defaultResponse><con:response name="Response 1" encoding="UTF-8"><con:settings/><con:responseContent><![CDATA[<soapenv:Envelope xmlns:soapenv="http://schemas.xmlsoap.org/soap/envelope/" xmlns:trac="http://tracksoftware.net/">
+   <soapenv:Header/>
+   <soapenv:Body>
+      <trac:GetEmployeeIDResponse>
+         <trac:GetEmployeeIDResult>?</trac:GetEmployeeIDResult>
+         <!--Optional:-->
+         <trac:sEmpID>?</trac:sEmpID>
+         <!--Optional:-->
+         <trac:sErrorStr>?</trac:sErrorStr>
+      </trac:GetEmployeeIDResponse>
+   </soapenv:Body>
+</soapenv:Envelope>]]></con:responseContent><con:wsaConfig mustUnderstand="NONE" version="200508" action="http://tracksoftware.net/GetEmployeeID"/></con:response><con:dispatchConfig/></con:mockOperation><con:mockOperation name="GetInOutIndicator" interface="ACS2TrackWebSvcSoap" operation="GetInOutIndicator"><con:settings/><con:dispatchStyle>SEQUENCE</con:dispatchStyle><con:defaultResponse>Response 1</con:defaultResponse><con:response name="Response 1" encoding="UTF-8"><con:settings/><con:responseContent><![CDATA[<soapenv:Envelope xmlns:soapenv="http://schemas.xmlsoap.org/soap/envelope/" xmlns:trac="http://tracksoftware.net/">
+   <soapenv:Header/>
+   <soapenv:Body>
+      <trac:GetInOutIndicatorResponse>
+         <trac:GetInOutIndicatorResult>?</trac:GetInOutIndicatorResult>
+         <trac:iRetVal>?</trac:iRetVal>
+         <!--Optional:-->
+         <trac:sErrorStr>?</trac:sErrorStr>
+      </trac:GetInOutIndicatorResponse>
+   </soapenv:Body>
+</soapenv:Envelope>]]></con:responseContent><con:wsaConfig mustUnderstand="NONE" version="200508" action="http://tracksoftware.net/GetInOutIndicator"/></con:response><con:dispatchConfig/></con:mockOperation><con:mockOperation name="GetReaderIDByDescription" interface="ACS2TrackWebSvcSoap" operation="GetReaderIDByDescription"><con:settings/><con:dispatchStyle>SEQUENCE</con:dispatchStyle><con:defaultResponse>Response 1</con:defaultResponse><con:response name="Response 1" encoding="UTF-8"><con:settings/><con:responseContent><![CDATA[<soapenv:Envelope xmlns:soapenv="http://schemas.xmlsoap.org/soap/envelope/" xmlns:trac="http://tracksoftware.net/">
+   <soapenv:Header/>
+   <soapenv:Body>
+      <trac:GetReaderIDByDescriptionResponse>
+         <trac:GetReaderIDByDescriptionResult>?</trac:GetReaderIDByDescriptionResult>
+         <trac:iReaderId>?</trac:iReaderId>
+         <!--Optional:-->
+         <trac:sErrorStr>?</trac:sErrorStr>
+      </trac:GetReaderIDByDescriptionResponse>
+   </soapenv:Body>
+</soapenv:Envelope>]]></con:responseContent><con:wsaConfig mustUnderstand="NONE" version="200508" action="http://tracksoftware.net/GetReaderIDByDescription"/></con:response><con:dispatchConfig/></con:mockOperation><con:mockOperation name="GetTrackEmployee" interface="ACS2TrackWebSvcSoap" operation="GetTrackEmployee"><con:settings/><con:dispatchStyle>SEQUENCE</con:dispatchStyle><con:defaultResponse>Response 1</con:defaultResponse><con:response name="Response 1" encoding="UTF-8"><con:settings/><con:responseContent><![CDATA[<soapenv:Envelope xmlns:soapenv="http://schemas.xmlsoap.org/soap/envelope/" xmlns:trac="http://tracksoftware.net/" xmlns:xs="http://www.w3.org/2001/XMLSchema">
+   <soapenv:Header/>
+   <soapenv:Body>
+      <trac:GetTrackEmployeeResponse>
+         <trac:GetTrackEmployeeResult>?</trac:GetTrackEmployeeResult>
+         <!--Optional:-->
+         <trac:dsTrackPerson>
+            <xs:schema>
+               <!--Ignoring type [{http://www.w3.org/2001/XMLSchema}schema]-->
+            </xs:schema>
+            <!--You may enter ANY elements at this point-->
+         </trac:dsTrackPerson>
+         <!--Optional:-->
+         <trac:sErrorStr>?</trac:sErrorStr>
+      </trac:GetTrackEmployeeResponse>
+   </soapenv:Body>
+</soapenv:Envelope>]]></con:responseContent><con:wsaConfig mustUnderstand="NONE" version="200508" action="http://tracksoftware.net/GetTrackEmployee"/></con:response><con:dispatchConfig/></con:mockOperation><con:properties/></con:mockService><con:mockService port="8088" path="/mockACS2TrackWebSvcSoap12" host="cencle10" name="ACS2TrackWebSvcSoap12 MockService"><con:settings><con:setting id="com.eviware.soapui.impl.wsdl.mock.WsdlMockService@require-soap-action">false</con:setting></con:settings><con:mockOperation name="AddAccessExpirationReason" interface="ACS2TrackWebSvcSoap12" operation="AddAccessExpirationReason"><con:settings/><con:dispatchStyle>SEQUENCE</con:dispatchStyle><con:defaultResponse>Response 1</con:defaultResponse><con:response name="Response 1" encoding="UTF-8"><con:settings/><con:responseContent><![CDATA[<soap:Envelope xmlns:soap="http://www.w3.org/2003/05/soap-envelope" xmlns:trac="http://tracksoftware.net/">
+   <soap:Header/>
+   <soap:Body>
+      <trac:AddAccessExpirationReasonResponse>
+         <trac:AddAccessExpirationReasonResult>?</trac:AddAccessExpirationReasonResult>
+         <!--Optional:-->
+         <trac:sErrorStr>?</trac:sErrorStr>
+      </trac:AddAccessExpirationReasonResponse>
+   </soap:Body>
+</soap:Envelope>]]></con:responseContent><con:wsaConfig mustUnderstand="NONE" version="200508" action="http://tracksoftware.net/ACS2TrackWebSvcSoap/AddAccessExpirationReasonResponse"/></con:response><con:dispatchConfig/></con:mockOperation><con:mockOperation name="AddCompany" interface="ACS2TrackWebSvcSoap12" operation="AddCompany"><con:settings/><con:dispatchStyle>SEQUENCE</con:dispatchStyle><con:defaultResponse>Response 1</con:defaultResponse><con:response name="Response 1" encoding="UTF-8"><con:settings/><con:responseContent><![CDATA[<soap:Envelope xmlns:soap="http://www.w3.org/2003/05/soap-envelope" xmlns:trac="http://tracksoftware.net/">
+   <soap:Header/>
+   <soap:Body>
+      <trac:AddCompanyResponse>
+         <trac:AddCompanyResult>true</trac:AddCompanyResult>
+         <!--Optional:-->
+         <trac:sErrorStr></trac:sErrorStr>
+      </trac:AddCompanyResponse>
+   </soap:Body>
+</soap:Envelope>]]></con:responseContent><con:wsaConfig mustUnderstand="NONE" version="200508" action="http://tracksoftware.net/ACS2TrackWebSvcSoap/AddCompanyResponse"/></con:response><con:dispatchConfig/></con:mockOperation><con:mockOperation name="AddEvent" interface="ACS2TrackWebSvcSoap12" operation="AddEvent"><con:settings/><con:dispatchStyle>SEQUENCE</con:dispatchStyle><con:defaultResponse>Response 1</con:defaultResponse><con:response name="Response 1" encoding="UTF-8"><con:settings/><con:responseContent><![CDATA[<soap:Envelope xmlns:soap="http://www.w3.org/2003/05/soap-envelope" xmlns:trac="http://tracksoftware.net/">
+   <soap:Header/>
+   <soap:Body>
+      <trac:AddEventResponse>
+         <trac:AddEventResult>?</trac:AddEventResult>
+         <!--Optional:-->
+         <trac:sErrorStr>?</trac:sErrorStr>
+      </trac:AddEventResponse>
+   </soap:Body>
+</soap:Envelope>]]></con:responseContent><con:wsaConfig mustUnderstand="NONE" version="200508" action="http://tracksoftware.net/ACS2TrackWebSvcSoap/AddEventResponse"/></con:response><con:dispatchConfig/></con:mockOperation><con:mockOperation name="AddEventByEmpID" interface="ACS2TrackWebSvcSoap12" operation="AddEventByEmpID"><con:settings/><con:dispatchStyle>SEQUENCE</con:dispatchStyle><con:defaultResponse>Response 1</con:defaultResponse><con:response name="Response 1" encoding="UTF-8"><con:settings/><con:responseContent><![CDATA[<soap:Envelope xmlns:soap="http://www.w3.org/2003/05/soap-envelope" xmlns:trac="http://tracksoftware.net/">
+   <soap:Header/>
+   <soap:Body>
+      <trac:AddEventByEmpIDResponse>
+         <trac:AddEventByEmpIDResult>?</trac:AddEventByEmpIDResult>
+         <!--Optional:-->
+         <trac:sErrorStr>?</trac:sErrorStr>
+      </trac:AddEventByEmpIDResponse>
+   </soap:Body>
+</soap:Envelope>]]></con:responseContent><con:wsaConfig mustUnderstand="NONE" version="200508" action="http://tracksoftware.net/ACS2TrackWebSvcSoap/AddEventByEmpIDResponse"/></con:response><con:dispatchConfig/></con:mockOperation><con:mockOperation name="AddEventByExtEmpRef" interface="ACS2TrackWebSvcSoap12" operation="AddEventByExtEmpRef"><con:settings/><con:dispatchStyle>SEQUENCE</con:dispatchStyle><con:defaultResponse>Response 1</con:defaultResponse><con:response name="Response 1" encoding="UTF-8"><con:settings/><con:responseContent><![CDATA[<soap:Envelope xmlns:soap="http://www.w3.org/2003/05/soap-envelope" xmlns:trac="http://tracksoftware.net/">
+   <soap:Header/>
+   <soap:Body>
+      <trac:AddEventByExtEmpRefResponse>
+         <trac:AddEventByExtEmpRefResult>?</trac:AddEventByExtEmpRefResult>
+         <!--Optional:-->
+         <trac:sErrorStr>?</trac:sErrorStr>
+      </trac:AddEventByExtEmpRefResponse>
+   </soap:Body>
+</soap:Envelope>]]></con:responseContent><con:wsaConfig mustUnderstand="NONE" version="200508" action="http://tracksoftware.net/ACS2TrackWebSvcSoap/AddEventByExtEmpRefResponse"/></con:response><con:dispatchConfig/></con:mockOperation><con:mockOperation name="AddEventByExtEmpRef2" interface="ACS2TrackWebSvcSoap12" operation="AddEventByExtEmpRef2"><con:settings/><con:dispatchStyle>SEQUENCE</con:dispatchStyle><con:defaultResponse>Response 1</con:defaultResponse><con:response name="Response 1" encoding="UTF-8"><con:settings/><con:responseContent><![CDATA[<soap:Envelope xmlns:soap="http://www.w3.org/2003/05/soap-envelope" xmlns:trac="http://tracksoftware.net/">
+   <soap:Header/>
+   <soap:Body>
+      <trac:AddEventByExtEmpRef2Response>
+         <trac:AddEventByExtEmpRef2Result>?</trac:AddEventByExtEmpRef2Result>
+         <!--Optional:-->
+         <trac:sErrorStr>?</trac:sErrorStr>
+      </trac:AddEventByExtEmpRef2Response>
+   </soap:Body>
+</soap:Envelope>]]></con:responseContent><con:wsaConfig mustUnderstand="NONE" version="200508" action="http://tracksoftware.net/ACS2TrackWebSvcSoap/AddEventByExtEmpRef2Response"/></con:response><con:dispatchConfig/></con:mockOperation><con:mockOperation name="AddEventByExtEmpRefByLocation" interface="ACS2TrackWebSvcSoap12" operation="AddEventByExtEmpRefByLocation"><con:settings/><con:dispatchStyle>SEQUENCE</con:dispatchStyle><con:defaultResponse>Response 1</con:defaultResponse><con:response name="Response 1" encoding="UTF-8"><con:settings/><con:responseContent><![CDATA[<soap:Envelope xmlns:soap="http://www.w3.org/2003/05/soap-envelope" xmlns:trac="http://tracksoftware.net/">
+   <soap:Header/>
+   <soap:Body>
+      <trac:AddEventByExtEmpRefByLocationResponse>
+         <trac:AddEventByExtEmpRefByLocationResult>true</trac:AddEventByExtEmpRefByLocationResult>
+         <!--Optional:-->
+         <trac:sErrorStr></trac:sErrorStr>
+      </trac:AddEventByExtEmpRefByLocationResponse>
+   </soap:Body>
+</soap:Envelope>]]></con:responseContent><con:wsaConfig mustUnderstand="NONE" version="200508" action="http://tracksoftware.net/ACS2TrackWebSvcSoap/AddEventByExtEmpRefByLocationResponse"/></con:response><con:dispatchConfig/></con:mockOperation><con:mockOperation name="AddEventByExtEmpRefSimple" interface="ACS2TrackWebSvcSoap12" operation="AddEventByExtEmpRefSimple"><con:settings/><con:dispatchStyle>SEQUENCE</con:dispatchStyle><con:defaultResponse>Response 1</con:defaultResponse><con:response name="Response 1" encoding="UTF-8"><con:settings/><con:responseContent><![CDATA[<soap:Envelope xmlns:soap="http://www.w3.org/2003/05/soap-envelope" xmlns:trac="http://tracksoftware.net/">
+   <soap:Header/>
+   <soap:Body>
+      <trac:AddEventByExtEmpRefSimpleResponse>
+         <trac:AddEventByExtEmpRefSimpleResult>?</trac:AddEventByExtEmpRefSimpleResult>
+         <!--Optional:-->
+         <trac:sErrorStr>?</trac:sErrorStr>
+      </trac:AddEventByExtEmpRefSimpleResponse>
+   </soap:Body>
+</soap:Envelope>]]></con:responseContent><con:wsaConfig mustUnderstand="NONE" version="200508" action="http://tracksoftware.net/ACS2TrackWebSvcSoap/AddEventByExtEmpRefSimpleResponse"/></con:response><con:dispatchConfig/></con:mockOperation><con:mockOperation name="AddOrUpdateDeviceControlUnits" interface="ACS2TrackWebSvcSoap12" operation="AddOrUpdateDeviceControlUnits"><con:settings/><con:dispatchStyle>SEQUENCE</con:dispatchStyle><con:defaultResponse>Response 1</con:defaultResponse><con:response name="Response 1" encoding="UTF-8"><con:settings/><con:responseContent><![CDATA[<soap:Envelope xmlns:soap="http://www.w3.org/2003/05/soap-envelope" xmlns:trac="http://tracksoftware.net/">
+   <soap:Header/>
+   <soap:Body>
+      <trac:AddOrUpdateDeviceControlUnitsResponse>
+         <trac:AddOrUpdateDeviceControlUnitsResult>true</trac:AddOrUpdateDeviceControlUnitsResult>
+         <!--Optional:-->
+         <trac:sErrorStr></trac:sErrorStr>
+      </trac:AddOrUpdateDeviceControlUnitsResponse>
+   </soap:Body>
+</soap:Envelope>]]></con:responseContent><con:wsaConfig mustUnderstand="NONE" version="200508" action="http://tracksoftware.net/ACS2TrackWebSvcSoap/AddOrUpdateDeviceControlUnitsResponse"/></con:response><con:dispatchConfig/></con:mockOperation><con:mockOperation name="AddPerson" interface="ACS2TrackWebSvcSoap12" operation="AddPerson"><con:settings/><con:dispatchStyle>SEQUENCE</con:dispatchStyle><con:defaultResponse>Response 1</con:defaultResponse><con:response name="Response 1" encoding="UTF-8"><con:settings/><con:responseContent><![CDATA[<soap:Envelope xmlns:soap="http://www.w3.org/2003/05/soap-envelope" xmlns:trac="http://tracksoftware.net/">
+   <soap:Header/>
+   <soap:Body>
+      <trac:AddPersonResponse>
+         <trac:AddPersonResult>true</trac:AddPersonResult>
+         <!--Optional:-->
+         <trac:sErrorStr></trac:sErrorStr>
+      </trac:AddPersonResponse>
+   </soap:Body>
+</soap:Envelope>]]></con:responseContent><con:wsaConfig mustUnderstand="NONE" version="200508" action="http://tracksoftware.net/ACS2TrackWebSvcSoap/AddPersonResponse"/></con:response><con:dispatchConfig/></con:mockOperation><con:mockOperation name="AddPersonByEmpID" interface="ACS2TrackWebSvcSoap12" operation="AddPersonByEmpID"><con:settings/><con:dispatchStyle>SEQUENCE</con:dispatchStyle><con:defaultResponse>Response 1</con:defaultResponse><con:response name="Response 1" encoding="UTF-8"><con:settings/><con:responseContent><![CDATA[<soap:Envelope xmlns:soap="http://www.w3.org/2003/05/soap-envelope" xmlns:trac="http://tracksoftware.net/">
+   <soap:Header/>
+   <soap:Body>
+      <trac:AddPersonByEmpIDResponse>
+         <trac:AddPersonByEmpIDResult>?</trac:AddPersonByEmpIDResult>
+         <!--Optional:-->
+         <trac:sErrorStr>?</trac:sErrorStr>
+      </trac:AddPersonByEmpIDResponse>
+   </soap:Body>
+</soap:Envelope>]]></con:responseContent><con:wsaConfig mustUnderstand="NONE" version="200508" action="http://tracksoftware.net/ACS2TrackWebSvcSoap/AddPersonByEmpIDResponse"/></con:response><con:dispatchConfig/></con:mockOperation><con:mockOperation name="AddReaderDevice" interface="ACS2TrackWebSvcSoap12" operation="AddReaderDevice"><con:settings/><con:dispatchStyle>SEQUENCE</con:dispatchStyle><con:defaultResponse>Response 1</con:defaultResponse><con:response name="Response 1" encoding="UTF-8"><con:settings/><con:responseContent><![CDATA[<soap:Envelope xmlns:soap="http://www.w3.org/2003/05/soap-envelope" xmlns:trac="http://tracksoftware.net/">
+   <soap:Header/>
+   <soap:Body>
+      <trac:AddReaderDeviceResponse>
+         <trac:AddReaderDeviceResult>true</trac:AddReaderDeviceResult>
+         <!--Optional:-->
+         <trac:sErrorStr></trac:sErrorStr>
+      </trac:AddReaderDeviceResponse>
+   </soap:Body>
+</soap:Envelope>]]></con:responseContent><con:wsaConfig mustUnderstand="NONE" version="200508" action="http://tracksoftware.net/ACS2TrackWebSvcSoap/AddReaderDeviceResponse"/></con:response><con:dispatchConfig/></con:mockOperation><con:mockOperation name="AddReaderDeviceByDescription" interface="ACS2TrackWebSvcSoap12" operation="AddReaderDeviceByDescription"><con:settings/><con:dispatchStyle>SEQUENCE</con:dispatchStyle><con:defaultResponse>Response 1</con:defaultResponse><con:response name="Response 1" encoding="UTF-8"><con:settings/><con:responseContent><![CDATA[<soap:Envelope xmlns:soap="http://www.w3.org/2003/05/soap-envelope" xmlns:trac="http://tracksoftware.net/">
+   <soap:Header/>
+   <soap:Body>
+      <trac:AddReaderDeviceByDescriptionResponse>
+         <trac:AddReaderDeviceByDescriptionResult>?</trac:AddReaderDeviceByDescriptionResult>
+         <!--Optional:-->
+         <trac:sErrorStr>?</trac:sErrorStr>
+      </trac:AddReaderDeviceByDescriptionResponse>
+   </soap:Body>
+</soap:Envelope>]]></con:responseContent><con:wsaConfig mustUnderstand="NONE" version="200508" action="http://tracksoftware.net/ACS2TrackWebSvcSoap/AddReaderDeviceByDescriptionResponse"/></con:response><con:dispatchConfig/></con:mockOperation><con:mockOperation name="GetCompanyCode" interface="ACS2TrackWebSvcSoap12" operation="GetCompanyCode"><con:settings/><con:dispatchStyle>SEQUENCE</con:dispatchStyle><con:defaultResponse>Response 1</con:defaultResponse><con:response name="Response 1" encoding="UTF-8"><con:settings/><con:responseContent><![CDATA[<soap:Envelope xmlns:soap="http://www.w3.org/2003/05/soap-envelope" xmlns:trac="http://tracksoftware.net/">
+   <soap:Header/>
+   <soap:Body>
+      <trac:GetCompanyCodeResponse>
+         <trac:GetCompanyCodeResult>?</trac:GetCompanyCodeResult>
+         <!--Optional:-->
+         <trac:sCompanyCode>?</trac:sCompanyCode>
+         <!--Optional:-->
+         <trac:sErrorStr>?</trac:sErrorStr>
+      </trac:GetCompanyCodeResponse>
+   </soap:Body>
+</soap:Envelope>]]></con:responseContent><con:wsaConfig mustUnderstand="NONE" version="200508" action="http://tracksoftware.net/ACS2TrackWebSvcSoap/GetCompanyCodeResponse"/></con:response><con:dispatchConfig/></con:mockOperation><con:mockOperation name="GetEmployeeID" interface="ACS2TrackWebSvcSoap12" operation="GetEmployeeID"><con:settings/><con:dispatchStyle>SEQUENCE</con:dispatchStyle><con:defaultResponse>Response 1</con:defaultResponse><con:response name="Response 1" encoding="UTF-8"><con:settings/><con:responseContent><![CDATA[<soap:Envelope xmlns:soap="http://www.w3.org/2003/05/soap-envelope" xmlns:trac="http://tracksoftware.net/">
+   <soap:Header/>
+   <soap:Body>
+      <trac:GetEmployeeIDResponse>
+         <trac:GetEmployeeIDResult>?</trac:GetEmployeeIDResult>
+         <!--Optional:-->
+         <trac:sEmpID>?</trac:sEmpID>
+         <!--Optional:-->
+         <trac:sErrorStr>?</trac:sErrorStr>
+      </trac:GetEmployeeIDResponse>
+   </soap:Body>
+</soap:Envelope>]]></con:responseContent><con:wsaConfig mustUnderstand="NONE" version="200508" action="http://tracksoftware.net/ACS2TrackWebSvcSoap/GetEmployeeIDResponse"/></con:response><con:dispatchConfig/></con:mockOperation><con:mockOperation name="GetInOutIndicator" interface="ACS2TrackWebSvcSoap12" operation="GetInOutIndicator"><con:settings/><con:dispatchStyle>SEQUENCE</con:dispatchStyle><con:defaultResponse>Response 1</con:defaultResponse><con:response name="Response 1" encoding="UTF-8"><con:settings/><con:responseContent><![CDATA[<soap:Envelope xmlns:soap="http://www.w3.org/2003/05/soap-envelope" xmlns:trac="http://tracksoftware.net/">
+   <soap:Header/>
+   <soap:Body>
+      <trac:GetInOutIndicatorResponse>
+         <trac:GetInOutIndicatorResult>?</trac:GetInOutIndicatorResult>
+         <trac:iRetVal>?</trac:iRetVal>
+         <!--Optional:-->
+         <trac:sErrorStr>?</trac:sErrorStr>
+      </trac:GetInOutIndicatorResponse>
+   </soap:Body>
+</soap:Envelope>]]></con:responseContent><con:wsaConfig mustUnderstand="NONE" version="200508" action="http://tracksoftware.net/ACS2TrackWebSvcSoap/GetInOutIndicatorResponse"/></con:response><con:dispatchConfig/></con:mockOperation><con:mockOperation name="GetReaderIDByDescription" interface="ACS2TrackWebSvcSoap12" operation="GetReaderIDByDescription"><con:settings/><con:dispatchStyle>SEQUENCE</con:dispatchStyle><con:defaultResponse>Response 1</con:defaultResponse><con:response name="Response 1" encoding="UTF-8"><con:settings/><con:responseContent><![CDATA[<soap:Envelope xmlns:soap="http://www.w3.org/2003/05/soap-envelope" xmlns:trac="http://tracksoftware.net/">
+   <soap:Header/>
+   <soap:Body>
+      <trac:GetReaderIDByDescriptionResponse>
+         <trac:GetReaderIDByDescriptionResult>?</trac:GetReaderIDByDescriptionResult>
+         <trac:iReaderId>?</trac:iReaderId>
+         <!--Optional:-->
+         <trac:sErrorStr>?</trac:sErrorStr>
+      </trac:GetReaderIDByDescriptionResponse>
+   </soap:Body>
+</soap:Envelope>]]></con:responseContent><con:wsaConfig mustUnderstand="NONE" version="200508" action="http://tracksoftware.net/ACS2TrackWebSvcSoap/GetReaderIDByDescriptionResponse"/></con:response><con:dispatchConfig/></con:mockOperation><con:mockOperation name="GetTrackEmployee" interface="ACS2TrackWebSvcSoap12" operation="GetTrackEmployee"><con:settings/><con:dispatchStyle>SEQUENCE</con:dispatchStyle><con:defaultResponse>Response 1</con:defaultResponse><con:response name="Response 1" encoding="UTF-8"><con:settings/><con:responseContent><![CDATA[<soap:Envelope xmlns:soap="http://www.w3.org/2003/05/soap-envelope" xmlns:trac="http://tracksoftware.net/" xmlns:xs="http://www.w3.org/2001/XMLSchema">
+   <soap:Header/>
+   <soap:Body>
+      <trac:GetTrackEmployeeResponse>
+         <trac:GetTrackEmployeeResult>?</trac:GetTrackEmployeeResult>
+         <!--Optional:-->
+         <trac:dsTrackPerson>
+            <xs:schema>
+               <!--Ignoring type [{http://www.w3.org/2001/XMLSchema}schema]-->
+            </xs:schema>
+            <!--You may enter ANY elements at this point-->
+         </trac:dsTrackPerson>
+         <!--Optional:-->
+         <trac:sErrorStr>?</trac:sErrorStr>
+      </trac:GetTrackEmployeeResponse>
+   </soap:Body>
+</soap:Envelope>]]></con:responseContent><con:wsaConfig mustUnderstand="NONE" version="200508" action="http://tracksoftware.net/ACS2TrackWebSvcSoap/GetTrackEmployeeResponse"/></con:response><con:dispatchConfig/></con:mockOperation><con:properties/></con:mockService><con:properties/><con:wssContainer/></con:soapui-project>

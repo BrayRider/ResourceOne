@@ -1,0 +1,710 @@
+﻿body
+{
+    background-color: #5c87b2;
+    font-size: 75%;
+    font-family: Verdana,Tahoma,Arial, "Helvetica Neue" ,Helvetica,Sans-Serif;
+    margin: 0;
+    padding: 0;
+    color: #333;
+}
+a:link
+{
+    color: #034af3;
+    text-decoration: underline;
+}
+a:visited
+{
+    color: #505abc;
+}
+a:hover
+{
+    color: #1d60ff;
+    text-decoration: none;
+}
+a:active
+{
+    color: #12eb87;
+}
+p, ul
+{
+    margin-bottom: 20px;
+    line-height: 1.6em;
+}
+h1, h2, h3, h4, h5, h6
+{
+    font-size: 1.5em;
+    color: #000;
+}
+h1
+{
+    font-size: 2em;
+    padding-bottom: 0;
+    margin-bottom: 0;
+}
+h2
+{
+    padding: 0 0 10px 0;
+}
+h3
+{
+    font-size: 1.2em;
+}
+h4
+{
+    font-size: 1.1em;
+}
+h5, h6
+{
+    font-size: 1em;
+}
+.rightColumn > h1, .rightColumn > h2, .leftColumn > h1, .leftColumn > h2
+{
+    margin-top: 0;
+}
+.page
+{
+    width: 90%;
+    margin-left: auto;
+    margin-right: auto;
+}
+#header
+{
+    position: relative;
+    margin-bottom: 0px;
+    color: #000;
+    padding: 0;
+}
+#header h1
+{
+    font-weight: bold;
+    padding: 5px 0;
+    margin: 0;
+    color: #fff;
+    border: none;
+    line-height: 2em;
+    font-size: 32px !important;
+}
+#main
+{
+    padding: 30px 30px 15px 30px;
+    background-color: #fff;
+    margin-bottom: 30px;
+    _height: 1px;
+}
+#footer
+{
+    color: #999;
+    padding: 10px 0;
+    text-align: center;
+    line-height: normal;
+    margin: 0;
+    font-size: .9em;
+}
+ul#menu
+{
+    border-bottom: 1px #5C87B2 solid;
+    padding: 0 0 2px;
+    position: relative;
+    margin: 0;
+    text-align: right;
+}
+ul#menu li
+{
+    display: inline;
+    list-style: none;
+}
+ul#menu li#greeting
+{
+    padding: 10px 20px;
+    font-weight: bold;
+    text-decoration: none;
+    line-height: 2.8em;
+    color: #fff;
+}
+ul#menu li a
+{
+    padding: 10px 20px;
+    font-weight: bold;
+    text-decoration: none;
+    line-height: 2.8em;
+    background-color: #e8eef4;
+    color: #034af3;
+}
+ul#menu li a:hover
+{
+    background-color: #fff;
+    text-decoration: none;
+}
+ul#menu li a:active
+{
+    background-color: #a6e2a6;
+    text-decoration: none;
+}
+ul#menu li.selected a
+{
+    background-color: #fff;
+    color: #000;
+}
+fieldset
+{
+    border: 1px solid #ddd;
+    padding: 0 1.4em 1.4em 1.4em;
+    margin: 0 0 1.5em 0;
+}
+legend
+{
+    font-size: 1.2em;
+    font-weight: bold;
+}
+textarea
+{
+    min-height: 75px;
+}
+input[type="text"]
+{
+    width: 200px;
+    border: 1px solid #CCC;
+}
+input[type="password"]
+{
+    width: 200px;
+    border: 1px solid #CCC;
+}
+table td
+{
+    padding: 5px;
+}
+table th
+{
+    padding: 6px 5px;
+    text-align: left;
+    background-color: #e8eef4;
+    border: solid 1px #e8eef4;
+}
+.autoAdded
+{
+    color: rgba(64,64,64,.8);
+    font-style: italic;
+}
+.userAdded
+{
+    font-weight: bold;
+}
+.sevWarn
+{
+    font-weight: bold;
+}
+.sevError
+{
+    color: red;
+    font-weight: bold;
+}
+.dataChanged
+{
+    font-weight: bold;
+}
+.dataUnchanged
+{
+    font-weight: normal;
+}
+.ruleAny
+{
+    color: rgba(64,64,64,.8);
+    font-style: italic;
+}
+.ruleSpecific
+{
+    font-weight: bold;
+}
+.clear
+{
+    clear: both;
+}
+.error
+{
+    color: Red;
+}
+#menucontainer
+{
+    margin-top: 40px;
+}
+div#title
+{
+    display: block;
+    float: left;
+    text-align: left;
+}
+#logindisplay
+{
+    font-size: 1.1em;
+    display: block;
+    text-align: right;
+    margin: 10px;
+    color: White;
+}
+#logindisplay a:link
+{
+    color: white;
+    text-decoration: underline;
+}
+#logindisplay a:visited
+{
+    color: white;
+    text-decoration: underline;
+}
+#logindisplay a:hover
+{
+    color: white;
+    text-decoration: none;
+}
+.field-validation-error
+{
+    color: #f00;
+}
+.field-validation-valid
+{
+    display: none;
+}
+.input-validation-error
+{
+    border: 1px solid #f00;
+    background-color: #fee;
+}
+.validation-summary-errors
+{
+    font-weight: bold;
+    color: #f00;
+}
+.validation-summary-valid
+{
+    display: none;
+}
+.display-label, .editor-label
+{
+    letter-spacing: 1px;
+    padding: 0;
+    margin: 0.5em 0 0 0;
+    font-size: 1.25em;
+}
+.display-field, .editor-field
+{
+    letter-spacing: 1px;
+    padding: 0;
+    margin: 0.75em 0 0 0;
+    color: #06a;
+}
+.text-box
+{
+    width: 45em;
+}
+.text-box.multi-line
+{
+    height: 6.5em;
+}
+.tri-state
+{
+    width: 6em;
+}
+.smalltext
+{
+    font-size: .8em;
+    color: #06a;
+    vertical-align: middle;
+}
+#xsnazzy h1, #xsnazzy h2, #xsnazzy h3, #xsnazzy p
+{
+    margin: 0 5px;
+    letter-spacing: 1px;
+    padding: 0;
+}
+#xsnazzy h1
+{
+    font-size: 2em;
+    color: #06a;
+}
+#xsnazzy h2
+{
+    font-size: 1em;
+    color: #06a;
+    border: 0;
+}
+#xsnazzy p
+{
+    padding-bottom: 0.5em;
+}
+#xsnazzy h2
+{
+    padding-top: 0.5em;
+}
+#xsnazzy h3
+{
+    font-size: 1em;
+    color: #000;
+    border: 0;
+}
+#xsnazzy h3
+{
+    padding-top: 0.5em;
+}
+#xsnazzy
+{
+    background: transparent;
+    margin: 2px 1em 10px 1em;
+    width: 925px;
+}
+#xsnazzy2 h1, #xsnazzy2 h2, #xsnazzy2 h3, #xsnazzy2 p
+{
+    margin: 0 10px;
+    letter-spacing: 1px;
+    padding: 0;
+}
+#xsnazzy2 h1
+{
+    font-size: 2.5em;
+    color: #fff;
+}
+#xsnazzy2 h2
+{
+    font-size: 1em;
+    color: #06a;
+    border: 0;
+}
+#xsnazzy2 p
+{
+    padding-bottom: 0.5em;
+}
+#xsnazzy2 h3
+{
+    font-size: 1em;
+    color: #000;
+    border: 0;
+}
+#xsnazzy2 h3
+{
+    padding-top: 0.5em;
+}
+#xsnazzy2 h2
+{
+    padding-top: 0.5em;
+}
+#xsnazzy2
+{
+    background: transparent;
+    margin: 5px 1em 100px 1em;
+    width: 750px;
+}
+#xsnazzy3 h1, #xsnazzy3 h2, #xsnazzy3 h3, #xsnazzy3 p
+{
+    margin: 0 10px;
+    letter-spacing: 1px;
+    padding: 0;
+}
+#xsnazzy3 h1
+{
+    font-size: 2.5em;
+    color: #fff;
+}
+#xsnazzy3 h2
+{
+    font-size: 1em;
+    color: #06a;
+    border: 0;
+}
+#xsnazzy3 p
+{
+    padding-bottom: 0.5em;
+}
+#xsnazzy3 h3
+{
+    font-size: 1em;
+    color: #000;
+    border: 0;
+}
+#xsnazzy3 h3
+{
+    padding-top: 0.5em;
+}
+#xsnazzy3 h2
+{
+    padding-top: 0.5em;
+}
+#xsnazzy3
+{
+    background: transparent;
+    margin: 5px 1em 50px 1em;
+    width: 705px;
+}
+#xsnazzy4 h1, #xsnazzy4 h2, #xsnazzy4 h3, #xsnazzy4 p
+{
+    margin: 0 5px;
+    letter-spacing: 1px;
+    padding: 0;
+}
+#xsnazzy4 h1
+{
+    font-size: 2em;
+    color: #06a;
+}
+#xsnazzy4 h2
+{
+    font-size: 1em;
+    color: #06a;
+    border: 0;
+}
+#xsnazzy4 p
+{
+    padding-bottom: 0.5em;
+}
+#xsnazzy4 h2
+{
+    padding-top: 0.5em;
+}
+#xsnazzy4 h3
+{
+    font-size: 1em;
+    color: #000;
+    border: 0;
+}
+#xsnazzy4 h3
+{
+    padding-top: 0.5em;
+}
+#xsnazzy4
+{
+    background: transparent;
+    margin: 3px 1em 10px 1em;
+    width: 890px;
+}
+#persondisplay h1, #persondisplay h2, #persondisplay h3, #persondisplay p
+{
+    margin: 0 10px;
+    letter-spacing: 1px;
+    padding: 0;
+}
+#persondisplay h1
+{
+    font-size: 2em;
+    color: #06a;
+}
+#persondisplay h2
+{
+    font-size: 1em;
+    color: #06a;
+    border: 0;
+}
+#persondisplay p
+{
+    padding-bottom: 0.5em;
+}
+#persondisplay h2
+{
+    padding-top: 0.5em;
+}
+#persondisplay h3
+{
+    font-size: 1em;
+    color: #000;
+    border: 0;
+}
+#persondisplay h3
+{
+    padding-top: 0.5em;
+}
+#persondisplay
+{
+    background: transparent;
+    margin: 5px 1em 100px 1em;
+    width: 800px;
+}
+#gridContainer
+{
+    position: relative;
+    left: 7px;
+}
+#gridContainer
+{
+    position: relative;
+    left: 7px;
+}
+#gridContainer2
+{
+    position: relative;
+    left: 17px;
+}
+.xtop, .xbottom
+{
+    display: block;
+    background: transparent;
+    font-size: 1px;
+}
+.xb1, .xb2, .xb3, .xb4
+{
+    display: block;
+    /*overflow: hidden;*/
+}
+.xb1, .xb2, .xb3
+{
+    height: 1px;
+}
+.xb2, .xb3, .xb4
+{
+    background: #ddd;
+    border-left: 1px solid #08c;
+    border-right: 1px solid #08c;
+}
+.xb1
+{
+    margin: 0 5px;
+    background: #08c;
+}
+.xb2
+{
+    margin: 0 3px;
+    border-width: 0 2px;
+}
+.xb3
+{
+    margin: 0 2px;
+}
+.xb4
+{
+    height: 2px;
+    margin: 0 1px;
+}
+#ruletop h1, #ruletop h2, #ruletop h3, #ruletop p
+{
+    margin: 0 10px;
+    letter-spacing: 1px;
+    padding: 0;
+}
+#ruletop h1
+{
+    font-size: 2em;
+    color: #06a;
+}
+#ruletop h2
+{
+    font-size: 1em;
+    color: #06a;
+    border: 0;
+}
+#ruletop p
+{
+    padding-bottom: 0.5em;
+}
+#ruletop h2
+{
+    padding-top: 0.5em;
+}
+#ruletop h3
+{
+    font-size: 1em;
+    color: #000;
+    border: 0;
+}
+#ruletop h3
+{
+    padding-top: 0.5em;
+}
+#ruletop
+{
+    background: transparent;
+    margin: 25px 1em 5px 1em;
+    width: 880px;
+}
+#rulebottom h1, #rulebottom h2, #rulebottom h3, #rulebottom p
+{
+    margin: 0 10px;
+    letter-spacing: 1px;
+    padding: 0;
+}
+#rulebottom h1
+{
+    font-size: 2em;
+    color: #06a;
+}
+#rulebottom h2
+{
+    font-size: 1em;
+    color: #06a;
+    border: 0;
+}
+#rulebottom p
+{
+    padding-bottom: 0.5em;
+}
+#rulebottom h2
+{
+    padding-top: 0.5em;
+}
+#rulebottom h3
+{
+    font-size: 1em;
+    color: #000;
+    border: 0;
+}
+#rulebottom h3
+{
+    padding-top: 0.5em;
+}
+#rulebottom
+{
+    background: transparent;
+    margin: 25px 1em 100px 1em;
+    width: 880px;
+}
+#smallbox h1, #smallbox h2, #smallbox h3, #smallbox p
+{
+    margin: 0 10px;
+    letter-spacing: 1px;
+    padding: 0;
+}
+#smallbox h1
+{
+    font-size: 2em;
+    color: #06a;
+}
+#smallbox h2
+{
+    font-size: 1em;
+    color: #06a;
+    border: 0;
+}
+#smallbox p
+{
+    padding-bottom: 0.5em;
+}
+#smallbox h2
+{
+    padding-top: 0.5em;
+}
+#smallbox h3
+{
+    font-size: 1em;
+    color: #000;
+    border: 0;
+}
+#smallbox h3
+{
+    padding-top: 0.5em;
+}
+#smallbox
+{
+    background: transparent;
+    margin: 5px 1em 100px 1em;
+    width: 550px;
+}
+.xboxcontent
+{
+    display: block;
+    background: #ddd;
+    border: 0 solid #08c;
+    border-width: 0 1px;
+}
+.marginlayout
+{
+    border-width: 0px;
+    border-style: outset;
+    border-color: #08c;
+    border-collapse: separate;
+}

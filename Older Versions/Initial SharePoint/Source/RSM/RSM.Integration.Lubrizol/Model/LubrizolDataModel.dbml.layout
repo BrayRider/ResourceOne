@@ -1,0 +1,12 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<ordesignerObjectsDiagram dslVersion="1.0.0.0" absoluteBounds="0, 0, 11, 8.5" name="LubrizolDataModel">
+  <DataContextMoniker Name="/LubrizolDataModelDataContext" />
+  <nestedChildShapes>
+    <classShape Id="80089b8d-5d0e-4a49-965e-06560acc5345" absoluteBounds="1.5, 0.5, 2, 4.71179443359375">
+      <DataClassMoniker Name="/LubrizolDataModelDataContext/tblzILMData" />
+      <nestedChildShapes>
+        <elementListCompartment Id="181ab428-1530-4647-a672-638a93eefe08" absoluteBounds="1.5150000000000001, 0.96, 1.9700000000000002, 4.15179443359375" name="DataPropertiesCompartment" titleTextColor="Black" itemTextColor="Black" />
+      </nestedChildShapes>
+    </classShape>
+  </nestedChildShapes>
+</ordesignerObjectsDiagram>
